@@ -1,0 +1,85 @@
+.header {
+
+    .grid (9.7vw max-content auto  max-content max-content , auto, 20px, 20px);
+    align-items: center;
+    
+
+
+    .padding-container(1925px, 1726px);
+    
+
+    &-logo {
+        .bg-contain('img/svg/logo.svg');
+        width : 188px;
+        height: 100px;
+        
+    }
+
+    &-menu-open {
+        .bg-cover('img/svg/union.svg');
+        height: 17px;
+        width : 34px;
+    }
+
+    &-menu_list {
+        .grid(   repeat(auto-fit, minmax(140px, max-content)) , auto, 1vw, 1vw);
+        align-self: start;
+        margin: 0;
+
+        padding-left: 0%;
+
+        & li {
+            list-style  : none;
+            justify-self: center;
+            padding:0;
+
+            & a {
+                font-size      : 18px;
+                text-decoration: none;
+                border-bottom: none;
+                color          : inherit;
+                text-transform : uppercase;
+                font-weight: 700;
+                word-break: keep-all;
+                text-align: center;
+            }
+        }
+    }
+    
+    &-controls{
+        .grid( repeat(3,max-content   ) , auto, 2.2vw, 1vw);
+        align-items: baseline;
+        min-width: 300px ;
+        padding-top: 6px;
+
+        & .login span{
+            font-weight: 700;
+            font-size  : 24px;
+            text-decoration: none;
+            color:@red;
+            border-bottom: none;
+            text-transform: uppercase;
+
+        }
+
+        & .login i {
+            display: none;
+        }
+    }
+
+    &_phone {
+        font-weight: 700;
+        font-size  : 24px;
+        text-decoration: none;
+        color: black;
+        
+    }
+
+    &-search {
+        width:24px;
+        height:24px;
+        .bg-contain('img/svg/search.svg');
+    }
+
+
+}

@@ -1,0 +1,110 @@
+@import "parts/root";
+@import "parts/params";
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// font styles
+@font-face {
+  font-family: 'Formular';
+  src: url(./fonts/Formular-Bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Formular';
+  src: url(./fonts/Formular.ttf);
+  font-weight: 400;
+}
+
+
+
+
+html {
+  font-family                : @font-family;
+  
+  font-size: var(--font-size);
+  line-height: 130%;
+  -webkit-text-size-adjust   : 100%;
+  -ms-text-size-adjust       : 100%;
+  -ms-overflow-style         : scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+body {
+  margin: 0;
+  font-family: @font-family, -apple-system, BlinkMacSystemFont,  "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  font-size       : var(--font-size);
+  font-weight     : 400;
+  line-height     : 1.5;
+  color           : @black;
+  text-align      : left;
+  background-color: @white;
+  
+  .grid();
+  position: relative;
+  // row-gap: @block-gap;
+}
+
+// end of bs styles
+
+//common styles
+
+
+
+
+.span-2{
+  .grid-col-span-m;
+}
+
+
+@import "parts/header/header";
+
+@import "parts/footer/footer";
+
+.m-show {
+  @media (min-width: @size-mobile + 1) {
+    display: none!important;
+  }
+}
+
+.m-hide {
+  @media (max-width: @size-mobile) {
+    display: none!important;
+  }
+}
+
+.t-hide {
+  @media (max-width: @size-tablete) {
+    display: none!important;
+  }
+}
+
+.hide{
+  display: none!important;
+}
+
+
+
+

@@ -1,0 +1,38 @@
+.container-m(@max-width: @article-max ) {
+  margin   : 0 auto;
+  max-width: @max-width;
+  width    : 90%;
+  --container-width: 90vw;
+
+
+  @media only screen and (min-width: @size-tablete) {
+
+    width: 85%;
+    --container-width: 85vw;
+  }
+
+
+  @media only screen and (min-width: 1401px) {
+
+    width: 70%;
+    --container-width: 70vw;
+  }
+
+  @media only screen and (min-width: @max-width){
+    --container-width:@max-width;
+  }
+
+
+  
+
+}
+
+.padding-container(@breakpoint: @viewport-max, @container-max-width: 1400px, @padding:36px 5vw  ){
+  padding:  @padding;
+  width:100%;
+
+  @media ( min-width: @breakpoint) {
+
+    padding: 36px calc((100vw - @container-max-width )/2);
+  }
+}

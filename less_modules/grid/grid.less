@@ -1,0 +1,31 @@
+.grid(@col: 1fr, @row: auto, @col-gap: 0, @row-gap: 0) {
+  display              : grid;
+  grid-template-columns: @col;
+  grid-template-rows   : @row;
+  grid-row-gap         : @row-gap;
+  grid-column-gap      : @col-gap;
+  row-gap         : @row-gap;
+  column-gap      : @col-gap;
+
+  @supports not (grid-row-gap: @row-gap){
+& > div, &> p, &>a {
+  margin-bottom: @row-gap;
+}
+  }
+
+}
+
+
+.grid-col-span(@n: 2){
+  grid-column: span @n;
+}
+
+.grid-col-span-m(@n:2){
+  .grid-col-span(@n);
+  @media only screen and (max-width: @size-tablete) {
+    grid-column: 1;
+}
+}
+
+
+            
