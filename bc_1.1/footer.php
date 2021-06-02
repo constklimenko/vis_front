@@ -146,5 +146,23 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
         var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
     })(window,document,'https://cdn-ru.bitrix24.ru/b17549862/crm/site_button/loader_2_h3h6o9.js');
 </script>
+
+<script>$(function () {
+        $('.vertical-slider').slick({
+            vertical: true,
+            verticalSwiping: true,
+            slidesToShow: 3,
+            arrows: false,
+            asNavFor: '.horisontal-slider'
+        });
+
+
+        $('.horisontal-slider').slick({
+
+            slidesToShow: 1,
+            asNavFor: '.vertical-slider'
+
+        });
+    });</script>
 </body>
 </html>

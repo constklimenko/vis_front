@@ -1,8 +1,18 @@
 doctype html
 html(lang="en")
     head
+        link(rel="stylesheet", href="./js/slick/slick.css")
+        link(rel="stylesheet", href="./js/slick/slick-theme.css")
         include parts/common_headings.pug
         title Карточка 1920
     body 
-        include parts/header/header.pug
+        include parts/header/header
+        include parts/info/info
         include parts/footer/footer
+
+        script( src="../../js/jquery-1.11.2.min.js" )
+        script( src="../../js/slick/slick.js" )
+
+        script
+            include parts/info/info-sliders.js
+

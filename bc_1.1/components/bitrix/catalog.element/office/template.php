@@ -98,6 +98,63 @@ $ar_res = $ob_el->GetNext();
 
 
 
+<section class="info">
+    <div class="info-back-link span-2"></div>
+    <div class="gallery-grid">
+        <div class="gallery-grid-left">
+            <div class="gallery-grid-left-button"><div class="img"></div>
+                <span>+12 фото</span></div>
+            <div class="vertical-slider">
+                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg">
+                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-video.jpg">
+                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img2.jpg">
+                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg">
+                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img2.jpg">
+                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg">
+                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img2.jpg">
+            </div>
+        </div>
+        <div class="gallery-grid-right">
+            <div class="horisontal-slider">
+                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg">
+                <img class="slide"  src="<?=SITE_TEMPLATE_PATH?>/img/card/small-video.jpg">
+                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img2.jpg">
+                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg">
+                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img2.jpg">
+                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg">
+                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img2.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="info-grid"><h1 class="info-title">Название помещения бывает в две строки</h1>
+        <div class="share-button"></div>
+        <div class="info-char">
+            <div class="info-char-title">Этаж</div>
+            <div class="info-char-subtitle"><span class="number">3</span></div>
+            <div class="info-char-title">Строение</div>
+            <div class="info-char-subtitle"><span class="number">1</span><a class="info-char-link">Планировка</a></div>
+            <div class="info-char-title">Площадь</div>
+            <div class="info-char-subtitle"><span class="number"></span><span class="text"></span></div>
+            <div class="info-char-title">Потолки</div>
+            <div class="info-char-subtitle"><span class="number"></span><span class="text"></span></div>
+            <div class="info-char-title">Планировка</div>
+            <div class="info-char-subtitle"><span class="number"></span></div>
+        </div>
+        <div class="info-prices">
+            <div class="info-prices-title">Арендная ставка</div>
+            <div class="info-pices-number"><span class="number">5 768</span><span class="text">₽ кв. м.</span></div>
+            <div class="info-prices-subtitle">Включая стоимость эксплуатации здания, без учета стоимости эксплуатации
+                арендуемого помещения и стоимости коммунальных услуг.
+            </div>
+            <div class="info-prices-title">Ежемесячный платеж</div>
+            <div class="info-pices-number"><span class="number">51 567</span><span class="text">₽ мес.</span></div>
+            <button class="info-btn">скачать презентацию</button>
+        </div>
+        <div class="info-text">Коммунальные услуги оплачиваются дополнительно по тарифам ресурсоснабжающей организации
+            согласно показаний приборов учета.
+        </div>
+    </div>
+</section>
 
 
 <div class="content">
@@ -144,7 +201,7 @@ $ar_res = $ob_el->GetNext();
 		<div class="clear"></div>
 	</div>
 </div>
-	
+
 	
 	
 	

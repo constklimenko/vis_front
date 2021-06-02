@@ -1,0 +1,110 @@
+.info{
+  position: relative;
+  .padding-container(1925px, 1726px);
+  --column-gap: 4.3vw;
+  --column-fr: calc((var(--container-width) - var(--column-gap))/5 );
+  .grid(calc( var(--column-fr)*3) calc( var(--column-fr)*2),1em auto, var(--column-gap));
+
+}
+
+.gallery-grid{
+  .grid( 1fr 3.3fr, auto,calc( 0.009 * var(--container-width))  );
+  overflow: hidden;
+
+  &-left{
+    --left-width: calc( 0.145 * var(--container-width));
+    width: var(--left-width);
+    position: relative;
+
+    &-button{
+      position: absolute;
+      left: 30%;
+      top: calc( 1.67 * var(--left-width));
+      z-index: 20;
+      color: white;
+      .flex-row;
+
+      & .img {
+        width: calc( 0.12 * var(--left-width));
+        height: calc( 0.12 * var(--left-width));
+        .bg-contain('./img/svg/picture.svg');
+
+      }
+
+      & span {
+        font-size: 12px;
+        align-self: center;
+        padding-left: 2px;
+      }
+    }
+
+    & .slick-current + div + div {
+      filter: brightness(40%);
+    }
+
+
+
+
+  }
+
+  &-right{
+    --right-width: calc( 0.46 * var(--container-width));
+    width: var(--right-width);
+    position: relative;
+
+    & .slider-nav{
+      position: absolute;
+      width:160px;
+      height: 36px;
+      background-color: #312C2BAA;
+      z-index: 20;
+      left: calc(0.6*var(--right-width));
+      top:calc(0.57*var(--right-width));
+      color: white;
+      text-align: center;
+      font-size: 14px;
+      .flex-row;
+      align-content: center;
+      justify-content: center;
+      padding-bottom: 2px;
+    }
+
+    & .slick-arrow {
+      z-index: 20;
+
+      top: 50%;
+    }
+
+    & .slick-prev{
+      left:14px;
+      &:before {
+      .masked-icon('./img/svg/arrow.svg', 31px, 8px);
+      display: block;
+      height: 8px;
+      width:31px;
+      content:"n";
+      color:white;
+
+    }}
+
+    & .slick-next{
+      right:24px;
+      &:before {
+      .masked-icon('./img/svg/arrow.svg', 31px, 8px);
+      display: block;
+      height: 8px;
+      width:31px;
+      content:"n";
+      color:white;
+      transform: scaleX(-1);
+    }
+    }
+  }
+
+  & .slide{
+    width:100%;
+    height: auto;
+  }
+
+
+}
