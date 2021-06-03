@@ -1,11 +1,87 @@
 .info{
   position: relative;
   .padding-container(1925px, 1726px);
+  margin-bottom: @section-gap;
   --column-gap: 4.3vw;
   --column-fr: calc((var(--container-width) - var(--column-gap))/5 );
   .grid(calc( var(--column-fr)*3) calc( var(--column-fr)*2),1em auto, var(--column-gap));
 
+  &-btn{
+    width: 350px;
+    height: 56px;
+    background-color: @red;
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+    border:none;
+    box-shadow: none;
+  }
+
+  &-grid{
+    .grid(1fr 3.6fr, auto, 20%);
+    align-self: start;
+  }
+
+  &-title{
+    .grid-col-span-m();
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 44px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+
+  &-text{
+    .grid-col-span-m();
+    padding-top: 32px ;
+  }
+
+  &-char, &-prices{
+    align-self: start;
+    .flex-col();
+    justify-content: flex-start;
+    justify-items: flex-start;
+    align-items: flex-start;
+    gap:10px;
+    &-title{
+      font-size: 20px;
+      line-height: 24px;
+      color: @gray;
+    }
+  }
+
+  &-char{
+    &-subtitle{
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: bold;
+      color: @black;
+    }
+  }
+
+  &-prices{
+    &-number{
+      color:@red;
+      font-weight: bold;
+      & .number{
+        font-size: 36px;
+        line-height: 44px;
+        text-transform: uppercase;
+      }
+
+      & .text{
+        padding-left: .5em;
+      }
+    }
+
+  }
+  .share-button{
+    position: absolute;
+  }
+
+
 }
+
 
 .gallery-grid{
   .grid( 1fr 3.3fr, auto,calc( 0.009 * var(--container-width))  );
@@ -41,10 +117,6 @@
     & .slick-current + div + div {
       filter: brightness(40%);
     }
-
-
-
-
   }
 
   &-right{
@@ -101,9 +173,18 @@
     }
   }
 
-  & .slide{
+  & .slide {
     width:100%;
     height: auto;
+
+    & img{
+      width:100%;
+      height: auto;
+    }
+
+    &-fancybox{
+
+    }
   }
 
 

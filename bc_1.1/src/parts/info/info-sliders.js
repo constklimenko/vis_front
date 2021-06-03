@@ -1,8 +1,7 @@
 $(function(){
 
-    var number_of_slides = document.querySelectorAll('.horisontal-slider div').length;
-    document.querySelector('.number_of_slides').innerHTML = number_of_slides;
-    document.querySelector('.number_of_slides-2').innerHTML = number_of_slides - 1;
+
+
 
 
 
@@ -12,7 +11,10 @@ $(function(){
         slidesToShow: 3,
         arrows: false,
         asNavFor: '.horisontal-slider'
-    });
+    }).on('init', (slider)=>{
+
+        document.querySelector('.number_of_slides-2').innerHTML = slider.slideCount ;
+    });;
 
 
     $('.horisontal-slider').slick({
@@ -20,20 +22,19 @@ $(function(){
         slidesToShow: 1,
         asNavFor: '.vertical-slider',
         appendArrows: '.slider-nav',
-        // dots: true,
-        // dotsClass: 'custom_paging',
-        // customPaging: function (slider, i) {
-        //
-        //     console.log(slider);
-        //     return  (i + 1) + '/' + slider.slideCount;
-        // }
+
+
+    }).on('init', (slider)=>{
+        var slideCount = slider.slideCount;
+        document.querySelector('.number_of_slides').innerHTML = slideCount;
 
     })
         .on(
         'afterChange',
-        ()=>{
-            var currentSlide = $('.horisontal-slider').slick('slickCurrentSlide');
-            document.querySelector('.current-count').innerHTML = currentSlide + 1;
+            (event, slick, currentSlide, slideCount)=>{
+            var countOfSlides = $('.number_of_slides').text();
+
+          $('.current-count').text(currentSlide + 1);
         }
     );
 });

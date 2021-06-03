@@ -1,0 +1,33 @@
+.elem_descr{
+  .padding-container(1925px, 1726px);
+  position: relative;
+  margin-bottom: @section-gap;
+  --column-gap: 4.3vw;
+  --column-fr: calc((var(--container-width) - var(--column-gap))/5 );
+  .grid(calc( var(--column-fr)*3) calc( var(--column-fr)*2),auto, var(--column-gap));
+  align-items: start;
+
+  &-plan, &-description{
+    .flex-col();
+    align-items: flex-start;
+    justify-items: flex-start;
+  justify-content: flex-start;
+  }
+
+  &-title{
+    font-size: 20px;
+    margin-bottom: 1em;
+  }
+  &-img{
+    max-width: 100%;
+  }
+
+  & p{
+    margin-bottom: .5em;
+  }
+
+  & ul{
+    padding-left: 1em;
+    margin-bottom: .5em;
+  }
+}

@@ -44,5 +44,12 @@
     "less": "^3.10.3",
     "lightbox2": "^2.11.3",
     "materialize-css": "^1.0.0-rc.2"
-  }
+  },
+  "browserslist": [
+    "last 3 version",
+    "ie 11",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ]
 }

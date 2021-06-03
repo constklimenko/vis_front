@@ -1,0 +1,36 @@
+.flex-row() {
+  display               : -ms-flexbox;
+  display               : -webkit-flex;
+  display               : flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction    : row;
+  flex-direction        : row;
+  -webkit-flex-wrap     : wrap;
+  -ms-flex-wrap         : wrap;
+  flex-wrap             : wrap;
+}
+
+.flex-col() {
+  display               : -ms-flexbox;
+  display               : -webkit-flex;
+  display               : flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction    : column;
+  flex-direction        : column;
+  -webkit-flex-wrap     : wrap;
+  -ms-flex-wrap         : wrap;
+  flex-wrap             : wrap;
+}
+
+
+.flex_item(@width) {
+  -webkit-order      : 0;
+  -ms-flex-order     : 0;
+  order              : 0;
+  -webkit-flex       : 0 1 @width;
+  -ms-flex           : 0 1 @width;
+  flex               : 0 1 @width;
+  -webkit-align-self : center;
+  -ms-flex-item-align: center;
+  align-self         : center;
+}

@@ -20,10 +20,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     $assets->addJs(SITE_TEMPLATE_PATH . '/js/custom.js');
     $assets->addJs(SITE_TEMPLATE_PATH . '/js/script.js');
 
-//    slick
-    $assets->addJs(SITE_TEMPLATE_PATH . '/js/slick/slick.js');
-    $assets->addCss(SITE_TEMPLATE_PATH . '/js/slick/slick.css');
-    $assets->addCss(SITE_TEMPLATE_PATH . '/js/slick/slick-theme.css');
+
 
 
     $assets->addCss(SITE_TEMPLATE_PATH . '/css/plagins_style.css');

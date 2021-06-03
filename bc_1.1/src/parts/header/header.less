@@ -1,4 +1,5 @@
 .header {
+    position: sticky;
 
     .grid (9.7vw max-content auto  max-content max-content , auto, 20px, 20px);
     align-items: center;
@@ -12,9 +13,7 @@
         .bg-contain('img/svg/logo.svg');
         width : 188px;
         height: 100px;
-        
     }
-
     &-menu-open {
         .bg-cover('img/svg/union.svg');
         height: 17px;
@@ -22,12 +21,11 @@
     }
 
     &-menu_list {
-        .grid(   repeat(auto-fit, minmax(140px, max-content)) , auto, 1vw, 1vw);
+        .flex-row();
+        gap:1vw;
         align-self: start;
         margin: 0;
-
         padding-left: 0%;
-
         & li {
             list-style  : none;
             justify-self: center;

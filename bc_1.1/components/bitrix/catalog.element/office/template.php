@@ -1,98 +1,13 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-$this->setFrameMode(true);?>
+$this->setFrameMode(true);
+//    slick
 
-<?
-$ob_el=CIBlockElement::GetList(Array("SORT"=>"ASC"),Array('IBLOCK_ID'=>$arResult['IBLOCK_ID'],'SORT'=>array($arResult['SORT']-1,$arResult['SORT']+1),'PROPERTY_KORPUS'=>$arResult['PROPERTIES']['KORPUS']['VALUE']),false,false,Array('SORT','CODE'));
-while($ob = $ob_el->GetNext()){ 
-	if($ob['SORT']>$arResult['SORT']){$etahe['+']=$ob;}else{$etahe['-']=$ob;}
-}
-$ob_el=CIBlockElement::GetByID($arResult['PROPERTIES']['KORPUS']['VALUE']);
-$ar_res = $ob_el->GetNext();
-?><div class="gallery-controls_wrapper rent">
-	<div class="content">
-		<a href="/arenda/<?=$ar_res['CODE']?>.html" class="select-floor"><i class="icon-arrowhead7"></i>Выбор этажа</a>
-		<a href="" class="back-link parameters-link" style="float:right;"><i class="icon-menu61"></i><span>Подбор по параметрам</span></a>
-		<div class="number-offers">Найдено <span>0</span> предложений</div>
-		<div class="clear"></div>
-	</div>
-</div>
+$this->addExternalJs(SITE_TEMPLATE_PATH . '/js/slick/slick.js');
+$this->addExternalCss(SITE_TEMPLATE_PATH . '/js/slick/slick.css');
+$this->addExternalCss(SITE_TEMPLATE_PATH . '/js/slick/slick-theme.css');
 
 
-
-<?/*фильтр*/?>
-<div class="selection-parameters" >
-			<div class="content">
-				<div class="controls-box" style="height: 731.158px; min-height: 523px;">
-					<?$APPLICATION->IncludeComponent("bitrix:catalog.smart.filter", "podbor", Array(
-						"COMPONENT_TEMPLATE" => ".default",
-							"IBLOCK_TYPE" => "bc",	// Тип инфоблока
-							"IBLOCK_ID" => "6",	// Инфоблок
-							"SECTION_ID" => "",	// ID раздела инфоблока
-							"SECTION_CODE" => "",	// Код раздела
-							"FILTER_NAME" => "arrFilter",	// Имя выходящего массива для фильтрации
-							"TEMPLATE_THEME" => "blue",	// Цветовая тема
-							"FILTER_VIEW_MODE" => "vertical",	// Вид отображения
-							"POPUP_POSITION" => "left",	// Позиция для отображения всплывающего блока с информацией о фильтрации
-							"DISPLAY_ELEMENT_COUNT" => "Y",	// Показывать количество
-							"SEF_MODE" => "N",	// Включить поддержку ЧПУ
-							"CACHE_TYPE" => "A",	// Тип кеширования
-							"CACHE_TIME" => "36000000",	// Время кеширования (сек.)
-							"CACHE_GROUPS" => "Y",	// Учитывать права доступа
-							"SAVE_IN_SESSION" => "N",	// Сохранять установки фильтра в сессии пользователя
-							"INSTANT_RELOAD" => "N",	// Мгновенная фильтрация при включенном AJAX
-							"PAGER_PARAMS_NAME" => "arrPager",	// Имя массива с переменными для построения ссылок в постраничной навигации
-							"XML_EXPORT" => "N",	// Включить поддержку Яндекс Островов
-							"SECTION_TITLE" => "-",	// Заголовок
-							"SECTION_DESCRIPTION" => "-",	// Описание
-						),
-						false
-					);?>
-				</div>
-				<div class="resultat-selection">
-					<ul class="resultat-list">
-						<li class="resultat-item">
-							<div class="wrapper">
-								<ol class="office-inform_list">
-									<li><b>Фото</b></li>
-									<li><b>Корпус</b></li>
-									<li><b>Этаж</b></li>
-									<li><b>Площадь, м2</b></li>
-									<li><b>Тип помещения</b></li>
-								</ol>
-							</div>
-						</li>
-						<?foreach ($arResult['OFISES'] as $ofise){?>
-						<li class="resultat-item be_set">
-							<div class="wrapper">
-								<ol class="office-inform_list">
-									<li> 
-										<a href="<?=CFile::GetPath($ofise['PREVIEW_PICTURE']);?>" class="fancy">
-											<?$file = CFile::ResizeImageGet($ofise['PREVIEW_PICTURE'], array('width'=>90, 'height'=>60), BX_RESIZE_IMAGE_PROPORTIONAL_ALT );?>
-											<img src="<?=$file['src']?>" alt="">
-										</a> 
-									</li>
-									<li><?=$ofise['PROPERTY_KORPUS_NAME']?></li>
-									<li><?=$ofise['PROPERTY_PLAN_PROPERTY_NAME_VALUE']?></li>
-									<li><?=$ofise['PROPERTY_PLOSH_VALUE']!=''?$ofise['PROPERTY_PLOSH_VALUE']:'-'?></li>
-									<li><?=$ofise['PROPERTY_TYPE_APARTMENT_VALUE']!=''?$ofise['PROPERTY_TYPE_APARTMENT_VALUE']:'-'?></li>
-								</ol>
-								<div class="button-wrapper"><a href="/arenda/office/<?=$ofise['CODE']?>.html">Смотреть офис</a></div>
-							</div>
-						</li>
-						<?}?>
-
-					</ul>
-					
-				</div>
-				<div class="clear"></div>
-			</div>
-		</div>
-
-
-<?/*фильтр*/?>
-
-
-
+?>
 
 
 
@@ -102,8 +17,8 @@ $ar_res = $ob_el->GetNext();
     <div class="info-back-link span-2"></div>
     <div class="gallery-grid">
         <div class="gallery-grid-left">
-            <div class="gallery-grid-left-button"><div class="img"></div>
-                <span>+12 фото</span></div>
+            <div class="gallery-grid-left-button"><img class="img"><span><span>+</span><span class="number_of_slides-2">12</span><span>фото</span></span>
+            </div>
             <div class="vertical-slider">
                 <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg">
                 <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-video.jpg">
@@ -115,6 +30,8 @@ $ar_res = $ob_el->GetNext();
             </div>
         </div>
         <div class="gallery-grid-right">
+            <div class="slider-nav"><span><span class="current-count">1</span><span>/</span><span
+                            class="number_of_slides">4</span></span></div>
             <div class="horisontal-slider">
                 <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg">
                 <img class="slide"  src="<?=SITE_TEMPLATE_PATH?>/img/card/small-video.jpg">
@@ -126,15 +43,18 @@ $ar_res = $ob_el->GetNext();
             </div>
         </div>
     </div>
-    <div class="info-grid"><h1 class="info-title">Название помещения бывает в две строки</h1>
+
+
+
+    <div class="info-grid"><h1 class="info-title">Название помещения <br/> бывает в две строки</h1>
         <div class="share-button"></div>
         <div class="info-char">
             <div class="info-char-title">Этаж</div>
-            <div class="info-char-subtitle"><span class="number">3</span></div>
+            <div class="info-char-subtitle"><span class="number"><?=$etah['SORT']?></span></div>
             <div class="info-char-title">Строение</div>
-            <div class="info-char-subtitle"><span class="number">1</span><a class="info-char-link">Планировка</a></div>
+            <div class="info-char-subtitle"><span class="number"><?=$korpus['SORT']?></span><a class="info-char-link">Планировка</a></div>
             <div class="info-char-title">Площадь</div>
-            <div class="info-char-subtitle"><span class="number"></span><span class="text"></span></div>
+            <div class="info-char-subtitle"><span class="number"><?=$arResult['PROPERTIES']['PLOSH']['VALUE']?></span><span class="text"></span></div>
             <div class="info-char-title">Потолки</div>
             <div class="info-char-subtitle"><span class="number"></span><span class="text"></span></div>
             <div class="info-char-title">Планировка</div>
@@ -142,12 +62,12 @@ $ar_res = $ob_el->GetNext();
         </div>
         <div class="info-prices">
             <div class="info-prices-title">Арендная ставка</div>
-            <div class="info-pices-number"><span class="number">5 768</span><span class="text">₽ кв. м.</span></div>
+            <div class="info-prices-number"><span class="number">5 768</span><span class="text">₽ кв. м.</span></div>
             <div class="info-prices-subtitle">Включая стоимость эксплуатации здания, без учета стоимости эксплуатации
                 арендуемого помещения и стоимости коммунальных услуг.
             </div>
             <div class="info-prices-title">Ежемесячный платеж</div>
-            <div class="info-pices-number"><span class="number">51 567</span><span class="text">₽ мес.</span></div>
+            <div class="info-prices-number"><span class="number">51 567</span><span class="text">₽ мес.</span></div>
             <button class="info-btn">скачать презентацию</button>
         </div>
         <div class="info-text">Коммунальные услуги оплачиваются дополнительно по тарифам ресурсоснабжающей организации
@@ -156,8 +76,58 @@ $ar_res = $ob_el->GetNext();
     </div>
 </section>
 
+<section class="elem_descr">
+    <div class="elem_descr-plan">
+        <div class="elem_descr-title">ПЛАНИРОВКА ЭТАЖА</div>
+        <img class="elem_descr-img" src="<?=$arResult['PREVIEW_PICTURE']['SRC']?>" alt="<?=$arResult['NAME']?>" ></div>
+    <div class="elem_descr-description">
+        <div class="elem_descr-title">ОПИСАНИЕ И ОБЩИЙ ВИД ОБЪЕКТА</div>
+        <div class="elem_descr-text">
+            <?=$arResult['DETAIL_TEXT']?>
 
-<div class="content">
+            <p>Предлагаемое помещение: Офисный блок 271,69кв.м. 3 этаж, 1 строение</p>
+            <p>Высота потолков 4,2м.и большой размер окон обеспечивает максимальную освещенность офиса</p>
+            <p>Планировочные решения: смешанная планировка, с возможностью перепланировки.</p>
+            <p>Помещения готовы к въезду, выполнен косметический ремонт</p>
+            <p>Техническое оснащение:</p>
+            <ul>
+                <li>кондиционирование</li>
+                <li>приточно-вытяжная вентиляция</li>
+                <li>пожарная сигнализация</li>
+                <li>подвод воды и канализации</li>
+            </ul>
+            <p>Провайдеры: WestCall, АМТ-Групп, Вымпел Коммуникации (Билайн)</p>
+            <p>Развитая инфраструктура, на территории Делового комплекса: кафе, рестораны, столовая, фитнес-залы, салоны
+                красоты, магазины и мини- маркеты, типография, вендинговые аппараты для самообслуживания а также
+                банкоматы.</p>
+
+
+        </div>
+    </div>
+</section>
+<section class="elem_tabs">
+    <div class="elem_tabs-header"><a class="elem_tabs-header-tab elem_tabs-header-tab--active">Дополнительные услуги</a><a
+                class="elem_tabs-header-tab">Транспортная доступность</a></div>
+    <div class="elem_tabs-content"><a class="elem_tabs-card">
+            <div class="card-img">
+                <div class="bucket"></div>
+            </div>
+            <div class="card-text">Услуги клининга (уборки) в арендуемом помещении</div>
+        </a><a class="elem_tabs-card">
+            <div class="card-img">
+                <div class="parking"></div>
+            </div>
+            <div class="card-text">Круглосуточная наземная парковка на охраняемой территории</div>
+        </a><a class="elem_tabs-card">
+            <div class="card-img">
+                <div class="taxometr"></div>
+            </div>
+            <div class="card-text">Гостевая парковка с оплатой на почасовой основе</div>
+        </a></div>
+</section>
+
+
+<!--<div class="content">
 	<div class="office-card">
 		<div class="title"><?=$arResult['NAME']?></div>
 		<div class="office-plan">
@@ -200,7 +170,7 @@ $ar_res = $ob_el->GetNext();
 		<? } ?>	
 		<div class="clear"></div>
 	</div>
-</div>
+</div>-->
 
 	
 	
