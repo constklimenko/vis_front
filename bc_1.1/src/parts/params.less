@@ -17,9 +17,9 @@
 @viewport-min: 320px;
 
 @size-mobile: 700px;
-@size-tablete: 1040px;
+@size-tablete: 1240px;
 
-@article-max: 1100px;
+
 
 
 
@@ -32,49 +32,15 @@
 @font-h5: 'Formular', sans-serif;
 
 body{
-  
-  .f-size( 24, 44,320, 1400);
-  --h2-size: var(--return);
-  .f-size2( 12, 18, 320, 1400);
-  --font-size: var(--return2);
+  .adaptive-size(24,100, 320, 1920);
+  --section-gap: var(--return);
 
-  --block-gap: 4.33333333333rem;
-  --cross-size: 33px;
-
-  @media only screen and (max-width: @size-mobile) {
-    --block-gap: 20px;
-    --font-size: 12px;
-    --h2-size: 24px;
-
-  }
-
-  @media only screen and (min-width: @size-tablete) {
-    --block-gap: 78px;
-    --font-size: 18px;
-    --h2-size: 44px;
-  }
-
-  font-size: var(--font-size);
 }
 
 
 //paddings
 
-@padding-h: 100px;
-@block-gap:var(--block-gap);
 
-@h2-size: var(--h2-size);
-
-@fnt-size-xxs: 12px;
-@fnt-size-xs: 13.7px;
-@fnt-size-s: 16px;
-@fnt-size-m: 18px;
-@fnt-size-ml: 20px;
-@fnt-size-l: 24px;
-@fnt-size-xl: 32px;
-@fnt-size-xxl: 36px;
-@line-height: 1.5em;
-@line-height-h1: 1.4em;
 
 
 
@@ -83,8 +49,6 @@ body{
 
 // animation
 
-@aniimation_time: 1.3s;
- @aniimation_way: ease-in;
 
 
-@section-gap: 100px;
+@section-gap: var(--section-gap);

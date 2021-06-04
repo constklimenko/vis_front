@@ -1,23 +1,39 @@
 .header {
     position: sticky;
 
-    .grid (9.7vw max-content auto  max-content max-content , auto, 20px, 20px);
+    .grid (max-content  auto  max-content max-content , auto, 20px, 20px);
     align-items: center;
-    
-
-
     .padding-container(1925px, 1726px);
-    
+
+
+    @media screen and (max-width: 1100px){
+       .grid(1fr 1fr 1fr);
+
+    }
 
     &-logo {
         .bg-contain('img/svg/logo.svg');
-        width : 188px;
-        height: 100px;
+        .adaptive-size(54, 100, 320, 1926);
+        width : calc(1.88 * var(--return));
+        height: var(--return);
+
+        @media screen and (max-width: @size-mobile){
+            order:2;
+            justify-self: center ;
+        }
     }
     &-menu-open {
         .bg-cover('img/svg/union.svg');
         height: 17px;
         width : 34px;
+        .t-show;
+        @media screen and (max-width: @size-mobile){
+            order:1;
+        }
+    }
+
+    &-menu{
+        .t-hide;
     }
 
     &-menu_list {
@@ -45,10 +61,23 @@
     }
     
     &-controls{
+
+
         .grid( repeat(3,max-content   ) , auto, 2.2vw, 1vw);
         align-items: baseline;
         min-width: 300px ;
         padding-top: 6px;
+        @media screen and (max-width: 1100px){
+            .flex-row;
+            gap: 2.2vw;
+            flex-wrap: nowrap;
+            min-width: 30px ;
+        }
+        @media screen and (max-width: @size-mobile){
+            order:3;
+            justify-content: flex-end;
+        }
+
 
         & .login span{
             font-weight: 700;
@@ -67,16 +96,26 @@
 
     &_phone {
         font-weight: 700;
-        font-size  : 24px;
+        .f-size(16, 24, 1240, 1926);
         text-decoration: none;
         color: black;
-        
+
+        @media screen and (max-width: @size-mobile){
+            font-size: 0;
+            width: 29.72px;
+            height: 37.5px;
+            .bg-contain('./img/svg/phone.svg')
+
+        }
+
+
     }
 
     &-search {
         width:24px;
         height:24px;
         .bg-contain('img/svg/search.svg');
+        .m-hide;
     }
 
 

@@ -3,4 +3,74 @@
   position: relative;
   margin-bottom: @section-gap;
 
+  &-title{
+    font-size: 20px;
+  }
+
+  &-row{
+    .flex-row;
+    gap: 80px;
+
+
+  }
+
+
+
+}
+
+.row_card{
+position: relative;
+  width:370px;
+
+  height: 540px;
+  font-weight: bold;
+  color: white;
+  .flex-col!important;
+  justify-content: space-between;
+  @media screen and (max-width: @size-mobile){
+    min-width:90vw;
+  }
+
+
+  &-bg{
+    position: absolute;
+    top:0;right:0;left:0;bottom:0;
+    z-index: -1;
+    filter: brightness(0.3);
+  }
+
+  &-title{
+    .flex-row;
+    padding: 28px;
+    justify-content: space-between;
+
+    &-item{
+      .flex-row;
+      gap:.5em
+    }
+  }
+
+  &-bottom{
+    height-min:25%;
+    .flex-col;
+    align-items: center;
+    justify-content: space-between;
+    gap:20px;
+    padding-bottom: 5%;
+
+    &-title{
+      text-transform: uppercase;
+    }
+
+    &-price{
+      .flex-row;
+      justify-content: space-between;
+      gap:.5em;
+      & number{
+        text-transform: uppercase;
+        font-size: 18px;
+
+      }
+    }
+  }
 }

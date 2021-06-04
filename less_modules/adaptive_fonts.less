@@ -39,34 +39,38 @@
   
   @c: @b * 1px;
   
-  --return: ~"calc( " @k ~" * 100vw + " @c ~" )" ;
+  font-size: ~"calc( " @k ~" * 100vw + " @c ~" )" ;
   
-  @media screen and (max-width: @viewport_min) {
-    --return: @value_min;
+  @media screen and (max-width: @viewport_min * 1px) {
+    font-size: @value_min * 1px;
   }
-  @media screen and (min-width: @viewport_max) {
-    --return: @value_max;
+  @media screen and (min-width: @viewport_max * 1px) {
+    font-size: @value_max * 1px;
   }
   
   
 }
 
 
-.f-size2(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+.adaptive-size(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
   @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
   @b: @value_min - @k * @viewport_min;
   
   @c: @b * 1px;
   
-  --return2: ~"calc( " @k ~" * 100vw + " @c ~" )" ;
-  
-  @media screen and (max-width: @viewport_min) {
-    --return2: @value_min;
-  }
-  @media screen and (min-width: @viewport_max) {
-    --return2: @value_max;
-  }
-  
+  --return: ~"calc( " @k ~" * 100vw + " @c ~" )" ;
   
 }
+
+.adaptive-size2(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+  @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
+  @b: @value_min - @k * @viewport_min;
+
+  @c: @b * 1px;
+
+  --return2: ~"calc( " @k ~" * 100vw + " @c ~" )" ;
+
+}
+
+
 

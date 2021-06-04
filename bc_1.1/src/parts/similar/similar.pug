@@ -1,1 +1,32 @@
+mixin card()
+    .similar-row_card.row_card
+        .row_card-bg(style="background: url('./img/card/big-img.jpg') no-repeat center/auto auto")
+        .row_card-title
+            .row_card-title-item
+                .number 3
+                .text этаж
+            .row_card-title-item
+                .number 57.2
+                small.text кв. м.
+        .row_card-bottom
+            .row_card-bottom-title
+                | название помещения
+                br
+                |бывает в две строки
+            .row_card-bottom-price
+                .number 5 768 ₽
+                .text  кв. м.
+
+
 .similar
+    .similar-title Похожие офисы
+    .similar-row
+        +card()
+        +card()
+        +card()
+        +card()
+
+
+
+
+

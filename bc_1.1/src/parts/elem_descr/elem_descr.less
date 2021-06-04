@@ -6,6 +6,10 @@
   --column-fr: calc((var(--container-width) - var(--column-gap))/5 );
   .grid(calc( var(--column-fr)*3) calc( var(--column-fr)*2),auto, var(--column-gap));
   align-items: start;
+  @media screen and (max-width: @size-mobile){
+    .flex-col;
+
+  }
 
   &-plan, &-description{
     .flex-col();

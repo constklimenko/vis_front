@@ -5,6 +5,10 @@
   .grid(auto auto, auto, 77px);
   position: relative;
 
+  @media screen and (max-width: @size-mobile){
+    .flex-col;
+  }
+
   & nav li a{
     font-size: 14px;
   }
@@ -19,6 +23,10 @@
   &-grid{
     .grid(3.7fr 1fr 1fr,auto);
     padding-top:35px;
+
+    @media screen and (max-width: @size-mobile){
+      .flex-col;
+    }
   }
 
   &-text, &-email {

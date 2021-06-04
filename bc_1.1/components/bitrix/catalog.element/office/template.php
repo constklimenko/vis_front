@@ -5,7 +5,7 @@ $this->setFrameMode(true);
 $this->addExternalJs(SITE_TEMPLATE_PATH . '/js/slick/slick.js');
 $this->addExternalCss(SITE_TEMPLATE_PATH . '/js/slick/slick.css');
 $this->addExternalCss(SITE_TEMPLATE_PATH . '/js/slick/slick-theme.css');
-
+$this->addExternalJs(SITE_TEMPLATE_PATH . '/js/vis-scripts.js');
 
 ?>
 
@@ -14,7 +14,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/js/slick/slick-theme.css');
 
 
 <section class="info">
-    <div class="info-back-link span-2"></div>
+    <div class="info-back-link"></div>
     <div class="gallery-grid">
         <div class="gallery-grid-left">
             <div class="gallery-grid-left-button"><img class="img"><span><span>+</span><span class="number_of_slides-2">12</span><span>фото</span></span>
@@ -125,6 +125,88 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/js/slick/slick-theme.css');
             <div class="card-text">Гостевая парковка с оплатой на почасовой основе</div>
         </a></div>
 </section>
+
+<div class="similar">
+    <div class="similar-title">Похожие офисы</div>
+    <div class="similar-row">
+        <div class="similar-row_card row_card">
+            <div class="row_card-bg" style="background: url('<?=SITE_TEMPLATE_PATH?>/img/card/big-img.jpg') no-repeat center/ cover"></div>
+            <div class="row_card-title">
+                <div class="row_card-title-item">
+                    <div class="number">3</div>
+                    <div class="text">этаж</div>
+                </div>
+                <div class="row_card-title-item">
+                    <div class="number">57.2</div>
+                    <small class="text">кв. м.</small></div>
+            </div>
+            <div class="row_card-bottom">
+                <div class="row_card-bottom-title">название помещения<br>бывает в две строки</div>
+                <div class="row_card-bottom-price">
+                    <div class="number">5 768 ₽</div>
+                    <div class="text"> кв. м.</div>
+                </div>
+            </div>
+        </div>
+        <div class="similar-row_card row_card">
+            <div class="row_card-bg" style="background: url('<?=SITE_TEMPLATE_PATH?>/img/card/big-img.jpg') no-repeat center/ cover"></div>
+            <div class="row_card-title">
+                <div class="row_card-title-item">
+                    <div class="number">3</div>
+                    <div class="text">этаж</div>
+                </div>
+                <div class="row_card-title-item">
+                    <div class="number">57.2</div>
+                    <small class="text">кв. м.</small></div>
+            </div>
+            <div class="row_card-bottom">
+                <div class="row_card-bottom-title">название помещения<br>бывает в две строки</div>
+                <div class="row_card-bottom-price">
+                    <div class="number">5 768 ₽</div>
+                    <div class="text"> кв. м.</div>
+                </div>
+            </div>
+        </div>
+        <div class="similar-row_card row_card">
+            <div class="row_card-bg" style="background: url('<?=SITE_TEMPLATE_PATH?>/img/card/big-img.jpg') no-repeat center/ cover"></div>
+            <div class="row_card-title">
+                <div class="row_card-title-item">
+                    <div class="number">3</div>
+                    <div class="text">этаж</div>
+                </div>
+                <div class="row_card-title-item">
+                    <div class="number">57.2</div>
+                    <small class="text">кв. м.</small></div>
+            </div>
+            <div class="row_card-bottom">
+                <div class="row_card-bottom-title">название помещения<br>бывает в две строки</div>
+                <div class="row_card-bottom-price">
+                    <div class="number">5 768 ₽</div>
+                    <div class="text"> кв. м.</div>
+                </div>
+            </div>
+        </div>
+        <div class="similar-row_card row_card">
+            <div class="row_card-bg" style="background: url('<?=SITE_TEMPLATE_PATH?>/img/card/big-img.jpg') no-repeat center/ cover"></div>
+            <div class="row_card-title">
+                <div class="row_card-title-item">
+                    <div class="number">3</div>
+                    <div class="text">этаж</div>
+                </div>
+                <div class="row_card-title-item">
+                    <div class="number">57.2</div>
+                    <small class="text">кв. м.</small></div>
+            </div>
+            <div class="row_card-bottom">
+                <div class="row_card-bottom-title">название помещения<br>бывает в две строки</div>
+                <div class="row_card-bottom-price">
+                    <div class="number">5 768 ₽</div>
+                    <div class="text"> кв. м.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!--<div class="content">
