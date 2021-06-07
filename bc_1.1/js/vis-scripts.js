@@ -1,10 +1,11 @@
-
 function toggleNav() {
     document.querySelector('.header__bottom').classList.toggle('m-hide');
 };
 
 
-$(function() {
+
+
+$(document).ready(function() {
 
 
     $('.vertical-slider').slick({
@@ -50,6 +51,10 @@ $(function() {
 
 
         });
+    } else {
+
+
+        $(".fb").fancybox();
     };
 
 });
