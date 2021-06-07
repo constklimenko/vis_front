@@ -1,7 +1,27 @@
 header.header
-    
+    .header__bottom.m-show.m-hide
+
+        nav.header-menu
+            ul.header-menu_list
+                li
+                    a(href="/about/") О&nbsp;бизнес&#8209;центре
+                li
+                    a(href="/location/") Инфраструктура
+                li
+                    a(href="/gallery/") Галерея
+                li
+                    a(href="/arenda/") Аренда
+                li
+                    a(href="/press-center") Пресс&#8209;центр
+                li
+                    a(href="/contacts/") Контакты
+
+
+        .header__cross.m-show(onclick="toggleNav()")
+    .header__bottom__overlay
+
     a.header-logo(href="/")
-    a.header-menu-open(href="#")
+    a.header-menu-open(onclick="toggleNav()")
     nav.header-menu
         ul.header-menu_list
             li

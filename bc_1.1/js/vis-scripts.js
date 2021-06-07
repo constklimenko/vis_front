@@ -1,3 +1,9 @@
+
+function toggleNav() {
+    document.querySelector('.header__bottom').classList.toggle('m-hide');
+};
+
+
 $(function() {
 
 
@@ -18,6 +24,8 @@ $(function() {
         slidesToShow: 1,
         asNavFor: '.vertical-slider',
         appendArrows: '.slider-nav',
+        dots: true,
+        dotsClass: 'info-dots-container',
 
 
     }).on('init', (slider) => {

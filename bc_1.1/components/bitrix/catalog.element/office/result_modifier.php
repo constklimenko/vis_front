@@ -589,20 +589,4 @@ if ($arResult['MODULES']['currency'])
 }
 ?>
 
-<?
-$ob_el=CIBlockElement::GetList(Array("SORT"=>"ASC"),Array('IBLOCK_ID'=>$arResult['IBLOCK_ID'],'SORT'=>array($arResult['SORT']-1,$arResult['SORT']+1),'PROPERTY_KORPUS'=>$arResult['PROPERTIES']['KORPUS']['VALUE']),false,false,Array('SORT','CODE'));
-while($ob = $ob_el->GetNext()){
-	if($ob['SORT']>$arResult['SORT']){$etahe['+']=$ob;}else{$etahe['-']=$ob;}
-}
-$ob_el=CIBlockElement::GetByID($arResult['PROPERTIES']['KORPUS']['VALUE']);
-$ar_res = $ob_el->GetNext();
-?>
 
-
-
-<?
-$ob_korpus=CIBlockElement::GetByID($arResult['PROPERTIES']['KORPUS']['VALUE']);
-$korpus = $ob_korpus->GetNext();
-$ob_plan=CIBlockElement::GetByID($arResult['PROPERTIES']['PLAN']['VALUE']);
-$etah = $ob_plan->GetNext();
-?>

@@ -9,12 +9,30 @@ $this->addExternalJs(SITE_TEMPLATE_PATH . '/js/vis-scripts.js');
 
 ?>
 
+<?
+$ob_el=CIBlockElement::GetList(Array("SORT"=>"ASC"),Array('IBLOCK_ID'=>$arResult['IBLOCK_ID'],'SORT'=>array($arResult['SORT']-1,$arResult['SORT']+1),'PROPERTY_KORPUS'=>$arResult['PROPERTIES']['KORPUS']['VALUE']),false,false,Array('SORT','CODE'));
+while($ob = $ob_el->GetNext()){
+    if($ob['SORT']>$arResult['SORT']){$etahe['+']=$ob;}else{$etahe['-']=$ob;}
+}
+$ob_el=CIBlockElement::GetByID($arResult['PROPERTIES']['KORPUS']['VALUE']);
+$ar_res = $ob_el->GetNext();
+?>
 
+
+
+<?
+$ob_korpus=CIBlockElement::GetByID($arResult['PROPERTIES']['KORPUS']['VALUE']);
+$korpus = $ob_korpus->GetNext();
+$ob_plan=CIBlockElement::GetByID($arResult['PROPERTIES']['PLAN']['VALUE']);
+$etah = $ob_plan->GetNext();
+?>
 
 
 
 <section class="info">
-    <div class="info-back-link"></div>
+    <a class="info-back-link">
+        <div class="img"></div>
+        <span>Назад</span></a>
     <div class="gallery-grid">
         <div class="gallery-grid-left">
             <div class="gallery-grid-left-button"><img class="img"><span><span>+</span><span class="number_of_slides-2">12</span><span>фото</span></span>
@@ -30,6 +48,7 @@ $this->addExternalJs(SITE_TEMPLATE_PATH . '/js/vis-scripts.js');
             </div>
         </div>
         <div class="gallery-grid-right">
+            <div class="info-dots-container"></div>
             <div class="slider-nav"><span><span class="current-count">1</span><span>/</span><span
                             class="number_of_slides">4</span></span></div>
             <div class="horisontal-slider">
@@ -85,21 +104,6 @@ $this->addExternalJs(SITE_TEMPLATE_PATH . '/js/vis-scripts.js');
         <div class="elem_descr-text">
             <?=$arResult['DETAIL_TEXT']?>
 
-            <p>Предлагаемое помещение: Офисный блок 271,69кв.м. 3 этаж, 1 строение</p>
-            <p>Высота потолков 4,2м.и большой размер окон обеспечивает максимальную освещенность офиса</p>
-            <p>Планировочные решения: смешанная планировка, с возможностью перепланировки.</p>
-            <p>Помещения готовы к въезду, выполнен косметический ремонт</p>
-            <p>Техническое оснащение:</p>
-            <ul>
-                <li>кондиционирование</li>
-                <li>приточно-вытяжная вентиляция</li>
-                <li>пожарная сигнализация</li>
-                <li>подвод воды и канализации</li>
-            </ul>
-            <p>Провайдеры: WestCall, АМТ-Групп, Вымпел Коммуникации (Билайн)</p>
-            <p>Развитая инфраструктура, на территории Делового комплекса: кафе, рестораны, столовая, фитнес-залы, салоны
-                красоты, магазины и мини- маркеты, типография, вендинговые аппараты для самообслуживания а также
-                банкоматы.</p>
 
 
         </div>

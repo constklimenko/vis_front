@@ -64,10 +64,15 @@ $isDevMode = $isAdmin || $isDevSite;
 		<li>load</li>
 	</ul>
 </div>
+
+
+
+
+
 <div class="menu-wrap" style="display:none;">
 	<div class="dark-fader">fader</div>
 	<div class="mob-menu">
-		<a class="menu-open" href="#">menu-open</a>
+		<a class="menu-open" href="#" >menu-open</a>
 		<div class="enter">
 			<span><?if($USER->IsAuthorized()){?><a href="/personal/"><?}?>Войти в кабинет<?if($USER->IsAuthorized()){?></a><?}?></span>
 			<a class="enter-btn" href="#">enter</a>
@@ -77,25 +82,21 @@ $isDevMode = $isAdmin || $isDevSite;
 
 
 
-		<?$APPLICATION->IncludeComponent(
-			"bitrix:menu", 
-			"top_menu_mobile", 
-			array(
-				"ALLOW_MULTI_SELECT" => "N",
-				"CHILD_MENU_TYPE" => "left",
-				"COMPONENT_TEMPLATE" => "top_menu_mobile",
-				"DELAY" => "N",
-				"MAX_LEVEL" => "1",
-				"MENU_CACHE_GET_VARS" => array(
-				),
-				"MENU_CACHE_TIME" => "3600",
-				"MENU_CACHE_TYPE" => "A",
-				"MENU_CACHE_USE_GROUPS" => "Y",
-				"ROOT_MENU_TYPE" => "top",
-				"USE_EXT" => "N"
-			),
-			false
-		);?>
+        <?$APPLICATION->IncludeComponent("bitrix:menu", "top_menu", Array(
+            "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+            "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+            "COMPONENT_TEMPLATE" => ".default",
+            "DELAY" => "N",	// Откладывать выполнение шаблона меню
+            "MAX_LEVEL" => "1",	// Уровень вложенности меню
+            "MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+            "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+            "MENU_CACHE_TYPE" => "A",	// Тип кеширования
+            "MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+            "ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
+            "USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+        ),
+            false
+        );?>
 		<div class="login-form">
 
 			<?$APPLICATION->IncludeComponent(
@@ -125,7 +126,7 @@ $isDevMode = $isAdmin || $isDevSite;
 
             </a>
 
-			<a class="header-menu-open" href="#"></a>
+			<a class="header-menu-open" onclick="toggleNav()"></a>
 				<?$APPLICATION->IncludeComponent("bitrix:menu", "top_menu", Array(
 					"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
 					"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
@@ -163,6 +164,52 @@ $isDevMode = $isAdmin || $isDevSite;
 
 
 	</header>
+
+<div class="header__bottom m-show m-hide">
+    <nav class="header-menu">
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:menu",
+            "top_menu_mobile",
+            array(
+                "ALLOW_MULTI_SELECT" => "N",
+                "CHILD_MENU_TYPE" => "left",
+                "COMPONENT_TEMPLATE" => "top_menu_mobile",
+                "DELAY" => "N",
+                "MAX_LEVEL" => "1",
+                "MENU_CACHE_GET_VARS" => array(
+                ),
+                "MENU_CACHE_TIME" => "3600",
+                "MENU_CACHE_TYPE" => "A",
+                "MENU_CACHE_USE_GROUPS" => "Y",
+                "ROOT_MENU_TYPE" => "top",
+                "USE_EXT" => "N"
+            ),
+            false
+        );?>
+
+
+        <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                "AREA_FILE_SHOW" => "file",
+                "PATH"=> SITE_TEMPLATE_PATH.'/inc/head_phone.php',
+                "EDIT_TEMPLATE" => "standard.php"
+            )
+        );?>
+
+
+        <?if($USER->IsAuthorized()){?>
+            <a href="<?=$APPLICATION->GetCurPageParam("logout=yes");?>" class="login"><i class="icon-login"></i><span>Выйти</span></a>
+        <?}else{?>
+            <a href="/auth/" class="login"><span>Войти</span></a>
+        <?}?>
+
+
+
+        <div class="header__cross m-show" onclick="toggleNav()"></div>
+
+    </nav>
+
+</div>
+<div class="header__bottom__overlay"></div>
 <!-- content-wrapper start  -->
 <div class="content-wrapper">
 

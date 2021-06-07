@@ -23,20 +23,24 @@
 
     @media screen and (max-width: @size-mobile){
       .flex-col;
-    }
+      text-align: center;
 
+    }
 
   }
 
   &-card{
     .flex-col;
     gap:16px;
-
+    width: 188px;
 
     @media screen and (min-width: @size-tablete) {
       .grid(auto auto,auto, 16px);
       height: 102px;
+      width:auto;
     };
+
+
 
 
 

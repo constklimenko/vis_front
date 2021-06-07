@@ -27,11 +27,13 @@
 
 }
 
-.padding-container(@breakpoint: @viewport-max, @container-max-width: 1400px, @padding-top:36px, @padding-right: 5vw, @padding-bottom:36px, @padding-left: 5vw   ){
+.padding-container(@breakpoint: @viewport-max, @container-max-width: 1400px, @padding-top:0, @padding-right: 5vw, @padding-bottom:0, @padding-left: 5vw   ){
   padding:  @padding-top @padding-right @padding-bottom @padding-left;
   width:100%;
 
-  --container-width: calc( 100vw - @padding-right - @padding-left );
+  --padding-x: calc(@padding-right + @padding-left);
+
+  --container-width: calc( 100vw - var(--padding-x)  );
 
   @media ( min-width: @breakpoint) {
     --container-width: @container-max-width ;
