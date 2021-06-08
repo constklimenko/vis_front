@@ -1,15 +1,30 @@
-.similar{
+.similar {
   .padding-container(1925px, 1726px);
-  position: relative;
+  position     : relative;
   margin-bottom: @section-gap;
+  height       : 630px;
+  overflow     : hidden;
 
-  &-title{
-    font-size: 20px;
+  @media screen and (min-width: 1880px) {
+    height: 700px;
   }
 
-  &-row{
+  &-title {
+    font-size     : 20px;
+    margin-bottom : 24px;
+    text-transform: uppercase;
+
+  }
+
+  &-row {
     .flex-row;
-    gap: 80px;
+    .adaptive-size(21, 80, 1024, 1926);
+    gap            : var(--return);
+    justify-content: space-between;
+
+    @media screen and (min-width: 1926px) {
+      gap: 80px;
+    }
 
 
   }
@@ -18,57 +33,89 @@
 
 }
 
-.row_card{
-position: relative;
-  width:370px;
+.row_card {
+  position: relative;
+  .adaptive-size(310, 370, 1024, 1426);
+  width    : var(--return);
+  max-width: 370px;
+  min-width: 310px;
 
-  height: 540px;
+  height     : 540px;
   font-weight: bold;
-  color: white;
-  .flex-col!important;
+  color      : white;
+  .flex-col !important;
   justify-content: space-between;
-  @media screen and (max-width: @size-mobile){
-    min-width:90vw;
+
+  @media screen and (max-width: @size-mobile) {
+    min-width: 90vw;
   }
 
 
-  &-bg{
+  &-bg {
     position: absolute;
-    top:0;right:0;left:0;bottom:0;
-    z-index: -1;
-    filter: brightness(0.3);
+    top     : 0;
+    right   : 0;
+    left    : 0;
+    bottom  : 0;
+    z-index : -1;
+    filter  : brightness(0.3);
   }
 
-  &-title{
+  &-title {
     .flex-row;
-    padding: 28px;
+    padding        : 28px;
     justify-content: space-between;
 
-    &-item{
+    &-item {
       .flex-row;
-      gap:.5em
+      gap: .5em;
+
+
+
+      @media screen and (max-width: 1440px) {
+        height         : 4em;
+        width          : 8em;
+        align-items    : center;
+        justify-content: center;
+        position       : relative;
+
+        &:after {
+          display: block;
+          content: " ";
+          .masked-icon('./img/svg/hexagon-empty.svg');
+          position: absolute;
+          top     : 0;
+          left    : 0;
+          height  : 4em;
+          width   : 8em;
+
+        }
+
+      }
+
     }
   }
 
-  &-bottom{
-    height-min:25%;
+  &-bottom {
+    height-min: 25%;
     .flex-col;
-    align-items: center;
+    align-items    : center;
     justify-content: space-between;
-    gap:20px;
-    padding-bottom: 5%;
+    gap            : 20px;
+    padding-bottom : 5%;
 
-    &-title{
+    &-title {
       text-transform: uppercase;
     }
 
-    &-price{
+    &-price {
       .flex-row;
       justify-content: space-between;
-      gap:.5em;
-      & number{
+      gap            : .5em;
+
+      & number {
         text-transform: uppercase;
-        font-size: 18px;
+        font-size     : 18px;
 
       }
     }

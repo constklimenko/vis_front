@@ -3,14 +3,25 @@
 
   position: relative;
   margin-bottom: @section-gap;
+  .grid( min-content auto, auto, 123px, 50px);
+
+  @media screen and (max-width: @size-mobile){
+    grid-template-columns: minmax( 75vw, max-content ) minmax( 75vw, max-content );
+    grid-column-gap: 0;
+    justify-items: center;
+    overflow-x: scroll;
+  }
 
   &-header{
-    .flex-row();
-    gap: 123px;
-    font-size: 20px;
-    margin-bottom: 50px;
+    //.flex-row();
+    //gap: 123px;
+    //font-size: 20px;
+    //margin-bottom: 50px;
+    //cursor: pointer;
 
     &-tab{
+      font-size: 20px;
+      cursor: pointer;
       text-transform: uppercase;
       &--active{
         color: @red;
@@ -19,11 +30,14 @@
   }
 
   &-content{
-    .grid(repeat(3,1fr), auto, 5vw);
+    .flex-col;
+    text-align: center;
+    max-width: var(--container-width);
 
-    @media screen and (max-width: @size-mobile){
-      .flex-col;
-      text-align: center;
+    @media screen and (min-width: @size-mobile){
+      text-align: left;
+      grid-column: span 2;
+      .grid(repeat(3,1fr), auto, 5vw);
 
     }
 

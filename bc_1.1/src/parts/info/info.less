@@ -11,15 +11,15 @@
   align-items: start;
   align-content: start;
 
+
+
   @media screen and (max-width: @size-mobile){
     .grid(auto,auto);
     grid-row-gap: var(--section-gap);
     row-gap: var(--section-gap);
     padding:0;
 
-    & .slide-fancybox{
-      display: none;
-    }
+
 
   }
 
@@ -344,7 +344,12 @@
       position: absolute;
       top: 2em;
       right:2em;
-      color:white;
+      color:transparent;
+      display: block;
+      width: 36px;
+      height: 36px;
+      .bg-contain-color('./img/svg/diagonal-arrows.svg', #312C2B);
+      background-size: 70%;
       
       .m-hide;
 

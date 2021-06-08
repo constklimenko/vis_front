@@ -2,6 +2,20 @@ function toggleNav() {
     document.querySelector('.header__bottom').classList.toggle('m-hide');
 };
 
+function toggleElemTab() {
+    var ht = document.querySelectorAll('.elem_tabs-header-tab');
+    for (var x = 0; x < ht.length; x++) {
+
+        ht[x].classList.toggle('elem_tabs-header-tab--active');
+    };
+
+    var et = document.querySelectorAll('.elem_tabs-content');
+
+    for (var x = 0; x < et.length; x++) {
+
+        et[x].classList.toggle('m-show');
+    };
+};
 
 
 
@@ -54,7 +68,13 @@ $(document).ready(function() {
     } else {
 
 
-        $(".fb").fancybox();
+        $(".fbs").fancybox();
+    };
+
+    if (window.matchMedia("(max-width: 1020px)").matches) {
+
+
+        $('.footer-text + .footer-text + div').append('<a class="footer-download">СКАЧАТЬ ПРЕЗЕНТАЦИЮ</a>');
     };
 
 });

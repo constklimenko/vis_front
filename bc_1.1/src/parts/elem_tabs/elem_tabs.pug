@@ -1,18 +1,30 @@
 section.elem_tabs
-    .elem_tabs-header
-        a.elem_tabs-header-tab.-active Дополнительные услуги
-        a.elem_tabs-header-tab Транспортная доступность
+    a.elem_tabs-header-tab.-active(onclick="toggleElemTab();") Дополнительные услуги
+    a.elem_tabs-header-tab(onclick="toggleElemTab();") Транспортная доступность
     .elem_tabs-content
         a.elem_tabs-card
             .card-img
-                .bucket
-
+                .bucket 
             .card-text Услуги клининга (уборки) в арендуемом помещении
         a.elem_tabs-card
             .card-img
                 .parking
             .card-text Круглосуточная наземная парковка на охраняемой территории
+            
         a.elem_tabs-card
             .card-img
                 .taxometr
             .card-text Гостевая парковка с оплатой на почасовой основе
+    .elem_tabs-content.m-show
+        a.elem_tabs-card
+            .card-img
+                .bucket
+            .card-text Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        a.elem_tabs-card
+            .card-img
+                .parking
+            .card-text  Quasi magni tempora magnam rerum odio, iure earum officia repellat ipsa ex alias excepturi 
+        a.elem_tabs-card
+            .card-img
+                .taxometr
+            .card-text quam laudantium, deleniti beatae omnis dignissimos dolore. Quidem.

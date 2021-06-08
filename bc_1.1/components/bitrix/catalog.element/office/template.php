@@ -35,8 +35,8 @@ $etah = $ob_plan->GetNext();
         <span>Назад</span></a>
     <div class="gallery-grid">
         <div class="gallery-grid-left">
-            <div class="gallery-grid-left-button"><img class="img"><span><span>+</span><span class="number_of_slides-2">12</span><span>фото</span></span>
-            </div>
+            <a class="gallery-grid-left-button fbs" href="<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg" rel="gallery1"><img class="img"><span><span>+</span><span class="number_of_slides-2">12</span><span>фото</span></span>
+            </a>
             <div class="vertical-slider">
                 <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg">
                 <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-video.jpg">
@@ -52,13 +52,35 @@ $etah = $ob_plan->GetNext();
             <div class="slider-nav"><span><span class="current-count">1</span><span>/</span><span
                             class="number_of_slides">4</span></span></div>
             <div class="horisontal-slider">
-                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg">
-                <img class="slide"  src="<?=SITE_TEMPLATE_PATH?>/img/card/small-video.jpg">
-                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img2.jpg">
-                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg">
-                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img2.jpg">
-                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg">
-                <img class="slide" src="<?=SITE_TEMPLATE_PATH?>/img/card/small-img2.jpg">
+                <div class="slide"><a class="slide-fancybox fbs" href="<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg" rel="gallery1"> a</a>
+                    <div class="img"
+                         style="background: url('<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg') no-repeat center/ cover;"></div>
+                </div>
+                <div class="slide"><a class="slide-fancybox fbs" href="<?=SITE_TEMPLATE_PATH?>/img/card/small-video.jpg" rel="gallery1"> a</a>
+                    <div class="img"
+                         style="background: url('<?=SITE_TEMPLATE_PATH?>/img/card/small-video.jpg') no-repeat center/ cover;"></div>
+                </div>
+                <div class="slide"><a class="slide-fancybox fbs" href="<?=SITE_TEMPLATE_PATH?>/img/card/small-img2.jpg" rel="gallery1"> a</a>
+                    <div class="img"
+                         style="background: url('<?=SITE_TEMPLATE_PATH?>/img/card/small-img2.jpg') no-repeat center/ cover;"></div>
+                </div>
+                <div class="slide"><a class="slide-fancybox fbs" href="<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg" rel="gallery1"> a</a>
+                    <div class="img"
+                         style="background: url('<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg') no-repeat center/ cover;"></div>
+                </div>
+                <div class="slide"><a class="slide-fancybox fbs" href="<?=SITE_TEMPLATE_PATH?>/img/card/small-img2.jpg" rel="gallery1"> a</a>
+                    <div class="img"
+                         style="background: url('<?=SITE_TEMPLATE_PATH?>/img/card/small-img2.jpg') no-repeat center/ cover;"></div>
+                </div>
+                <div class="slide"><a class="slide-fancybox fbs" href="<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg" rel="gallery1"> a</a>
+                    <div class="img"
+                         style="background: url('<?=SITE_TEMPLATE_PATH?>/img/card/small-img.jpg') no-repeat center/ cover;"></div>
+                </div>
+                <div class="slide"><a class="slide-fancybox fbs" href="<?=SITE_TEMPLATE_PATH?>/img/card/small-img2.jpg" rel="gallery1"> a</a>
+                    <div class="img"
+                         style="background: url('<?=SITE_TEMPLATE_PATH?>/img/card/small-img2.jpg') no-repeat center/ cover;"></div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -110,8 +132,8 @@ $etah = $ob_plan->GetNext();
     </div>
 </section>
 <section class="elem_tabs">
-    <div class="elem_tabs-header"><a class="elem_tabs-header-tab elem_tabs-header-tab--active">Дополнительные услуги</a><a
-                class="elem_tabs-header-tab">Транспортная доступность</a></div>
+    <a onclick="toggleElemTab();" class="elem_tabs-header-tab elem_tabs-header-tab--active">Дополнительные услуги</a><a
+                class="elem_tabs-header-tab" onclick="toggleElemTab();">Транспортная доступность</a>
     <div class="elem_tabs-content"><a class="elem_tabs-card">
             <div class="card-img">
                 <div class="bucket"></div>
@@ -127,6 +149,25 @@ $etah = $ob_plan->GetNext();
                 <div class="taxometr"></div>
             </div>
             <div class="card-text">Гостевая парковка с оплатой на почасовой основе</div>
+        </a></div>
+
+    <div class="elem_tabs-content m-show"><a class="elem_tabs-card">
+            <div class="card-img">
+                <div class="bucket"></div>
+            </div>
+            <div class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+        </a><a class="elem_tabs-card">
+            <div class="card-img">
+                <div class="parking"></div>
+            </div>
+            <div class="card-text"> Quasi magni tempora magnam rerum odio, iure earum officia repellat ipsa ex alias
+                excepturi
+            </div>
+        </a><a class="elem_tabs-card">
+            <div class="card-img">
+                <div class="taxometr"></div>
+            </div>
+            <div class="card-text">quam laudantium, deleniti beatae omnis dignissimos dolore. Quidem.</div>
         </a></div>
 </section>
 
