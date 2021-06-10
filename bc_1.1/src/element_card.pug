@@ -11,11 +11,12 @@ html(lang="en")
         link(rel="stylesheet", href="./js/slick/slick-theme.css")
         link(rel="stylesheet", href="./js/fancybox/jquery.fancybox.css" )
         include parts/common_headings.pug
-        title Главная
+        title Карточка 1920
     body 
         include parts/header/header
-        include parts/index_first/index_first
-       
+        include parts/info/info
+        include parts/elem_descr/elem_descr
+        include parts/elem_tabs/elem_tabs
         include parts/similar/similar
         include parts/footer/footer
 
@@ -24,4 +25,8 @@ html(lang="en")
         script( src="../../js/slick/slick.js" )
         script( src="../../js/fancybox/jquery.fancybox.pack.js" )
         script( src="../../js/vis-scripts.js" )
-        script( src="../../js/vis-home-script.js" )
+        script( src="../../js/vis-element-card-script.js" )
+
+        //script
+        //    include parts/info/info-sliders.js
+

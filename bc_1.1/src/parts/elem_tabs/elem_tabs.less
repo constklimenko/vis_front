@@ -13,11 +13,7 @@
   }
 
   &-header{
-    //.flex-row();
-    //gap: 123px;
-    //font-size: 20px;
-    //margin-bottom: 50px;
-    //cursor: pointer;
+    
 
     &-tab{
       font-size: 20px;
@@ -70,22 +66,31 @@
         .bg-contain('./img/svg/hexagon.svg');
       }
 
-      & div{
-        height: 60%;
-        width:100%;
-      }
+      
 
 
       & .bucket{
-        .bg-contain('./img/svg/bucket.svg')
+        .masked-icon('./img/svg/bucket.svg');
+        height: 60%;
+        width:30%;
+        
       }
       & .taxometr{
-        .bg-contain('./img/svg/taxometr.svg')
+        .masked-icon('./img/svg/taxometr.svg');
+        height: 60%;
+        width:25%;
+        
       }
       & .parking{
-        .bg-contain('./img/svg/parking.svg')
+        .masked-icon('./img/svg/parking.svg');
+        height: 60%;
+        width:35%;
+        
       }
-
+      & div{
+       color: @red;
+        align-self: center;
+      }
 
     }
   }
