@@ -12,7 +12,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 
 <footer class="footer">
     <div class="footer-logo"></div>
-    <div class="footer-grid">
+
         <?$APPLICATION->IncludeComponent("bitrix:menu", "top_menu", Array(
             "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
             "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
@@ -33,10 +33,12 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
             <div class="footer-email">arenda@kp-16.ru</div>
         </div>
         <div class="footer-text">Москва, ул. Краснопролетарская, 16</div>
-        <div class="footer-text span-2"><? $APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/inc/footer/copyright.php'); ?></div>
+
+        <div class="footer-text "><? $APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/inc/footer/copyright.php'); ?></div>
+    <div class="t-show"></div>
         <div class="footer-copyright"><? $APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/inc/footer/made-by.php'); ?>
         </div>
-    </div>
+
 </footer>
 
 

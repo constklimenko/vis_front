@@ -19,6 +19,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     $assets->addJs(SITE_TEMPLATE_PATH . '/js/contacts-map.js');
     $assets->addJs(SITE_TEMPLATE_PATH . '/js/custom.js');
     $assets->addJs(SITE_TEMPLATE_PATH . '/js/script.js');
+    $assets->addJs(SITE_TEMPLATE_PATH . '/js/vis-scripts.js');
 
 
 

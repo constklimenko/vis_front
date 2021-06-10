@@ -1,0 +1,28 @@
+<!--<? $cnt = 0;
+        while($rs_ofise = $ob_ofise->GetNextElement() && $cnt < 4){
+            $ofFields 	= $rs_ofise->GetFields();
+            $ofProps 	= $rs_ofise->GetProperties();
+            $cnt++;?>
+
+            <a href="<?=$ofFields["DETAIL_PAGE_URL"]?>" class="similar-row_card row_card">
+                <div class="row_card-bg" style="background: url('<?=CFile::GetPath($ofFields['PREVIEW_PICTURE'])?>') no-repeat center/ cover"></div>
+                <div class="row_card-title">
+                    <div class="row_card-title-item">
+                        <div class="number"><?=$ofProps["ETAJ"]["VALUE"]?></div>
+                        <div class="text">этаж</div>
+                    </div>
+                    <div class="row_card-title-item">
+                        <div class="number"><?=$ofProps["PLOSH"]["VALUE"]?></div>
+                        <small class="text">кв. м.</small></div>
+                </div>
+                <div class="row_card-bottom">
+                    <div class="row_card-bottom-title"><?=$ofFields["NAME"]?></div>
+                    <div class="row_card-bottom-price">
+                        <div class="number">5 768 ₽</div>
+                        <div class="text"> кв. м.</div>
+                    </div>
+                </div>
+            </a>
+
+
+        <? }; ?> -->

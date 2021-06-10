@@ -71,10 +71,6 @@ $(document).ready(function() {
         $(".fbs").fancybox();
     };
 
-    if (window.matchMedia("(max-width: 1020px)").matches) {
 
-
-        $('.footer-text + .footer-text + div').append('<a class="footer-download">СКАЧАТЬ ПРЕЗЕНТАЦИЮ</a>');
-    };
 
 });

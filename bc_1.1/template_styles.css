@@ -158,20 +158,19 @@ body {
           mask-size: contain;
   height: 17px;
   width: 34px;
+  display: none;
+  order: 1;
+  color: #F24538;
+  justify-self: center;
 }
 @supports not ((-webkit-mask-image: url(img/svg/union.svg)) or (mask-image: url(img/svg/union.svg))) {
   .header-menu-open {
     background: url('img/svg/union.svg') no-repeat / contain;
   }
 }
-@media (min-width: 1024px) {
+@media screen and (max-width: 1100px) {
   .header-menu-open {
-    display: none!important;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .header-menu-open {
-    order: 1;
+    display: block;
   }
 }
 @media screen and (max-width: 700px) {
@@ -366,7 +365,7 @@ body {
   --padding-x: calc(5vw + 5vw);
   --container-width: calc(100vw - var(--padding-x));
   margin-bottom: var(--section-gap);
-  --column-gap: 3vw;
+  --column-gap: 2vw;
   --column-fr: calc((var(--container-width) - var(--column-gap))/5);
   --left-width: calc(0.12 * var(--container-width));
   --right-width: calc(0.376 * var(--container-width));
@@ -477,7 +476,7 @@ body {
 }
 @media screen and (max-width: 1240px) {
   .info-btn {
-    min-width: 212px;
+    min-width: 162px;
   }
 }
 @media screen and (max-width: 500px) {
@@ -1078,7 +1077,7 @@ body {
   --container-width: calc(100vw - var(--padding-x));
   position: relative;
   margin-bottom: var(--section-gap);
-  height: 630px;
+  height: 594px;
   overflow: hidden;
 }
 @media (min-width: 1925px) {
@@ -1109,6 +1108,11 @@ body {
 @media screen and (min-width: 1926px) {
   .similar-row {
     gap: 80px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .similar-row {
+    gap: 21px;
   }
 }
 .row_card {
@@ -1234,6 +1238,7 @@ body {
   grid-template-areas: "logo menu tel adress" "logo  text tel copy";
   align-items: end;
   position: relative;
+  grid-row-gap: 10px;
 }
 @media (min-width: 1925px) {
   .footer {
@@ -1258,7 +1263,7 @@ body {
     grid-column-gap: 20px;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .footer {
     display: flex;
     flex-direction: column;

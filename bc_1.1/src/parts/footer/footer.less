@@ -6,8 +6,8 @@
   grid-template-areas:   "logo menu tel adress"
                         "logo  text tel copy";
   align-items: end;
-  
   position: relative;
+  grid-row-gap: 10px;
   
   @media screen and (max-width: 1180px){
     grid-template-columns: max-content max-content auto;
@@ -18,7 +18,7 @@
     grid-column-gap: 20px;
   }
 
-  @media screen and (max-width: 800px){
+  @media screen and (max-width: 900px){
     .flex-col;
     gap:20px;
   }
@@ -60,9 +60,6 @@
   &-text, &-email {
     font-size: 14px;
   }
-  
-  
-
   &-download{
     font-size: 12px;
     text-transform: uppercase;
