@@ -28,6 +28,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     $assets->addCss(SITE_TEMPLATE_PATH . '/css/style.css');
     $assets->addCss(SITE_TEMPLATE_PATH . '/css/media_query.css');
     $assets->addCss(SITE_TEMPLATE_PATH . '/css/fonts.css', true);
+    $assets->addCss(SITE_TEMPLATE_PATH . '/template_styles.css');
     $assets->addCss('https://fonts.googleapis.com/css?family=Roboto:400,500,300,700,900&amp;subset=latin,cyrillic-ext', true);
 
     $APPLICATION->ShowHead();

@@ -60,6 +60,7 @@ $this->__template->SetViewTarget('similar');?>
         "CACHE_TIME" => "36000000",
         "CACHE_TYPE" => "A",
         "CHECK_DATES" => "Y",
+        "COMPONENT_TITLE" =>"ПОХОЖИЕ ОФИСЫ",
         "DETAIL_URL" => "",
         "DISPLAY_BOTTOM_PAGER" => "Y",
         "DISPLAY_DATE" => "Y",

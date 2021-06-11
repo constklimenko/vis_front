@@ -15,7 +15,7 @@ $this->setFrameMode(true);
 
 <div class="similar">
 
-    <div class="similar-title">Похожие офисы</div>
+    <div class="similar-title"><?=$arParams["COMPONENT_TITLE"]?></div>
     <div class="similar-row">
 <?foreach($arResult["ITEMS"] as $arItem):?>
 	<?
@@ -41,7 +41,7 @@ $this->setFrameMode(true);
             </div>
         </div>
     </a>
-1
+
 <?endforeach;?>
 
 
