@@ -1,0 +1,139 @@
+.history{
+    position: relative;
+    .padding-container(1925px, 1726px, 77px, 5vw, 65px, 10vw);
+    margin-bottom: @section-gap;
+    background-color: #EDEFF1;
+    overflow: hidden;
+    
+    &-title{
+        position: relative;
+        margin-bottom: 20px;
+        font-size: 36px;
+
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    &-subtitle{
+        position: relative;
+        
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        max-width: 820px;
+        margin: auto;
+        
+        margin-bottom: 50px;
+    }
+    
+    &-grid{
+        .grid(1fr 1fr);
+        position: relative;
+        
+        & .info-btn{
+            grid-column: span 2;
+            margin-top: 56px;
+        }
+        
+        &-top{
+            grid-column: span 2;
+            border-left: 1px solid @gray_lines; 
+            width:50%;
+            height: 60px;
+            position: relative;
+            justify-self: end;
+            
+            
+            
+            &::after{
+                content: ".";
+                display: block;
+                color: transparent;
+                width: 12px;
+                height: 12px;
+                background-color: @gray_lines; 
+                border-radius: 50%;
+                top: -6px;
+                left: -6px;
+                position: absolute;
+                
+                
+            }
+            
+            &.history-blue{
+                border-left: 1px solid @blue; 
+                
+                &::after{
+                    background-color: @blue;
+                }
+            }
+            
+        }
+        
+        &-left_line{
+            border-left: 1px solid @gray_lines;  
+        }
+        
+        
+        .history-blue + &-left_line, .history-blue + div + &-left_line{
+            border-left: 1px solid @blue; 
+        }
+        
+        &-date{
+            grid-column: span 2;
+            justify-self: center;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 29px;
+            text-align: center;
+            text-transform: uppercase;
+            height: 29px;
+            color: @medium_gray;
+            
+            &.history-blue{
+                color: @blue;
+            }
+        }
+        
+        &-info{
+            text-align: right;
+            font-size: 20px;
+            
+            max-width: 367px;
+                min-height: 208px;
+                align-self: center;
+                justify-self: center;
+            
+            & .title{
+               
+                line-height: 24px;                
+                text-transform: uppercase;
+                margin-bottom: 16px;
+            }
+            
+            
+            
+            .history-grid-left_line & {
+                text-align: left;
+            }
+        }
+        
+        &-container{
+            .flex-row; 
+            justify-content: center; 
+            padding-top: 40px;
+            padding-bottom: 40px;
+                    
+            & .img{
+                width: 367px;
+                height: 208px;
+                align-self: center;
+                justify-self: center;
+                
+            }
+            
+        }
+    }
+    
+    
+}
