@@ -1759,29 +1759,49 @@ body {
 }
 .history-grid {
   display: flex;
-  align-content: center;
-  align-items: center;
-  justify-content: space-between;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  grid-row-gap: 0;
-  grid-column-gap: 0;
-  row-gap: 0;
-  -moz-column-gap: 0;
-       column-gap: 0;
+  flex-direction: column;
+  flex-wrap: wrap;
   position: relative;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
 }
-@supports not (grid-row-gap: 0) {
-  .history-grid > div,
-  .history-grid > p,
-  .history-grid > a {
-    margin-bottom: 0;
+@media screen and (max-width: 1000px) {
+  .history-grid {
+    align-items: flex-start;
+  }
+}
+.history-grid-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+@media screen and (max-width: 1000px) {
+  .history-grid-row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+  .history-grid-row--reverse {
+    flex-direction: column-reverse;
   }
 }
 .history-grid .info-btn {
   grid-column: span 2;
   margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media screen and (max-width: 1000px) {
+  .history-grid .info-btn {
+    width: 100%;
+  }
 }
 .history-grid-top {
   grid-column: span 2;
@@ -1789,7 +1809,7 @@ body {
   width: 50%;
   height: 60px;
   position: relative;
-  justify-self: end;
+  align-self: flex-end;
 }
 .history-grid-top::after {
   content: ".";
@@ -1812,8 +1832,7 @@ body {
 .history-grid-left_line {
   border-left: 1px solid #9c9c9c;
 }
-.history-blue + .history-grid-left_line,
-.history-blue + div + .history-grid-left_line {
+.history-blue + .history-drid-row > .history-grid-left_line {
   border-left: 1px solid #0055FF;
 }
 .history-grid-date {
@@ -1846,6 +1865,11 @@ body {
 .history-grid-left_line .history-grid-info {
   text-align: left;
 }
+@media screen and (max-width: 1000px) {
+  .history-grid-info {
+    text-align: left;
+  }
+}
 .history-grid-container {
   display: flex;
   flex-direction: row;
@@ -1853,12 +1877,23 @@ body {
   justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
+  width: 50%;
 }
 .history-grid-container .img {
   width: 367px;
   height: 208px;
   align-self: center;
   justify-self: center;
+}
+@media screen and (max-width: 1000px) {
+  .history-grid-container {
+    border-left: 1px solid #9c9c9c;
+    width: 100%;
+    padding-left: 10px;
+  }
+  .history-blue + .history-drid-row .history-grid-container {
+    border-left: 1px solid #0055FF;
+  }
 }
 .footer {
   color: white;

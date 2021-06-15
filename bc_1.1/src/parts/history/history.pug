@@ -1,21 +1,23 @@
 mixin history(date, title, text, img_url)
     .history-grid-date=date
-    .history-grid-container
-        .history-grid-info
-            .title=title
-            .text=text    
-    .history-grid-container.history-grid-left_line
-        .img(style = attributes.style) 
+    .history-grid-row
+        .history-grid-container
+            .history-grid-info
+                .title=title
+                .text=text    
+        .history-grid-container.history-grid-left_line
+            .img(style = attributes.style) 
         
         
 mixin history-reverse(date, title, text, img_url)
-    .history-grid-date.history-blue=date     
-    .history-grid-container
-        .img(style = attributes.style)
-    .history-grid-container.history-grid-left_line
-        .history-grid-info
-            .title=title
-            .text=text   
+    .history-grid-date.history-blue=date
+    .history-grid-row.history-grid-row--reverse     
+        .history-grid-container
+            .img(style = attributes.style)
+        .history-grid-container.history-grid-left_line
+            .history-grid-info
+                .title=title
+                .text=text   
 
 
 .history 
@@ -30,5 +32,6 @@ mixin history-reverse(date, title, text, img_url)
         +history-reverse("1905-1914", "Вдвое Выше",'Архитектор Ф.Ф.Воскресенский достраивал и перестраивал типографию  за годы здание  выросло до 6 этажей.')(style= "background: url(./img/history/4.jpg) no-repeat center/cover")
         +history("2007", "Офисный центр",'Производство было остановлено, здания отремонтированы и перепрофилированы в комфортабельный офисный центр.')(style= "background: url(./img/history/5.jpg) no-repeat center/cover")
         .history-grid-date 2021
-        a.info-btn Арендовать офис
+        a.info-btn 
+            span Арендовать офис
         

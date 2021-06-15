@@ -27,12 +27,50 @@
     }
     
     &-grid{
-        .grid(1fr 1fr);
+        .flex-col;
         position: relative;
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+        align-content: center;
+        
+        @media screen and(max-width: 1000px){
+            align-items: flex-start;
+        }
+        
+        &-row{
+            
+            .flex-row;
+            width: 100%;
+            
+            @media screen and(max-width: 1000px){
+            
+                .flex-col;
+                align-items: flex-start;
+                align-content: flex-start;
+                
+                &--reverse{
+                    flex-direction: column-reverse;
+                }
+                
+            }
+        }
+        
+        
+        
+        
+
         
         & .info-btn{
             grid-column: span 2;
             margin-top: 56px;
+            .flex-col;
+            
+            justify-content: center;
+            
+            @media screen and(max-width: 1000px){
+                width: 100%;
+            }
         }
         
         &-top{
@@ -41,7 +79,7 @@
             width:50%;
             height: 60px;
             position: relative;
-            justify-self: end;
+            align-self: flex-end;
             
             
             
@@ -75,7 +113,7 @@
         }
         
         
-        .history-blue + &-left_line, .history-blue + div + &-left_line{
+        .history-blue + .history-drid-row > &-left_line{
             border-left: 1px solid @blue; 
         }
         
@@ -116,6 +154,10 @@
             .history-grid-left_line & {
                 text-align: left;
             }
+            
+            @media screen and(max-width: 1000px){
+                text-align: left;
+            }
         }
         
         &-container{
@@ -123,12 +165,25 @@
             justify-content: center; 
             padding-top: 40px;
             padding-bottom: 40px;
+            width:50%;
+            
                     
             & .img{
                 width: 367px;
                 height: 208px;
                 align-self: center;
                 justify-self: center;
+                
+            }
+            
+            @media screen and(max-width: 1000px){
+                border-left: 1px solid @gray_lines;
+                width: 100%;
+                padding-left: 10px;
+                
+                .history-blue +  .history-drid-row &{
+                    border-left: 1px solid @blue; 
+                }
                 
             }
             
