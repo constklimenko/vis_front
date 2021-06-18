@@ -420,6 +420,23 @@
 
 }
 
+.masked-img(@mask_url,@bg_url, @width: 100%, @height: 100%) {
+  display         : inline-block;
+  height          : @width;
+  width           : @height;
+  background: url(@bg_url) no-repeat center/cover ;
+  mask-image      : url(@mask_url);
+  mask-repeat     : no-repeat;
+  mask-size       : contain;
+}
+
+.masked-img-no-bg(@mask_url, @width: 100%, @height: 100%) {
+  display         : inline-block;
+
+  mask-image      : url(@mask_url);
+  mask-repeat     : no-repeat;
+  mask-size       : contain;
+}
 
 
 .owl-nav-big() {

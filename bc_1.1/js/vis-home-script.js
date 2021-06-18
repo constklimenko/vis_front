@@ -34,58 +34,27 @@ $(document).ready(function() {
     });
 
 
+   var SlidersArr = document.querySelector('.index_slider').querySelectorAll('.img-slider');
+
+   for(var i=0; i<SlidersArr.length; i++){
+
+       $(`#index_slider-left${i} .img-slider`).slick({
+           slidesToShow: 1,
+           appendArrows: `#index_slider-left${i} .slider-nav`,
+
+       }).on('init', (slider, currentSlide) => {
+
+           var slideCount = slider.slideCount;
+           document.querySelector('.number_of_slides').innerHTML = slideCount;
+       }).on(
+           'afterChange',
+           (event, slick, currentSlide, slider) => {
+               var CurrID =  $(event.target).attr('id');
+               document.getElementById( CurrID ).parentNode.querySelector('.current-count').textContent = currentSlide + 1;
+           }
+       );
+   }
 
 
 
-    $('#index_slider-left1 .img-slider').slick({
-        slidesToShow: 1,
-
-        appendArrows: '#index_slider-left1 .slider-nav',
-
-    }).on('init', (slider) => {
-        var slideCount = slider.slideCount;
-        document.querySelector('#index_slider-left1 .number_of_slides').innerHTML = slideCount;
-    }).on(
-        'afterChange',
-        (event, slick, currentSlide, slideCount) => {
-            var countOfSlides = $('#index_slider-left1 .number_of_slides').text();
-
-            $('#index_slider-left1 .current-count').text(currentSlide + 1);
-        }
-    );
-
-    $('#index_slider-left2 .img-slider').slick({
-        slidesToShow: 1,
-
-        appendArrows: '#index_slider-left2 .slider-nav',
-
-    }).on('init', (slider) => {
-        var slideCount = slider.slideCount;
-        document.querySelector('#index_slider-left2 .number_of_slides').innerHTML = slideCount;
-    }).on(
-        'afterChange',
-        (event, slick, currentSlide, slideCount) => {
-            var countOfSlides = $('#index_slider-left2 .number_of_slides').text();
-
-            $('#index_slider-left2 .current-count').text(currentSlide + 1);
-        }
-    );
-
-
-    $('#index_slider-left3 .img-slider').slick({
-        slidesToShow: 1,
-
-        appendArrows: '#index_slider-left3 .slider-nav',
-
-    }).on('init', (slider) => {
-        var slideCount = slider.slideCount;
-        document.querySelector('#index_slider-left3 .number_of_slides').innerHTML = slideCount;
-    }).on(
-        'afterChange',
-        (event, slick, currentSlide, slideCount) => {
-            var countOfSlides = $('#index_slider-left3 .number_of_slides').text();
-
-            $('#index_slider-left3 .current-count').text(currentSlide + 1);
-        }
-    );
 })

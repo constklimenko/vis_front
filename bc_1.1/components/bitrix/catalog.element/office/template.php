@@ -5,9 +5,7 @@ $this->setFrameMode(true);
 $this->addExternalJs(SITE_TEMPLATE_PATH . '/js/slick/slick.js');
 $this->addExternalCss(SITE_TEMPLATE_PATH . '/js/slick/slick.css');
 $this->addExternalCss(SITE_TEMPLATE_PATH . '/js/slick/slick-theme.css');
-
 $this->addExternalJs(SITE_TEMPLATE_PATH . '/js/vis-element-card-script.js');
-
 ?>
 
 <?

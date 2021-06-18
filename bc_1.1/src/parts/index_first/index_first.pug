@@ -1,4 +1,11 @@
-section.index_first 
+mixin elem_tab(text)
+    a.elem_tabs-card.index_first-tabs-card(attributes)
+        .card-img
+            block
+        .card-text=text
+
+
+section.index_first
     .index_first-bg
     .index_first-center
         .index_first-center-title Деловой квартал <br> в центре Москвы
@@ -17,4 +24,12 @@ section.index_first
             .card-img
                 .taxometr
             .card-text Гостевая парковка с оплатой на почасовой основе
-        .index_first-tabs_arrow
+        .index_first-tabs_arrow(onclick="toggleElemTab();")
+    .elem_tabs-content.index_first-tabs.m-show
+        +elem_tab('Lorem ipsum dolor sit amet, consectetur adipisicing elit.')
+            .bucket
+        +elem_tab('Explicabo facilis maxime nesciunt. A accusamus ad adipisci, asperiores cumque' )
+            .parking
+        +elem_tab('cupiditate delectus ex iusto laboriosam obcaecati pariatur perferendis quasi tenetur totam, voluptatum.')
+            .taxometr
+        .index_first-tabs_arrow.up(onclick="toggleElemTab();")

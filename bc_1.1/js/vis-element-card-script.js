@@ -1,6 +1,4 @@
 $(document).ready(function() {
-
-
     $('.vertical-slider').slick({
         vertical: true,
         verticalSwiping: true,
@@ -28,7 +26,7 @@ $(document).ready(function() {
     }).on(
         'afterChange',
         (event, slick, currentSlide, slideCount) => {
-            var countOfSlides = $('.number_of_slides').text();
+
 
             $('.current-count').text(currentSlide + 1);
         }

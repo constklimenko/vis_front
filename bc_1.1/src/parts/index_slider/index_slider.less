@@ -14,13 +14,20 @@
         grid-column: 1;
         z-index    : 10;
 
-        @media screen and (max-width: @size-mobile) {
-            width: 100%;
-        }
+        
 
         & .slide {
             height: 40vw ;
             width : 66.666vw ;
+            
+            @media screen and (max-width: 1000px){
+                width: 100vw;
+                height: 100vw;
+            }
+        }
+        
+        @media screen and (max-width: 1000px) {
+            width: 100vw!important;
         }
 
         & .info-dots-container {
@@ -85,9 +92,9 @@
             justify-content: center;
             padding-bottom : 2px;
 
-            @media screen and (max-width: @size-mobile) {
-                display: none;
-
+            @media screen and (max-width: 1000px) {
+                
+                right: calc(50vw - 80px)
             }
         }
 
@@ -169,6 +176,14 @@
         min-height      : 22vw;
         padding         : 4vw;
         background-color: white;
+        
+        
+        @media screen and (max-width: 1000px){
+            grid-row    : 2;
+            justify-self: stretch;
+            width:100vw;
+            gap:20px;
+        }
 
         &-title {
             font-weight   : bold;

@@ -1,1 +1,1 @@
-<a href="/arenda/" class="free-office">5 офисов вакантны</a>
+<a href="/arenda/" class="info-btn"> Арендовать офис</a>

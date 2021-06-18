@@ -6,11 +6,16 @@
     .grid(1fr 1fr);
     overflow: hidden;
 
+    @media screen and (max-width: 1000px){
+        .flex-col;
+    }
+
     &-bg_text {
+        .f-size( 100, 200, 320, 1920 );
         position   : absolute;
         top:-.2em;
         font-weight: bold;
-        font-size  : 200px;
+        
         line-height: 245px;
         color      : #F6F7F8;
         white-space: nowrap;
@@ -41,6 +46,11 @@
         grid-template-areas: "a a" "b c" "d d";
         align-items: center;
         justify-items: center;
+
+        @media screen and (max-width: 1000px){
+            .flex-col;
+            align-items: flex-start;
+        }
         
         &-card{
             .flex-col;

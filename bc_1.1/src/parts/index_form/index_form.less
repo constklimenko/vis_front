@@ -1,0 +1,122 @@
+.index_form{
+  width:100%;
+  .grid(1.2fr 1fr);
+  position: relative;
+  overflow: hidden;
+  height: auto;
+
+  @media screen and(max-width: 1000px){
+    .flex-col;
+  }
+
+  &-left{
+    padding-left: 16vw;
+    padding-right: 5em;
+    position: relative;
+    .flex-row;
+    flex-wrap: nowrap;
+    gap: 60px;
+
+    @media screen and(max-width: 1000px){
+      .flex-col;
+      width:100%;
+      padding: 10vw;
+    }
+
+
+
+    & div{
+      position: relative;
+    }
+
+    & .title {
+      .f-size(24,36,300,1920);
+      ont-weight: bold;
+
+      text-transform: uppercase;
+    }
+
+    & .text{
+      .f-size(14,24,300,1920);
+      line-height: 140%;
+    }
+
+    & a{
+      color:@red;
+    }
+  }
+
+  & form{
+    position: relative;
+    padding: 117px 0 105px;
+    background-color: #EDEFF1;
+    .flex-col;
+    justify-content: center;
+    align-items: center;
+    gap:37px;
+
+    @media screen and(max-width: 1000px){
+      width:100%;
+      padding: 10vw;
+
+    }
+
+    & input{
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid #B6BDC4;
+      width: 100%;
+      max-width: 450px;
+    }
+
+    & label{
+      width: 100%;
+      max-width: 450px;
+    }
+
+    & input[type="submit"]{
+      .adaptive-size(212,350,1240, 1926);
+      .f-size(12,18,1240, 1926);
+      width: var(--return);
+      height: 56px;
+      background-color: @red;
+      color: white;
+      text-transform: uppercase;
+      border:none;
+      box-shadow: none;
+      max-width: 350px;
+      text-align: center;
+      vertical-align: middle;
+      padding: 1em;
+      margin: auto;
+
+      @media screen and (max-width: 1240px){
+        min-width: 162px;
+      }
+
+      @media screen and (max-width: 500px){
+        min-width: calc(var(--return) + 100px);
+      }
+    }
+
+    & h2{
+      font-weight: bold;
+      .f-size(24,36,300,1920);
+      text-transform: uppercase;
+    }
+  }
+
+  &-bg_text {
+    .f-size(100,200,320,1920);
+    position   : absolute;
+    top: -0.1em;
+    left: 0.1vw;
+    font-weight: bold;
+
+    line-height: 245px;
+    color      :  #EDEFF1;
+    white-space: nowrap;
+    text-transform: uppercase;
+
+  }
+}

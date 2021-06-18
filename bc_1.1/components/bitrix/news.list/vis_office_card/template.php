@@ -46,5 +46,12 @@ $this->setFrameMode(true);
 
 
     </div>
+    <?if($arParams["SHOW_BOTTOM_LINK"] == "Y"):?>
+
+    <a href="/arenda/" class="info-btn">Все офисы</a>
+
+    <?endif;?>
+
+
     </div>
 

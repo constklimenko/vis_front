@@ -10,9 +10,15 @@
     @media screen and (min-width:1920px){
         --container-height: 1000px;
     }
-    
+
     
     justify-content: flex-end;
+
+  @media screen and (max-width:1000px){
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+  }
     
     & div{
         position: relative;
@@ -79,6 +85,12 @@
         .masked-icon('./img/svg/oval_plus_arrow.svg');
         height: 58px;
         width:26px;
+      align-self: center;
+      cursor: pointer;
+
+      &.up{
+        transform: scaleY(-1);
+      }
     }
     
     

@@ -5,6 +5,22 @@
     background-color: #EDEFF1;
     overflow: hidden;
     
+    
+    
+    &-bg_text {
+        .f-size(100,200,320,1920);
+        position   : absolute;
+        top: 1em;
+        left: 25vw;
+        font-weight: bold;
+        
+        line-height: 245px;
+        color      :  #E4E8EC;
+        white-space: nowrap;
+        text-transform: uppercase;
+        
+    }
+    
     &-title{
         position: relative;
         margin-bottom: 20px;
@@ -80,6 +96,10 @@
             height: 60px;
             position: relative;
             align-self: flex-end;
+            
+            @media screen and(max-width: 1000px){
+                width: 100%;
+            }
             
             
             
