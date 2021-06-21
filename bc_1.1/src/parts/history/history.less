@@ -55,12 +55,10 @@
         }
         
         &-row{
-            
             .flex-row;
             width: 100%;
-            
             @media screen and(max-width: 1000px){
-            
+
                 .flex-col;
                 align-items: flex-start;
                 align-content: flex-start;
@@ -129,11 +127,12 @@
         }
         
         &-left_line{
-            border-left: 1px solid @gray_lines;  
+            border-left: 1px solid @gray_lines;
+            order:2;
         }
         
         
-        .history-blue + .history-drid-row > &-left_line{
+        .history-blue + .history-grid-row > &-left_line{
             border-left: 1px solid @blue; 
         }
         
@@ -186,6 +185,7 @@
             padding-top: 40px;
             padding-bottom: 40px;
             width:50%;
+            order:1;
             
                     
             & .img{
@@ -200,6 +200,7 @@
                 border-left: 1px solid @gray_lines;
                 width: 100%;
                 padding-left: 10px;
+                order:2;
                 
                 .history-blue +  .history-drid-row &{
                     border-left: 1px solid @blue; 

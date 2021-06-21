@@ -15,21 +15,23 @@ $confirmDelete = array('CONFIRM' => \GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')
             $this->AddEditAction($item['ID'], $item['EDIT_LINK'], $strEditLink);
             $this->AddDeleteAction($item['ID'], $item['DELETE_LINK'], $strDeleteLink, $confirmDelete);
             ?>
+            <div class="index_news-card"  id="<?=$this->GetEditAreaId($item['ID']);?>">
 
 
 
-            <a href="<?=$item['DETAIL_URL'];?>" class="index_news-card"  id="<?=$this->GetEditAreaId($item['ID']);?>">
+                <?if(!empty($item['PREVIEW_PICTURE']['SRC'])):?>
+                <?$img_url=$item['PREVIEW_PICTURE']['SRC']?>
+
+                <a   href="<?=$item['DETAIL_PAGE_URL'];?>"  class="index_news-card-img" style="background: url('./<?=$img_url;?>') no-repeat center/cover"   >  </>
+                <?else:?>
+        <div class="index_news-card-img" style= "background-color: black;"></div>
+    <?endif;?>
 
 
 
-                    <?if($item['PREVIEW_PICTURE']['SRC']):?>
-                    <div class="index_news-card-img style= "background: url(<?=$item['PREVIEW_PICTURE']['SRC']?>) no-repeat center/cover"   "></a>
-                    <?else:?>
-                    <div class="index_news-card-img style= "background-color: white;"></div>
-                    <?endif;?>
-                <div class="index_news-card-title"><?=$item['NAME']?></div>
+                <a  href="<?=$item['DETAIL_PAGE_URL'];?>" class="index_news-card-title"><?=$item['NAME']?> </a>
                 <div class="index_news-card-text"><?=$item['PREVIEW_TEXT']?></div>
-            </a>
+            </div>
 
         <?}?>
     </div>

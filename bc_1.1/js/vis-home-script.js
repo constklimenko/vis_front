@@ -15,10 +15,6 @@ function ChangeSliders(actual_id) {
 
 $(document).ready(function() {
 
-
-
-
-
     document.querySelector('.header').classList.add('tp');
     var var_scroll = 0;
 
@@ -54,6 +50,31 @@ $(document).ready(function() {
            }
        );
    }
+
+
+    $('.history').mouseenter(function(){
+
+        $('.history-grid-top').addClass('history-blue');
+        // $('.history-blue + .history-grid-date ').removeClass('hide-light');
+        // $('.history-blue + .history-grid-date +  .history-grid-row ').removeClass('hide-light');
+    } );
+
+    $('.history-grid').mouseenter(function(){
+
+
+        $(' .history-grid-top + .history-grid-date ').addClass('history-blue');
+        // $('.history-blue + .history-grid-date ').removeClass('hide-light');
+        // $('.history-blue + .history-grid-date +  .history-grid-row ').removeClass('hide-light');
+    } );
+
+    $('.history-grid-row').mouseenter(function(){
+
+
+        $(' .history-blue + .history-grid-row + .history-grid-date ').addClass('history-blue');
+        // $('.history-blue + .history-grid-date ').removeClass('hide-light');
+        // $('.history-blue + .history-grid-date +  .history-grid-row ').removeClass('hide-light');
+    } );
+
 
 
 

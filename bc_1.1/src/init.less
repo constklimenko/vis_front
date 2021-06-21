@@ -131,8 +131,12 @@ body {
 }
 
 .hide-light{
-  visibility: hidden;
-  z-index: 2;
+
+  @media (min-width: @size-mobile + 1){
+    visibility: hidden;
+    z-index: 2;
+  }
+
 }
 
 

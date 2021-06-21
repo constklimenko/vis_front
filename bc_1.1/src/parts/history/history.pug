@@ -4,14 +4,14 @@ mixin history(date, title, text, img_url)
         .history-grid-container
             .history-grid-info
                 .title=title
-                .text=text    
+                .text=text
         .history-grid-container.history-grid-left_line
-            .img(style = attributes.style) 
-        
-        
+            .img(style = attributes.style)
+
+
 mixin history-reverse(date, title, text, img_url)
-    .history-grid-date.history-blue=date
-    .history-grid-row.history-grid-row--reverse     
+    .history-grid-date=date
+    .history-grid-row.history-grid-row--reverse
         .history-grid-container
             .img(style = attributes.style)
         .history-grid-container.history-grid-left_line
@@ -25,7 +25,7 @@ mixin history-reverse(date, title, text, img_url)
     .history-title История
     .history-subtitle Бизнес-центр «Новослободский» – это бывшая типография «Красный пролетарий», которая была издателем Иваном Кушнарёвым. 
     .history-grid 
-        .history-grid-top.history-blue
+        .history-grid-top
         +history("1869", "Новая типография",'Сын небогатого помещика, статский советник Иван Николаевич Кушнерев, издававший  в Петербурге журнал "Грамотей" и ежемесячную "Народную газету", перебравшись в Москву, основал новую типографию.')(style= "background: url(./img/history/1.jpg) no-repeat center/cover")
         +history-reverse("1884", "Каменное здание",'Рядом с деревянным домом на Пименовской улице появляется каменное здание в два этажа с шатровой крышей.')(style= "background: url(./img/history/2.jpg) no-repeat center/cover")
         +history("1888", "Вдвое больше",'Здание типографии вырастает более чем вдвое. К нему пристраивается новая часть вдоль переулка, и, кроме того, все здание вырастает на целый этаж.')(style= "background: url(./img/history/3.jpg) no-repeat center/cover")
@@ -34,4 +34,3 @@ mixin history-reverse(date, title, text, img_url)
         .history-grid-date 2021
         a.info-btn 
             span Арендовать офис
-        
