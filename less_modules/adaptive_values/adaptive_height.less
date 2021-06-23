@@ -1,0 +1,274 @@
+
+.h-size(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+    @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
+    @b: @value_min - @k * @viewport_min;
+    
+    @c: @b * 1px;
+    
+    height: ~"calc( " @k ~" * 100vw + " @c ~" )" ;
+    
+    @media screen and (max-height: @viewport_min * 1px) {
+      height: @value_min * 1px;
+    }
+    @media screen and (min-height: @viewport_max * 1px) {
+      height: @value_max * 1px;
+    }
+    
+    
+  }
+
+
+.height-size-super(@value_mobile,@value_tablete, @value_notebook, @value_hd, @mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max)  when (@mode = "super"){
+  
+  
+  
+    @k: ( @value_hd - @value_notebook)/( @viewport_max - @viewport_notebook);
+    @b: @value_notebook - @k * @viewport_notebook;
+  
+    @c: @b * 1px;
+  
+    
+    
+    
+    @k1: ( @value_notebook - @value_tablete)/( @viewport_notebook - @viewport_tablete);
+    @b1: @value_tablete - @k1 * @viewport_tablete;
+  
+    @c1: @b * 1px;
+  
+    
+    
+    
+    @k2: ( @value_tablete - @value_mobile)/( @viewport_tablete - @viewport_mobile);
+    @b2: @value_mobile - @k2 * @viewport_mobile;
+  
+    @c2: @b * 1px; 
+    
+  
+    height: ~"calc( " @k ~" * 100vw + " @c ~" )" ;
+    
+    
+    @media screen and (min-height: @viewport_max * 1px) {
+      height: @value_max * 1px;
+    }
+    
+    @media screen and (max-height: @viewport_notebook * 1px) {
+      height:  ~"calc( " @k1 ~" * 100vw + " @c1 ~" )" ;
+    }
+    
+    @media screen and (max-height: @viewport_tablete * 1px) {
+      height:  ~"calc( " @k2 ~" * 100vw + " @c2 ~" )" ;
+    }
+    
+    @media screen and (max-height: @viewport_mobile * 1px) {
+      height: @value_mobile * 1px;
+    }
+  
+  }
+  
+  
+  .height-size-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max) when (default()){
+    
+    height: @value_max;
+    
+    @media screen and (min-height: @viewport_max * 1px) {
+      height: @value_max;
+    }
+    
+    @media screen and (max-height: @viewport_notebook * 1px) {
+      height:  @value_notebook;
+    }
+    
+    @media screen and (max-height: @viewport_tablete * 1px) {
+      height:  @value_tablete;
+    }
+    
+    @media screen and (max-height: @viewport_mobile * 1px) {
+      height: @value_mobile ;
+    }
+    
+  }
+  
+  
+  //max 
+  
+  .max-h-size(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+    @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
+    @b: @value_min - @k * @viewport_min;
+    
+    @c: @b * 1px;
+    
+    max-height: ~"calc( " @k ~" * 100vw + " @c ~" )" ;
+    
+    @media screen and (max-height: @viewport_min * 1px) {
+      max-height: @value_min * 1px;
+    }
+    @media screen and (min-height: @viewport_max * 1px) {
+      max-height: @value_max * 1px;
+    }
+    
+    
+  }
+
+
+.max-height-size-super(@value_mobile,@value_tablete, @value_notebook, @value_hd, @mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max)  when (@mode = "super"){
+  
+  
+  
+    @k: ( @value_hd - @value_notebook)/( @viewport_max - @viewport_notebook);
+    @b: @value_notebook - @k * @viewport_notebook;
+  
+    @c: @b * 1px;
+  
+    
+    
+    
+    @k1: ( @value_notebook - @value_tablete)/( @viewport_notebook - @viewport_tablete);
+    @b1: @value_tablete - @k1 * @viewport_tablete;
+  
+    @c1: @b * 1px;
+  
+    
+    
+    
+    @k2: ( @value_tablete - @value_mobile)/( @viewport_tablete - @viewport_mobile);
+    @b2: @value_mobile - @k2 * @viewport_mobile;
+  
+    @c2: @b * 1px; 
+    
+  
+    max-height: ~"calc( " @k ~" * 100vw + " @c ~" )" ;
+    
+    
+    @media screen and (min-height: @viewport_max * 1px) {
+      max-height: @value_max * 1px;
+    }
+    
+    @media screen and (max-height: @viewport_notebook * 1px) {
+      max-height:  ~"calc( " @k1 ~" * 100vw + " @c1 ~" )" ;
+    }
+    
+    @media screen and (max-height: @viewport_tablete * 1px) {
+      max-height:  ~"calc( " @k2 ~" * 100vw + " @c2 ~" )" ;
+    }
+    
+    @media screen and (max-height: @viewport_mobile * 1px) {
+      max-height: @value_mobile * 1px;
+    }
+  
+  }
+  
+  
+  .max-height-size-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max) when (default()){
+    
+    max-height: @value_max;
+    
+    @media screen and (min-height: @viewport_max * 1px) {
+      max-height: @value_max;
+    }
+    
+    @media screen and (max-height: @viewport_notebook * 1px) {
+      max-height:  @value_notebook;
+    }
+    
+    @media screen and (max-height: @viewport_tablete * 1px) {
+      max-height:  @value_tablete;
+    }
+    
+    @media screen and (max-height: @viewport_mobile * 1px) {
+      max-height: @value_mobile ;
+    }
+    
+  }
+  
+  //min
+  
+  .min-h-size(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+    @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
+    @b: @value_min - @k * @viewport_min;
+    
+    @c: @b * 1px;
+    
+    min-height: ~"calc( " @k ~" * 100vw + " @c ~" )" ;
+    
+    @media screen and (max-height: @viewport_min * 1px) {
+      min-height: @value_min * 1px;
+    }
+    @media screen and (min-height: @viewport_max * 1px) {
+      min-height: @value_max * 1px;
+    }
+    
+    
+  }
+
+
+.min-height-size-super(@value_mobile,@value_tablete, @value_notebook, @value_hd, @mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max)  when (@mode = "super"){
+  
+  
+  
+    @k: ( @value_hd - @value_notebook)/( @viewport_max - @viewport_notebook);
+    @b: @value_notebook - @k * @viewport_notebook;
+  
+    @c: @b * 1px;
+  
+    
+    
+    
+    @k1: ( @value_notebook - @value_tablete)/( @viewport_notebook - @viewport_tablete);
+    @b1: @value_tablete - @k1 * @viewport_tablete;
+  
+    @c1: @b * 1px;
+  
+    
+    
+    
+    @k2: ( @value_tablete - @value_mobile)/( @viewport_tablete - @viewport_mobile);
+    @b2: @value_mobile - @k2 * @viewport_mobile;
+  
+    @c2: @b * 1px; 
+    
+  
+    min-height: ~"calc( " @k ~" * 100vw + " @c ~" )" ;
+    
+    
+    @media screen and (min-height: @viewport_max * 1px) {
+      min-height: @value_max * 1px;
+    }
+    
+    @media screen and (max-height: @viewport_notebook * 1px) {
+      min-height:  ~"calc( " @k1 ~" * 100vw + " @c1 ~" )" ;
+    }
+    
+    @media screen and (max-height: @viewport_tablete * 1px) {
+      min-height:  ~"calc( " @k2 ~" * 100vw + " @c2 ~" )" ;
+    }
+    
+    @media screen and (max-height: @viewport_mobile * 1px) {
+      min-height: @value_mobile * 1px;
+    }
+  
+  }
+  
+  
+  .min-height-size-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max) when (default()){
+    
+    min-height: @value_max;
+    
+    @media screen and (min-height: @viewport_max * 1px) {
+      min-height: @value_max;
+    }
+    
+    @media screen and (max-height: @viewport_notebook * 1px) {
+      min-height:  @value_notebook;
+    }
+    
+    @media screen and (max-height: @viewport_tablete * 1px) {
+      min-height:  @value_tablete;
+    }
+    
+    @media screen and (max-height: @viewport_mobile * 1px) {
+      min-height: @value_mobile ;
+    }
+    
+  }
+  
+  
