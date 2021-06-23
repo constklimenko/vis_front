@@ -2,7 +2,7 @@
   
 //   top
 
-.top-size(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+.top-size(@value_min, @value_max, @viewport_min: @viewport-min-int, @viewport_max: @viewport-max-int){
     @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
     @b: @value_min - @k * @viewport_min;
     
@@ -22,11 +22,11 @@
 
 
 
-.top-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max)  when (@mode = "super"){
+.top-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int)  when (@mode = "super"){
   
   
   
-    @k: ( @value_hd - @value_notebook)/( @viewport_max - @viewport_notebook);
+    @k: ( @value_max - @value_notebook)/( @viewport_max - @viewport_notebook);
     @b: @value_notebook - @k * @viewport_notebook;
   
     @c: @b * 1px;
@@ -70,7 +70,7 @@
   }
   
   
-  .top-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max) when (default()){
+  .top-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int) when (default()){
     
     top: @value_max * 1px;
     
@@ -93,7 +93,7 @@
   }
   
 //   padding right
-.right-size(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+.right-size(@value_min, @value_max, @viewport_min: @viewport-min-int, @viewport_max: @viewport-max-int){
     @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
     @b: @value_min - @k * @viewport_min;
     
@@ -112,11 +112,11 @@
   }
 
 
-  .right-super(@mode: "simple",@value_mobile,@value_tablete, @value_notebook, @value_hd, @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max)  when (@mode = "super"){
+  .right-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int)  when (@mode = "super"){
   
   
   
-    @k: ( @value_hd - @value_notebook)/( @viewport_max - @viewport_notebook);
+    @k: ( @value_max - @value_notebook)/( @viewport_max - @viewport_notebook);
     @b: @value_notebook - @k * @viewport_notebook;
   
     @c: @b * 1px;
@@ -160,7 +160,7 @@
   }
   
   
-  .right-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max) when (default()){
+  .right-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int) when (default()){
     
     right: @value_max * 1px;
     
@@ -183,7 +183,7 @@
   }
   
   //padding bottom
-  .bottom-size(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+  .bottom-size(@value_min, @value_max, @viewport_min: @viewport-min-int, @viewport_max: @viewport-max-int){
     @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
     @b: @value_min - @k * @viewport_min;
     
@@ -204,11 +204,11 @@
   
   
   
-  .bottom-super(@mode: "simple",@value_mobile,@value_tablete, @value_notebook, @value_hd, @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max)  when (@mode = "super"){
+  .bottom-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int)  when (@mode = "super"){
   
   
   
-    @k: ( @value_hd - @value_notebook)/( @viewport_max - @viewport_notebook);
+    @k: ( @value_max - @value_notebook)/( @viewport_max - @viewport_notebook);
     @b: @value_notebook - @k * @viewport_notebook;
   
     @c: @b * 1px;
@@ -252,7 +252,7 @@
   }
   
   
-  .bottom-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max) when (default()){
+  .bottom-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int) when (default()){
     
     bottom: @value_max * 1px;
     
@@ -276,7 +276,7 @@
   
   // padding left
   
-  .left-size(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+  .left-size(@value_min, @value_max, @viewport_min: @viewport-min-int, @viewport_max: @viewport-max-int){
     @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
     @b: @value_min - @k * @viewport_min;
     
@@ -294,11 +294,11 @@
     
   }
   
-  .left-super(@mode: "simple",@value_mobile,@value_tablete, @value_notebook, @value_hd, @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max)  when (@mode = "super"){
+  .left-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int)  when (@mode = "super"){
   
   
   
-    @k: ( @value_hd - @value_notebook)/( @viewport_max - @viewport_notebook);
+    @k: ( @value_max - @value_notebook)/( @viewport_max - @viewport_notebook);
     @b: @value_notebook - @k * @viewport_notebook;
   
     @c: @b * 1px;
@@ -342,7 +342,7 @@
   }
   
   
-  .left-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max) when (default()){
+  .left-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int) when (default()){
     
     left: @value_max * 1px;
     

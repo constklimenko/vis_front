@@ -16,9 +16,17 @@
 
 
 // viewports
+@viewport-max-int: 1920;
+@viewport-min-int: 320;
 
-@viewport-max: 1920px;
-@viewport-min: 320px;
+
+@viewport-max: @viewport-max-int * 1px;
+@viewport-min: @viewport-min-int * 1px;
+
+
+@size-int-mobile: 700;
+@size-int-tablete: 1024;
+@size-int-notebook: 1366;
 
 @size-mobile: 700px;
 @size-tablete: 1024px;

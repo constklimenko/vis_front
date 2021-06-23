@@ -1,5 +1,5 @@
 
-.f-size(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+.f-size(@value_min, @value_max, @viewport_min: @viewport-min-int, @viewport_max: @viewport-max-int){
   @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
   @b: @value_min - @k * @viewport_min;
   
@@ -18,7 +18,7 @@
 }
 
 
-.adaptive-size(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+.adaptive-size(@value_min, @value_max, @viewport_min: @viewport-min-int, @viewport_max: @viewport-max-int){
   @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
   @b: @value_min - @k * @viewport_min;
   
@@ -28,7 +28,7 @@
   
 }
 
-.adaptive-size2(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+.adaptive-size2(@value_min, @value_max, @viewport_min: @viewport-min-int, @viewport_max: @viewport-max-int){
   @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
   @b: @value_min - @k * @viewport_min;
 
@@ -40,11 +40,11 @@
 
 
 
-.adaptive-size-super(@value_mobile,@value_tablete, @value_notebook, @value_hd, @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max){
+.adaptive-size-super(@value_mobile,@value_tablete, @value_notebook, @value_max, @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int){
   
   
   
-  @k: ( @value_hd - @value_notebook)/( @viewport_max - @viewport_notebook);
+  @k: ( @value_max - @value_notebook)/( @viewport_max - @viewport_notebook);
   @b: @value_notebook - @k * @viewport_notebook;
 
   @c: @b * 1px;
@@ -72,11 +72,11 @@
 }
 
 
-.adaptive-size-super2(@value_mobile,@value_tablete, @value_notebook, @value_hd, @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max){
+.adaptive-size-super2(@value_mobile,@value_tablete, @value_notebook, @value_max, @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int){
   
   
   
-  @k: ( @value_hd - @value_notebook)/( @viewport_max - @viewport_notebook);
+  @k: ( @value_max - @value_notebook)/( @viewport_max - @viewport_notebook);
   @b: @value_notebook - @k * @viewport_notebook;
 
   @c: @b * 1px;
@@ -104,11 +104,11 @@
 }
 
 
-.font-size-super(@value_mobile,@value_tablete, @value_notebook, @value_hd, @mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max)  when (@mode = "super"){
+.font-size-super(@value_mobile,@value_tablete, @value_notebook, @value_max, @mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int)  when (@mode = "super"){
   
   
   
-  @k: ( @value_hd - @value_notebook)/( @viewport_max - @viewport_notebook);
+  @k: ( @value_max - @value_notebook)/( @viewport_max - @viewport_notebook);
   @b: @value_notebook - @k * @viewport_notebook;
 
   @c: @b * 1px;
@@ -128,6 +128,7 @@
   @b2: @value_mobile - @k2 * @viewport_mobile;
 
   @c2: @b * 1px; 
+  
   
 
   font-size: ~"calc( " @k ~" * 100vw + " @c ~" )" ;
@@ -152,7 +153,7 @@
 }
 
 
-.font-size-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max) when (default()){
+.font-size-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int) when (default()){
   
   font-size: @value_max * 1px;
   
@@ -175,7 +176,7 @@
 }
 
 
-// @media screen and (max-width: @viewport-max ) {
+// @media screen and (max-width: @viewport-max-int ) {
 //   --return-descktop;
 // }
 

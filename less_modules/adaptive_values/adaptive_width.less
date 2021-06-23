@@ -1,5 +1,5 @@
 
-.w-size(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+.w-size(@value_min, @value_max, @viewport_min: @viewport-min-int, @viewport_max: @viewport-max-int){
     @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
     @b: @value_min - @k * @viewport_min;
     
@@ -18,11 +18,11 @@
   }
 
 
-.width-size-super(@value_mobile,@value_tablete, @value_notebook, @value_hd, @mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max)  when (@mode = "super"){
+.width-size-super(@value_mobile,@value_tablete, @value_notebook, @value_max, @mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int)  when (@mode = "super"){
   
   
   
-    @k: ( @value_hd - @value_notebook)/( @viewport_max - @viewport_notebook);
+    @k: ( @value_max - @value_notebook)/( @viewport_max - @viewport_notebook);
     @b: @value_notebook - @k * @viewport_notebook;
   
     @c: @b * 1px;
@@ -66,7 +66,7 @@
   }
   
   
-  .width-size-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max) when (default()){
+  .width-size-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int) when (default()){
     
     width: @value_max;
     
@@ -91,7 +91,7 @@
   
   //max 
   
-  .max-w-size(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+  .max-w-size(@value_min, @value_max, @viewport_min: @viewport-min-int, @viewport_max: @viewport-max-int){
     @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
     @b: @value_min - @k * @viewport_min;
     
@@ -110,11 +110,11 @@
   }
 
 
-.max-width-size-super(@value_mobile,@value_tablete, @value_notebook, @value_hd, @mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max)  when (@mode = "super"){
+.max-width-size-super(@value_mobile,@value_tablete, @value_notebook, @value_max, @mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int)  when (@mode = "super"){
   
   
   
-    @k: ( @value_hd - @value_notebook)/( @viewport_max - @viewport_notebook);
+    @k: ( @value_max - @value_notebook)/( @viewport_max - @viewport_notebook);
     @b: @value_notebook - @k * @viewport_notebook;
   
     @c: @b * 1px;
@@ -158,7 +158,7 @@
   }
   
   
-  .max-width-size-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max) when (default()){
+  .max-width-size-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int) when (default()){
     
     max-width: @value_max;
     
@@ -182,7 +182,7 @@
   
   //min
   
-  .min-w-size(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+  .min-w-size(@value_min, @value_max, @viewport_min: @viewport-min-int, @viewport_max: @viewport-max-int){
     @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
     @b: @value_min - @k * @viewport_min;
     
@@ -201,11 +201,11 @@
   }
 
 
-.min-width-size-super(@value_mobile,@value_tablete, @value_notebook, @value_hd, @mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max)  when (@mode = "super"){
+.min-width-size-super(@value_mobile,@value_tablete, @value_notebook, @value_max, @mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int)  when (@mode = "super"){
   
   
   
-    @k: ( @value_hd - @value_notebook)/( @viewport_max - @viewport_notebook);
+    @k: ( @value_max - @value_notebook)/( @viewport_max - @viewport_notebook);
     @b: @value_notebook - @k * @viewport_notebook;
   
     @c: @b * 1px;
@@ -249,7 +249,7 @@
   }
   
   
-  .min-width-size-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max) when (default()){
+  .min-width-size-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int) when (default()){
     
     min-width: @value_max;
     

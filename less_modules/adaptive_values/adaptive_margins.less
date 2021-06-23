@@ -1,4 +1,4 @@
-.m-size(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+.m-size(@value_min, @value_max, @viewport_min: @viewport-min-int, @viewport_max: @viewport-max-int){
     @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
     @b: @value_min - @k * @viewport_min;
     
@@ -22,11 +22,11 @@
 
 
 
-.margin-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max)  when (@mode = "super"){
+.margin-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int)  when (@mode = "super"){
   
   
   
-    @k: ( @value_hd - @value_notebook)/( @viewport_max - @viewport_notebook);
+    @k: ( @value_max - @value_notebook)/( @viewport_max - @viewport_notebook);
     @b: @value_notebook - @k * @viewport_notebook;
   
     @c: @b * 1px;
@@ -70,7 +70,7 @@
   }
   
   
-  .margin-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max) when (default()){
+  .margin-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int) when (default()){
     
     margin: @value_max * 1px;
     
@@ -94,7 +94,7 @@
   
 //   margin-top
 
-.m-top-size(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+.m-top-size(@value_min, @value_max, @viewport_min: @viewport-min-int, @viewport_max: @viewport-max-int){
     @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
     @b: @value_min - @k * @viewport_min;
     
@@ -114,11 +114,11 @@
 
 
 
-.margin-top-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max)  when (@mode = "super"){
+.margin-top-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int)  when (@mode = "super"){
   
   
   
-    @k: ( @value_hd - @value_notebook)/( @viewport_max - @viewport_notebook);
+    @k: ( @value_max - @value_notebook)/( @viewport_max - @viewport_notebook);
     @b: @value_notebook - @k * @viewport_notebook;
   
     @c: @b * 1px;
@@ -162,7 +162,7 @@
   }
   
   
-  .margin-top-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max) when (default()){
+  .margin-top-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int) when (default()){
     
     margin-top: @value_max * 1px;
     
@@ -185,7 +185,7 @@
   }
   
 //   margin right
-.m-right-size(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+.m-right-size(@value_min, @value_max, @viewport_min: @viewport-min-int, @viewport_max: @viewport-max-int){
     @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
     @b: @value_min - @k * @viewport_min;
     
@@ -204,11 +204,11 @@
   }
 
 
-  .margin-right-super(@mode: "simple",@value_mobile,@value_tablete, @value_notebook, @value_hd, @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max)  when (@mode = "super"){
+  .margin-right-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int)  when (@mode = "super"){
   
   
   
-    @k: ( @value_hd - @value_notebook)/( @viewport_max - @viewport_notebook);
+    @k: ( @value_max - @value_notebook)/( @viewport_max - @viewport_notebook);
     @b: @value_notebook - @k * @viewport_notebook;
   
     @c: @b * 1px;
@@ -252,7 +252,7 @@
   }
   
   
-  .margin-right-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max) when (default()){
+  .margin-right-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int) when (default()){
     
     margin-right: @value_max * 1px;
     
@@ -275,7 +275,7 @@
   }
   
   //margin bottom
-  .m-bottom-size(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+  .m-bottom-size(@value_min, @value_max, @viewport_min: @viewport-min-int, @viewport_max: @viewport-max-int){
     @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
     @b: @value_min - @k * @viewport_min;
     
@@ -296,11 +296,11 @@
   
   
   
-  .margin-bottom-super(@mode: "simple",@value_mobile,@value_tablete, @value_notebook, @value_hd, @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max)  when (@mode = "super"){
+  .margin-bottom-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int)  when (@mode = "super"){
   
   
   
-    @k: ( @value_hd - @value_notebook)/( @viewport_max - @viewport_notebook);
+    @k: ( @value_max - @value_notebook)/( @viewport_max - @viewport_notebook);
     @b: @value_notebook - @k * @viewport_notebook;
   
     @c: @b * 1px;
@@ -344,7 +344,7 @@
   }
   
   
-  .margin-bottom-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max) when (default()){
+  .margin-bottom-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int) when (default()){
     
     margin-bottom: @value_max * 1px;
     
@@ -368,7 +368,7 @@
   
   // margin left
   
-  .m-left-size(@value_min, @value_max, @viewport_min: @viewport-min, @viewport_max: @viewport-max){
+  .m-left-size(@value_min, @value_max, @viewport_min: @viewport-min-int, @viewport_max: @viewport-max-int){
     @k: ( @value_max - @value_min)/( @viewport_max - @viewport_min);
     @b: @value_min - @k * @viewport_min;
     
@@ -386,11 +386,11 @@
     
   }
   
-  .margin-left-super(@mode: "simple",@value_mobile,@value_tablete, @value_notebook, @value_hd, @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max)  when (@mode = "super"){
+  .margin-left-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int)  when (@mode = "super"){
   
   
   
-    @k: ( @value_hd - @value_notebook)/( @viewport_max - @viewport_notebook);
+    @k: ( @value_max - @value_notebook)/( @viewport_max - @viewport_notebook);
     @b: @value_notebook - @k * @viewport_notebook;
   
     @c: @b * 1px;
@@ -434,7 +434,7 @@
   }
   
   
-  .margin-left-super(@value_mobile,@value_tablete, @value_notebook, @value_hd,@mode: "simple", @viewport_mobile: @viewport-min,@viewport_tablete: @size-tablete,@viewport_notebook: @size-notebook, @viewport_max: @viewport-max) when (default()){
+  .margin-left-super(@value_mobile,@value_tablete, @value_notebook, @value_max,@mode: "simple", @viewport_mobile: @viewport-min-int,@viewport_tablete: @size-int-tablete,@viewport_notebook: @size-int-notebook, @viewport_max: @viewport-max-int) when (default()){
     
     margin-left: @value_max * 1px;
     

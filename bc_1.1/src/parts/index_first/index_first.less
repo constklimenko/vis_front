@@ -122,14 +122,19 @@
         
         grid-template-columns: repeat(3,1fr) auto!important;
         grid-column-gap: 1vw!important;
+        .bottom-super(-30px, -50px, 60px,0px);
+        align-items: stretch;
         
         @media screen and(max-width: @size-notebook) and (min-width: (@size-tablete + 1px)){
             left: 28px;
             position: absolute!important;
             gap: 8vw;
             max-width: 100vw;
-            bottom: 60px;
+            bottom: 60px;         
+            
         }
+        
+        
         
         @media screen and(max-width: @size-mobile) {
             bottom: -30px; 

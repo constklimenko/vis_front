@@ -3,17 +3,25 @@
     .padding-container(1925px, 1726px, 0, 5vw, 0, 10vw);
     margin-bottom: @section-gap;
 
-    .grid(1fr 1fr);
+    .grid(1fr 1.17fr);
     overflow: hidden;
+    padding-bottom: 0px;
+    
+    @media screen and (max-width: @size-notebook){
+        padding:0;
+        padding-bottom: 50px;
+    }
 
-    @media screen and (max-width: 1000px){
+    @media screen and (max-width: @size-tablete){
         .flex-col;
+        margin-bottom: 0;
     }
 
     &-bg_text {
         .f-size( 100, 200, 320, 1920 );
         position   : absolute;
-        top:-.2em;
+        top:2vw;
+        left:1vw;
         font-weight: bold;
         
         line-height: 245px;
@@ -26,30 +34,63 @@
     &-right,
     &-left {
         position: relative;
-        padding : 3vw;
+       
     }
 
     &-left {
+        .padding-top-super(3vw,3vw,3vw,6.2vw); 
+        padding-right: 6.2vw;
+        //.padding-right-super(6.2vw,6.2vw,6.2vw,6.2vw);
+        //padding-left:39px;        
+        .padding-left-super(39px,39px,39px,110px);
+        padding-bottom: 3.78vw;
+        
+        //.padding-bottom-super( 3.78vw, 3.78vw, 3.78vw, 3.78vw);
+             
         &-title {
-            font-size: 36px;
+            
+            .margin-top-super(75px,65px,105px,75px);            
+            .font-size-super(36px,30px,30px,36px);
             text-transform: uppercase;
-            margin-bottom: 28px;
+            .margin-bottom-super(23px,21.5px,23px,23px);
+            font-weight: 700;
         }
         
         &-text {
-            font-size: 20px;
+            .font-size-super(18px,18px,18px,20px);
+            line-height: 1.5em;
+            
         }
     }
     
     &-right{
-        .grid(1fr 1fr);
+        
+        padding : 0;
+        .grid(1fr 1fr, auto, 10px, 70px);        
         grid-template-areas: "a a" "b c" "d d";
         align-items: center;
         justify-items: center;
+        
+        @media screen and (max-width: @size-notebook){
+            padding-top: 50px;
+            grid-row-gap: 60px;
+            row-gap: 60px;
+        }
+        @media screen and (max-width: @size-tablete){
+            padding-top: 0px;
+            grid-row-gap: 0px;
+            row-gap: 0px;
+            
+            grid-column-gap: 40vw;
+            column-gap: 40vw;
+        }
+        
 
-        @media screen and (max-width: 1000px){
+        @media screen and (max-width: @size-mobile){
             .flex-col;
             align-items: flex-start;
+            
+            
         }
         
         &-card{
@@ -67,7 +108,8 @@
             & .text{               
                 
                 & b{                    
-                    .f-size(25,96,320,1920);
+                    .f-size(25,96,320,1024);
+                    
                     line-height: 1em;                   
                     color:#0055FF;
                 }
@@ -76,6 +118,7 @@
             & .text-big{
                 font-size: 20px;
                 text-transform: uppercase;
+                font-weight: 700;
             }
             
             
