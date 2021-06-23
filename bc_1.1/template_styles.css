@@ -1442,6 +1442,7 @@ h2 {
 @media screen and (max-width: 700px) {
   .index_first {
     min-height: 812px;
+    padding-left: 5vw;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -1507,12 +1508,14 @@ h2 {
     font-size: 28px;
     text-align: center;
     line-height: 1.4em;
+    margin-bottom: 23px;
   }
 }
 .index_first .index_first-center .info-btn {
   font-weight: bold;
   font-size: 18px;
   width: 350px;
+  font-family: 'Formular', sans-serif;
 }
 @media screen and (max-width: 1366px) {
   .index_first .index_first-center .info-btn {
@@ -1554,6 +1557,12 @@ h2 {
     bottom: 60px;
   }
 }
+@media screen and (max-width: 700px) {
+  .index_first-tabs {
+    bottom: -30px;
+    gap: 55px;
+  }
+}
 .index_first-tabs-card.elem_tabs-card {
   color: white;
   font-size: 20px;
@@ -1587,6 +1596,7 @@ h2 {
 @media screen and (max-width: 700px) {
   .index_first-tabs-card.elem_tabs-card .card-text {
     font-size: 10px;
+    line-height: 16px;
   }
 }
 .index_first-tabs_arrow {

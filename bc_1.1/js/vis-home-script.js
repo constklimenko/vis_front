@@ -50,6 +50,7 @@ $(function() {
                 document.getElementById(CurrID).parentNode.querySelector('.current-count').textContent = currentSlide + 1;
             }
         );
+        console.log(`ready ${i}`);
     }
 
 
