@@ -42,10 +42,10 @@
   }
 
   &-btn{
-    .adaptive-size(212,350,1240, 1926);
-    .f-size(12,18,1240, 1926);
-    width: var(--return);
-    //height: 56px;
+    
+    .f-size(12,18,1240, 1920);
+    min-width: 212px;
+    min-height: 56px;
     background-color: @red;
     color: white;
     text-transform: uppercase;
@@ -54,8 +54,12 @@
     max-width: 350px;
     text-align: center;
     vertical-align: middle;
-    padding: 1em;
+    // padding: 1em;
     margin: auto;
+    
+    @media screen and (max-width: @size-notebook){
+      min-width: 270px;
+    }
 
     @media screen and (max-width: 1240px){
       min-width: 162px;

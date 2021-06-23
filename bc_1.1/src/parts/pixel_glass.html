@@ -1,0 +1,95 @@
+<!-- Pixel Glass -->
+<style>
+    HTML {
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        /* Mobile layout by default */
+        background-image: url("./img/iPhone_8.png");
+    }
+    /* Tablet */
+    
+    @media ( min-width: 1024px) {
+        HTML {
+            /* Tablet layout */
+            background-image: url("./img/iPad_Pro.png");
+        }
+    }
+    /* notebook  */
+    
+    @media ( min-width: 1366px) {
+        HTML {
+            /* Tablet layout */
+            background-image: url("./about/");
+        }
+    }
+    /* Desktop */
+    
+    @media ( min-width: 1920px) {
+        HTML {
+            /* Desktop layout */
+            background-image: url("img/1920.png");
+        }
+    }
+</style>
+<link type="css" href="./js/pixel-glass/styles.css" rel="stylesheet">
+<script type="text/js" src="./js/pixel-glass/script.js"></script>
+<!-- // Pixel Glass -->
+
+
+<input type="checkbox" name="" id="" class="pp">
+<div class="pp-img"></div>
+<style>
+    .pp-img {
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        /* Mobile layout by default */
+        background-image: url("./img/iPhone_8.png");
+    }
+    /* Tablet */
+    
+    @media ( min-width: 1024px) {
+        .pp-img {
+            /* Tablet layout */
+            background-image: url("./img/iPad_Pro.png");
+        }
+    }
+    /* notebook  */
+    
+    @media ( min-width: 1366px) {
+        .pp-img {
+            /* Tablet layout */
+            background-image: url("./about/");
+        }
+    }
+    /* Desktop */
+    
+    @media ( min-width: 1920px) {
+        .pp-img {
+            /* Desktop layout */
+            background-image: url("img/1920.png");
+        }
+    }
+    
+    .pp {
+        position: fixed;
+        z-index: 9999999;
+        top: 20px;
+        left: 20px;
+    }
+    
+    .pp+.pp-img {
+        display: none;
+    }
+    
+    .pp:checked+.pp-img {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: -37px;
+        right: 0;
+        margin: auto;
+        z-index: 999998;
+        opacity: 0.5;
+        -webkit-filter: invert(100%);
+    }
+</style>

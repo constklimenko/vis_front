@@ -30,30 +30,42 @@
     text-align: center;
     max-width: var(--container-width);
 
-    @media screen and (min-width: @size-mobile){
+    @media screen and (min-width: @size-mobile + 1px){
       text-align: left;
       grid-column: span 2;
-      .grid(repeat(3,1fr), auto, 5vw);
+      .grid(repeat(3,1fr), auto, 3vw);
 
     }
 
   }
 
   &-card{
-    .flex-col;
+    display: flex;
+    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto;
     gap:16px;
     width: 188px;
+    justify-content: center;
+    align-items: center;
 
-    @media screen and (min-width: 1100px) {
+    @media screen and (min-width: @size-tablete + 1px ) {
       .grid(auto auto,auto, 16px);
       height: 102px;
       width:auto;
     };
-
-
-
-
-
+    
+    @media screen and (max-width: @size-notebook){
+      height: 86.10px;
+    }
+    
+    @media screen and (max-width: @size-tablete){
+      height: auto;
+      display: flex;
+      gap:2px;
+    }
+    
+    
     & .card-img{
 
       .bg-contain('./img/svg/hexagon-empty.svg');
@@ -62,11 +74,20 @@
       .flex-col();
       justify-content: center;
 
-      @media screen and (min-width: @size-tablete){
+      @media screen and (max-width: @size-tablete){
         .bg-contain('./img/svg/hexagon.svg');
+        width: 140px;
+      height:76px;
       }
-
       
+      
+      @media screen and (max-width: @size-mobile){
+        width: 100px;
+        height: 54.5px !important;;
+        
+        
+      
+      }
 
 
       & .bucket{
@@ -91,7 +112,22 @@
        color: @red;
         align-self: center;
       }
+      
+      
+     
 
+
+    }
+    
+    & .card-text{
+      @media screen and (max-width: @size-tablete){
+        text-align: center;
+        
+      }
+      
+      @media screen and (max-width: @size-mobile){
+        font-size: 10px;
+      }
     }
   }
 
