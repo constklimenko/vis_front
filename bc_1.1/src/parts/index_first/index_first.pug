@@ -1,6 +1,6 @@
-mixin elem_tab(text)
+mixin elem_tab(text, modifier)
     a.elem_tabs-card.index_first-tabs-card(attributes)
-        .card-img
+        .card-img(class="card-img--"+modifier)
             block
         .card-text=text
 
@@ -11,20 +11,23 @@ section.index_first
         .index_first-center-title Деловой квартал <br> в центре Москвы
         button.info-btn  Арендовать офис
     .elem_tabs-content.index_first-tabs
-        a.elem_tabs-card.index_first-tabs-card
-            .card-img
-                .bucket 
-            .card-text Услуги клининга&nbsp;(уборки) в арендуемом помещении
-        a.elem_tabs-card.index_first-tabs-card
-            .card-img
-                .parking
-            .card-text Круглосуточная наземная парковка на охраняемой территории
+        +elem_tab('Услуги клининга (уборки) в арендуемом помещении', 'bucket')
+        +elem_tab('Круглосуточная наземная парковка на охраняемой территории', 'parking')
+        +elem_tab('Гостевая парковка с оплатой на почасовой основе', 'taxometr')
+        //- a.elem_tabs-card.index_first-tabs-card
+        //-     .card-img
+        //-         .bucket 
+        //-     .card-text Услуги клининга&nbsp;(уборки) в арендуемом помещении
+        //- a.elem_tabs-card.index_first-tabs-card
+        //-     .card-img
+        //-         .parking
+        //-     .card-text Круглосуточная наземная парковка на охраняемой территории
             
-        a.elem_tabs-card.index_first-tabs-card
-            .card-img
-                .taxometr
-            .card-text Гостевая парковка с оплатой на почасовой основе
-        .index_first-tabs_arrow
+        //- a.elem_tabs-card.index_first-tabs-card
+        //-     .card-img
+        //-         .taxometr
+        //-     .card-text Гостевая парковка с оплатой на почасовой основе
+        //- .index_first-tabs_arrow
     //- .elem_tabs-content.index_first-tabs.m-show
     //-     +elem_tab('Lorem ipsum dolor sit amet, consectetur adipisicing elit.')
     //-         .bucket

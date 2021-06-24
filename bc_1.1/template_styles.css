@@ -547,6 +547,9 @@ h2 {
     font-size: 18px;
   }
 }
+.info-btn:hover {
+  background-color: #D33327;
+}
 @media screen and (max-width: 1366px) {
   .info-btn {
     min-width: 270px;
@@ -1590,7 +1593,9 @@ h2 {
   }
 }
 .index_first-tabs-card.elem_tabs-card .card-img {
-  background: url('./img/svg/hexagon-empty-white.svg') no-repeat center / contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 @media screen and (max-width: 1366px) {
   .index_first-tabs-card.elem_tabs-card .card-img {
@@ -1599,6 +1604,15 @@ h2 {
 }
 .index_first-tabs-card.elem_tabs-card .card-img div {
   color: white;
+}
+.index_first-tabs-card.elem_tabs-card .card-img--bucket {
+  background-image: url('./img/svg/buck.svg');
+}
+.index_first-tabs-card.elem_tabs-card .card-img--parking {
+  background-image: url('./img/svg/park.svg');
+}
+.index_first-tabs-card.elem_tabs-card .card-img--taxometr {
+  background-image: url('./img/svg/tax.svg');
 }
 .index_first-tabs-card.elem_tabs-card .card-text {
   max-width: 276px;
