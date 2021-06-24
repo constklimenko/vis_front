@@ -55,7 +55,7 @@
   @k1: ( @value_notebook - @value_tablete)/( @viewport_notebook - @viewport_tablete);
   @b1: @value_tablete - @k1 * @viewport_tablete;
 
-  @c1: @b * 1px;
+  @c1: @b1 * 1px;
 
   --return-notebook: ~"calc( " @k1 ~" * 100vw + " @c1 ~" )" ;
   
@@ -63,7 +63,7 @@
   @k2: ( @value_tablete - @value_mobile)/( @viewport_tablete - @viewport_mobile);
   @b2: @value_mobile - @k2 * @viewport_mobile;
 
-  @c2: @b * 1px;
+  @c2: @b2 * 1px;
 
   --return-tablete: ~"calc( " @k2 ~" * 100vw + " @c2 ~" )" ;
   
@@ -87,7 +87,7 @@
   @k1: ( @value_notebook - @value_tablete)/( @viewport_notebook - @viewport_tablete);
   @b1: @value_tablete - @k1 * @viewport_tablete;
 
-  @c1: @b * 1px;
+  @c1: @b1 * 1px;
 
   --return2-notebook: ~"calc( " @k1 ~" * 100vw + " @c1 ~" )" ;
   
@@ -95,7 +95,7 @@
   @k2: ( @value_tablete - @value_mobile)/( @viewport_tablete - @viewport_mobile);
   @b2: @value_mobile - @k2 * @viewport_mobile;
 
-  @c2: @b * 1px;
+  @c2: @b2 * 1px;
 
   --return2-tablete: ~"calc( " @k2 ~" * 100vw + " @c2 ~" )" ;
   
@@ -108,7 +108,7 @@
   
   
   
-  @k: ( @value_max - @value_notebook)/( @viewport_max - @viewport_notebook);
+  @k: ( floor(@value_max) - floor(@value_notebook))/( @viewport_max - @viewport_notebook);
   @b: @value_notebook - @k * @viewport_notebook;
 
   @c: @b * 1px;
@@ -116,18 +116,18 @@
   
   
   
-  @k1: ( @value_notebook - @value_tablete)/( @viewport_notebook - @viewport_tablete);
+  @k1: ( floor(@value_notebook) - floor(@value_tablete))/( @viewport_notebook - @viewport_tablete);
   @b1: @value_tablete - @k1 * @viewport_tablete;
 
-  @c1: @b * 1px;
+  @c1: @b1 * 1px;
 
   
   
   
-  @k2: ( @value_tablete - @value_mobile)/( @viewport_tablete - @viewport_mobile);
+  @k2: ( floor(@value_tablete) - floor(@value_mobile))/( @viewport_tablete - @viewport_mobile);
   @b2: @value_mobile - @k2 * @viewport_mobile;
 
-  @c2: @b * 1px; 
+  @c2: @b2 * 1px; 
   
   
 

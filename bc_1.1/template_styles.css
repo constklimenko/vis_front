@@ -2232,6 +2232,12 @@ h2 {
 }
 .index_slider-right-title {
   font-weight: bold;
+  --b: 15.20577617;
+  --k: 0.01083032;
+  --b1: 30;
+  --k1: 0;
+  --b2: 15.45454545;
+  --k2: 0.01420455;
   font-size: calc(  0.01083032  * 100vw +  15.20577617px  );
   line-height: 1.2em;
   text-transform: uppercase;
