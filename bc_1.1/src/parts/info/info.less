@@ -389,5 +389,56 @@
     }
   }
 
+}
+
+.fancybox{
+  
+  &-close{
+   
+    top: 18px;
+    right: 18px;
+    background-image: none;
+    &::after{
+      color: #F24538;
+      content: '✕';
+      font-size: 36px;
+    }
+   
   }
+  
+  &-title-float-wrap{
+      bottom: initial;
+      top:25px;
+      font-size: 24px;
+      
+      & .child{
+        background-color: transparent;
+      }
+      
+  }
+  
+  &-next{
+    
+    & span{
+      visibility: visible;
+      width: 60px;
+      height: 60px;
+      background: url(./img/svg/fb-arrow.svg) no-repeat center/contain;
+      transform: scaleX(-1);
+    }
+  }
+  
+  
+  &-prev{
+    
+    & span{
+      visibility: visible;
+          height: 60px;
+          width: 60px;
+          background: url(./img/svg/fb-arrow.svg) no-repeat center/contain ;
+          
+    }
+  }
+  
+}
 
