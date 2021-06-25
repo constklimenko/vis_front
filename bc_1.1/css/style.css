@@ -86,9 +86,9 @@ body.hidden{
     font-weight: 900;	
 	float: left;}
 .header-menu{
-	margin-top: 8px;
+	/* margin-top: 8px; */
 	/*width: 54%;*/	
-	display: table;
+	/* display: table; */
 	float: left;}
 .header-menu_list{
 	display: table-row;}
@@ -105,11 +105,10 @@ body.hidden{
 .header-menu_list li.active a{
 	border-bottom: none;
 	color: #00afc7;}
-.header-menu_list li a:hover{
-	opacity: 0.7;}
 .header-controls{
-	text-align: right;
-	width: 24%;}
+	/* text-align: right; */
+	/* width: 24%; */
+}
 .header-phone{
 	margin-left: 28px;
     color: #00AFC7;
@@ -133,8 +132,6 @@ body.hidden{
     font-weight: 400;}
 .header-controls .login span{
 	border-bottom: 1px dashed #9a9a9a;}
-.header-controls a:hover{
-	opacity: 0.7;}
 .header-controls .login i{
 	font-size: 20px;
 	margin-right: 9px;

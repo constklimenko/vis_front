@@ -1,9 +1,14 @@
 .header {
     position: sticky;
-    .grid (max-content 34px  minmax(max-content, 995px) max-content , auto, 7px);
+    display: flex;
     align-items: center;
-    .padding-container(1925px, 1726px, 36px,4.5vw,36px);
     justify-content: flex-start;
+    // .grid (max-content 34px  minmax(max-content, 995px) max-content , auto, 7px);
+    align-items: center;
+    // .padding-container(1925px, 1726px, 36px,4.5vw,36px);
+    width: 100%;
+    padding: 36px 4.5vw 36px 5vw;
+    // justify-content: flex-start;
     
     @media screen and (max-width: @size-notebook){
        padding: 46px 2.4vw 36px;
@@ -19,7 +24,7 @@
         background-color: transparent;
         position: absolute;
         color: white;
-        
+        z-index: 1;
         
             
         
@@ -66,6 +71,8 @@
         .adaptive-size(54, 100, 320, 1920);
         width : calc(2 * var(--return));
         height: var(--return);
+        // min-width: 190px;
+        // min-height: 100px;
 
         @media screen and (max-width: @size-tablete){
             
@@ -80,18 +87,26 @@
     }
     &-menu-open {
         .masked-icon('img/svg/union.svg');
-        height: 17px;
-        width : 34px;
+        min-height: 17px;
+        min-width : 34px;
         display: block;
+        margin-left: 20px;
         //
         
-        color:@red;
+        color: white;
         justify-self: center;
-        @media screen and (max-width:@size-notebook){            
+
+        &:hover {
+            color: @red; //красный цвет при наведении
+        }
+
+        @media screen and (max-width: 1500px){            
             display:none;
         }
         
-        @media screen and (max-width:@size-tablete){            
+        @media screen and (max-width:@size-tablete){    
+            color: @red;
+
             display:block;
         }
 
@@ -105,39 +120,51 @@
 
     &-menu{
         .t-hide;
-        margin-left: 4.5em;
+        // margin-left: 4.5em;
+        margin-left: 3.65%;
+        min-width: 57%;
+
         @media screen and (max-width: @size-notebook){
-            margin-left:1.5em;
+            // margin-left:1.5em;
+            margin-left: 30px;
         }
     }
 
     &-menu_list {
    
-        .flex-row();
-        gap:2.18vw;
-        align-self: start;
+        // .flex-row();
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        // gap: 1.18vw; flex gap не поддерживает все версии сафари до конца 2020. еще рано в проду
+        // align-self: start;
         margin: 0;
         padding-left: 0%;
-        @media screen and (max-width: @size-notebook){
-            gap:1.5vw;
-        }
+        // @media screen and (max-width: @size-notebook){
+        //     gap:1.5vw;
+        // }
         
         & li {
             list-style  : none;
             justify-self: center;
             padding:0;
+            margin-right: 10px;
 
             & a {
+                display: block;
                 font-size      : 18px;
+                line-height    : 1em;
                 text-decoration: none;
                 border-bottom: none;
                 color          : inherit;
                 text-transform : uppercase;
-                font-weight: 700;
+                font-weight: 400;
                 word-break: keep-all;
                 text-align: center;
+                padding        : 10px 0;
+                border-bottom: 1px solid transparent; //чтобы не прыгало при наведении
                 
-                @media screen and (max-width: @size-notebook){
+                @media screen and (max-width: 1500px){
                     font-size      : 16px;
                 }
             }
@@ -147,10 +174,22 @@
     &-controls{
 
 
-        .grid( repeat(3,max-content   ) , auto, 1.8vw, 1vw);
-        align-items: baseline;
-        min-width: 300px ;
-        padding-top: 6px;
+        // .grid( repeat(3,max-content   ) , auto, 1.8vw, 1vw);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // align-items: baseline;
+        min-width: 22.05%;
+        margin-left: auto;
+        // min-width: 300px ;
+        // padding-top: 6px;
+
+        & a {
+            padding: 10px 0;
+            margin-right: 10px;
+            border-bottom: 1px solid transparent; //чтобы не прыгало при наведении
+        }
+
         @media screen and (max-width: 1100px){
             .flex-row;
             gap: 2.2vw;
@@ -199,12 +238,13 @@
     &_phone {
         font-weight: 700;
         .f-size(16, 24, 1366, 1920);
+        line-height: 1em;
         text-decoration: none;
         color: black;
-        margin-left: 1.7em;
+        // margin-left: 1.7em;
         
         @media screen and (max-width: @size-notebook){
-            margin-left: 1.5em; 
+            // margin-left: 1.5em; 
         }
 
         @media screen and (max-width: @size-mobile){
@@ -245,7 +285,7 @@
         animation: fading_in 0.5s ease-in ;
 
         & .header-menu {
-            display: flex!important;
+            // display: flex!important;
             width: 100%;
             flex-direction: column;
             justify-content: center;

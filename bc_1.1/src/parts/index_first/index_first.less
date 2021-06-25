@@ -155,7 +155,10 @@
         }
         
         & .card-img{
-            .bg-contain('./img/svg/hexagon-empty-white.svg');
+            // .bg-contain('./img/svg/hexagon-empty-white.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
             
             @media screen and(max-width: @size-notebook){
                 height: 86px;
@@ -164,6 +167,22 @@
                 color: @white;
             }
         }
+
+        & .card-img--bucket {
+            background-image: url('./img/svg/buck.svg');
+        }
+
+        & .card-img--parking {
+            background-image: url('./img/svg/park.svg');
+        }
+
+        & .card-img--taxometr {
+            background-image: url('./img/svg/tax.svg');
+        }
+
+        // & .card-img--parking {
+        //     background-image: url();
+        // }
         
         & .card-text{
             max-width: 276px;
