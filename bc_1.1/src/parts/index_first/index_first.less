@@ -24,7 +24,7 @@
     
     justify-content: flex-end;
 
-  @media screen and (max-width:1000px){
+  @media screen and (max-width:@size-mobile){
     justify-content: center;
     align-items: center;
     gap:20px;
@@ -40,20 +40,16 @@
     }
     
     & &-center{
-         position: absolute;
-         .adaptive-size(260,355,1366, 1920);
-         top:var(--return);
-         width:max-content;
+       position: relative;
+
+      .top-super(0,0,-10vw,-10vw);
+      width:max-content;
          
-         
-         @media screen and (max-width:@size-tablete){
-             top: 225px;
-            
-         }
+
          
          @media screen and (max-width:@size-mobile ){
             display: flex;
-            top: 166px;
+
             flex-direction: column;
             justify-content: center;
         }
@@ -61,19 +57,16 @@
          
          
          &-title{
-             .f-size(46,50,1366,1920);
+
+           .font-size-super(28,36,46,50, "super");
              font-weight:700;
-            
             text-transform: uppercase;
             margin-bottom: .7em;
             line-height: 1.2em;
             
-            @media screen and (max-width:@size-tablete){
-                font-size: 36px;
-            }
+
             
             @media screen and (max-width:@size-mobile ){
-                font-size: 28px;
                 text-align: center;
                 line-height: 1.4em;
                 margin-bottom: 23px;
@@ -99,7 +92,7 @@
             
             @media screen and (max-width:@size-mobile ){
                 
-                max-width:71vw;
+                max-width:270px;
                 width:100%;
                 justify-self: center;
             }
@@ -156,9 +149,10 @@
         
         & .card-img{
             // .bg-contain('./img/svg/hexagon-empty-white.svg');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
+            //background-position: center;
+            //background-repeat: no-repeat;
+            //background-size: contain;
+          background: none;
             
             @media screen and(max-width: @size-notebook){
                 height: 86px;
