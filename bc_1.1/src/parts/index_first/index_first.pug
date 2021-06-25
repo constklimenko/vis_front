@@ -5,8 +5,8 @@ mixin elem_tab(text, modifier)
         .card-text=text
 
 
-section.index_first
-    .index_first-bg
+section.index_first(style="background-image: url('./img/index_head.jpg')")
+    //- .index_first-bg
     .index_first-center
         .index_first-center-title Деловой квартал <br> в центре Москвы
         button.info-btn  Арендовать офис
@@ -14,6 +14,7 @@ section.index_first
         +elem_tab('Услуги клининга (уборки) в арендуемом помещении', 'bucket')
         +elem_tab('Круглосуточная наземная парковка на охраняемой территории', 'parking')
         +elem_tab('Гостевая парковка с оплатой на почасовой основе', 'taxometr')
+        .index_first-tabs_arrow
         //- a.elem_tabs-card.index_first-tabs-card
         //-     .card-img
         //-         .bucket 

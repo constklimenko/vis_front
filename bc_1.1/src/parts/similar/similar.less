@@ -1,37 +1,64 @@
+.container {
+  max-width: 1720px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    padding: 0 25px;
+  }
+
+  @media (min-width: 1500px) {
+    padding: 0 35px;
+  }
+
+  @media (min-width: 1920px) {
+    padding: 0;
+  }
+}
+
 .similar {
-  .padding-container(1925px, 1726px);
+  // .padding-container(1925px, 1726px);
   position     : relative;
   margin-bottom: @section-gap;
-  .flex-col;
+  // .flex-col; флексы тут не нужны
 
   &-title {
     font-size     : 20px;
+    font-weight: 700;
     margin-bottom : 24px;
     text-transform: uppercase;
 
+    @media (min-width: 1024px) {
+      font-size: 30px;
+    }
+
+    @media (min-width: 1500px) {
+      font-size: 36px;
+    }
   }
 
   &-row {
     .flex-row;
-    .adaptive-size(21, 80, 1024, 1926);
-    gap            : var(--return);
-    justify-content: space-between;
+    // .adaptive-size(21, 80, 1024, 1926);
+    // gap            : var(--return);
+    justify-content: flex-start;
     overflow     : hidden;
-    height       : 554px;
+    height: 450px;
+    margin: 0 -10px;
 
-    @media screen and (min-width: 1880px) {
-      height: 660px;
+    @media (min-width: 1500px) {
+      justify-content: space-between;
+      height       : 540px;
     }
 
-    @media screen and (min-width: 1926px) {
-      gap: 80px;
-    }
+    // @media screen and (min-width: 1926px) {
+    //   gap: 80px;
+    // }
 
-    @media screen and (max-width: 1024px) {
-      gap: 21px;
-    }
-
-
+    // @media screen and (max-width: 1024px) {
+    //   gap: 21px;
+    // }
   }
 
 
@@ -40,10 +67,16 @@
 
 .row_card {
   position: relative;
-  .adaptive-size(310, 370, 1024, 1426);
-  width    : var(--return);
-  max-width: 370px;
+  // .adaptive-size(310, 370, 1024, 1426);
+  // width    : var(--return);
+  // max-width: 370px;
+  // min-width: 310px;
   min-width: 310px;
+  flex-grow: 1;
+
+  @media (min-width: 1500px) {
+    min-width: 370px;
+  }
 
   height     : 540px;
   font-weight: bold;
@@ -51,8 +84,14 @@
   .flex-col !important;
   justify-content: space-between;
 
+  margin: 10px;
+
   @media screen and (max-width: @size-mobile) {
     min-width: 90vw;
+  }
+
+  @media (max-width: 1500px) {
+    height: 450px;
   }
 
 
@@ -63,7 +102,7 @@
     left    : 0;
     bottom  : 0;
     z-index : -1;
-    filter  : brightness(0.3);
+    filter  : brightness(0.7);
   }
 
   &-title {
@@ -102,7 +141,7 @@
   }
 
   &-bottom {
-    height-min: 25%;
+    // height-min: 25%; <<не работает
     .flex-col;
     align-items    : center;
     justify-content: space-between;
