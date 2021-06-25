@@ -2256,7 +2256,6 @@ h2 {
   width: 38.9vw;
   min-height: 22vw;
   max-width: 100vw;
-  overflow-x: scroll;
   padding: 80px;
   padding-top: 84px;
   z-index: 12;
