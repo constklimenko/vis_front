@@ -1,23 +1,23 @@
 mixin history(date, title, text, img_url)
     .history-grid-date=date
-    .history-grid-row
-        .history-grid-container
+    .history-grid-row.history-grid-row--reverse
+        .history-grid-container.history-grid-left_line
             .history-grid-info
                 .title=title
                 .text=text
-        .history-grid-container.history-grid-left_line
+        .history-grid-container
             .img(style = attributes.style)
 
 
 mixin history-reverse(date, title, text, img_url)
     .history-grid-date=date
-    .history-grid-row.history-grid-row--reverse
-        .history-grid-container
-            .img(style = attributes.style)
+    .history-grid-row
         .history-grid-container.history-grid-left_line
             .history-grid-info
                 .title=title
-                .text=text   
+                .text=text
+        .history-grid-container
+            .img(style = attributes.style)
 
 
 .history 

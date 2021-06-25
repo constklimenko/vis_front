@@ -7,9 +7,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
 ?>
-
-
-
+</div>
 <footer class="footer">
     <div class="footer-logo"></div>
 
@@ -35,7 +33,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
         <div class="footer-text">Москва, ул. Краснопролетарская, 16</div>
 
         <div class="footer-text "><? $APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/inc/footer/copyright.php'); ?></div>
-    <div class="t-show"></div>
+    <div class="t-show"><a download="" class="footer-download" href=" " >СКАЧАТЬ ПРЕЗЕНТАЦИЮ</a>  </div>
         <div class="footer-copyright"><? $APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/inc/footer/made-by.php'); ?>
         </div>
 

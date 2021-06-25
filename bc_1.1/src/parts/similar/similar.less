@@ -1,3 +1,4 @@
+
 .container {
   max-width: 1720px;
   width: 100%;
@@ -17,11 +18,14 @@
   }
 }
 
+
 .similar {
   // .padding-container(1925px, 1726px);
   position     : relative;
   margin-bottom: @section-gap;
+
   // .flex-col; флексы тут не нужны
+
 
   &-title {
     font-size     : 20px;
@@ -40,6 +44,7 @@
 
   &-row {
     .flex-row;
+
     // .adaptive-size(21, 80, 1024, 1926);
     // gap            : var(--return);
     justify-content: flex-start;
@@ -50,6 +55,7 @@
     @media (min-width: 1500px) {
       justify-content: space-between;
       height       : 540px;
+
     }
 
     // @media screen and (min-width: 1926px) {
