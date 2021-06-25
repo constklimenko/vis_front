@@ -13,17 +13,18 @@ html(lang="en")
         include parts/common_headings.pug        
         //- include parts/pixel_glass.html        
         title Главная
-    body 
-        include parts/header/header
-        include parts/index_first/index_first
-        include parts/index_about/index_about
-        include parts/index_slider/index_slider
-        include parts/similar/index_similar
-        include parts/history/history
-        
-        include parts/index_news/index_news
-        include parts/index_form/index_form
-        include parts/footer/footer
+    body
+        .content-wrapper
+            include parts/header/header
+            include parts/index_first/index_first
+            include parts/index_about/index_about
+            include parts/index_slider/index_slider
+            include parts/similar/index_similar
+            include parts/history/history
+
+            include parts/index_news/index_news
+            include parts/index_form/index_form
+            include parts/footer/footer
         
 
         script( src="../../js/jquery-1.11.2.min.js" )

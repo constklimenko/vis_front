@@ -52,6 +52,25 @@ body {
   text-align: left;
   background-color: white;
 }
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.content-wrapper {
+  flex: 1 0 auto;
+}
+.footer {
+  flex: 0 0 auto;
+}
 @-webkit-keyframes index_arrow {
   from {
     transform: translateY(0%);
@@ -1167,7 +1186,6 @@ h2 {
   }
 }
 .elem_tabs-card .card-img {
-  background: url('./img/svg/hexagon-empty.svg') no-repeat center / contain;
   width: 188px;
   height: 102px;
   display: flex;
@@ -1193,18 +1211,18 @@ h2 {
   height: 0.9em;
   width: 0.9em;
   background-color: currentColor;
-  -webkit-mask-image: url('./img/svg/bucket.svg');
-          mask-image: url('./img/svg/bucket.svg');
+  -webkit-mask-image: url('./img/svg/buck.svg');
+          mask-image: url('./img/svg/buck.svg');
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-size: contain;
           mask-size: contain;
-  height: 60%;
-  width: 30%;
+  height: 100%;
+  width: 100%;
 }
-@supports not ((-webkit-mask-image: url(./img/svg/bucket.svg)) or (mask-image: url(./img/svg/bucket.svg))) {
+@supports not ((-webkit-mask-image: url(./img/svg/buck.svg)) or (mask-image: url(./img/svg/buck.svg))) {
   .elem_tabs-card .card-img .bucket {
-    background: url('./img/svg/bucket.svg') no-repeat / contain;
+    background: url('./img/svg/buck.svg') no-repeat / contain;
   }
 }
 .elem_tabs-card .card-img .taxometr {
@@ -1212,18 +1230,18 @@ h2 {
   height: 0.9em;
   width: 0.9em;
   background-color: currentColor;
-  -webkit-mask-image: url('./img/svg/taxometr.svg');
-          mask-image: url('./img/svg/taxometr.svg');
+  -webkit-mask-image: url('./img/svg/tax.svg');
+          mask-image: url('./img/svg/tax.svg');
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-size: contain;
           mask-size: contain;
-  height: 60%;
-  width: 25%;
+  height: 100%;
+  width: 100%;
 }
-@supports not ((-webkit-mask-image: url(./img/svg/taxometr.svg)) or (mask-image: url(./img/svg/taxometr.svg))) {
+@supports not ((-webkit-mask-image: url(./img/svg/tax.svg)) or (mask-image: url(./img/svg/tax.svg))) {
   .elem_tabs-card .card-img .taxometr {
-    background: url('./img/svg/taxometr.svg') no-repeat / contain;
+    background: url('./img/svg/tax.svg') no-repeat / contain;
   }
 }
 .elem_tabs-card .card-img .parking {
@@ -1231,18 +1249,18 @@ h2 {
   height: 0.9em;
   width: 0.9em;
   background-color: currentColor;
-  -webkit-mask-image: url('./img/svg/parking.svg');
-          mask-image: url('./img/svg/parking.svg');
+  -webkit-mask-image: url('./img/svg/park.svg');
+          mask-image: url('./img/svg/park.svg');
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-size: contain;
           mask-size: contain;
-  height: 60%;
-  width: 35%;
+  height: 100%;
+  width: 100%;
 }
-@supports not ((-webkit-mask-image: url(./img/svg/parking.svg)) or (mask-image: url(./img/svg/parking.svg))) {
+@supports not ((-webkit-mask-image: url(./img/svg/park.svg)) or (mask-image: url(./img/svg/park.svg))) {
   .elem_tabs-card .card-img .parking {
-    background: url('./img/svg/parking.svg') no-repeat / contain;
+    background: url('./img/svg/park.svg') no-repeat / contain;
   }
 }
 .elem_tabs-card .card-img div {
@@ -1266,14 +1284,18 @@ h2 {
   --container-width: calc(100vw - var(--padding-x));
   position: relative;
   margin-bottom: var(--section-gap);
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  height: 594px;
+  overflow: hidden;
 }
 @media (min-width: 1925px) {
   .similar {
     --container-width: 1726px;
     padding: 36px calc((100vw - 1726px)/2);
+  }
+}
+@media screen and (min-width: 1880px) {
+  .similar {
+    height: 700px;
   }
 }
 .similar-title {
@@ -1288,13 +1310,6 @@ h2 {
   --return: calc(  0.0654102  * 100vw +  -45.98004435px  );
   gap: var(--return);
   justify-content: space-between;
-  overflow: hidden;
-  height: 554px;
-}
-@media screen and (min-width: 1880px) {
-  .similar-row {
-    height: 660px;
-  }
 }
 @media screen and (min-width: 1926px) {
   .similar-row {
@@ -2695,6 +2710,9 @@ h2 {
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+}
+.history-grid-row--reverse {
+  flex-direction: row-reverse;
 }
 @media screen and (max-width: 1000px) {
   .history-grid-row {
