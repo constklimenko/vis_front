@@ -116,6 +116,9 @@
         &-text {
             .font-size-super(18px,18px,18px,20px);
             line-height: 1.5em;
+          @media screen and (max-width: @size-tablete){
+            text-align: center;
+          }
             
         }
     }
@@ -146,7 +149,8 @@
         @media screen and (max-width: @size-mobile){
             .flex-col;
             align-items: flex-start;
-            
+          padding-right: 6.2vw;
+          padding-left:39px;
             
         }
         

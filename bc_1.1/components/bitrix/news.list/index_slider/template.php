@@ -39,8 +39,9 @@ $this->setFrameMode(true);
             <? } ?>
 
         <div class="index_slider-right">
-            <div class="index_slider-right-title"><?=$arParams['SECTION_TITLE'];?></div>
 
+            <div class="index_slider-right-title"><?=$arParams['SECTION_TITLE'];?></div>
+            <div class="index_slider-right-inner">
             <? foreach ($arResult['ITEMS'] as $key=>$item): ?>
 
                 <div class="index_slider-right-link"
@@ -50,7 +51,7 @@ $this->setFrameMode(true);
 
             <? endforeach; ?>
         </div>
-
+        </div>
     <? endif; ?>
 </div>
 

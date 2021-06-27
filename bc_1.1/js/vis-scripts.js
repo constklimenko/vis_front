@@ -37,7 +37,7 @@ $(document).ready(function() {
     } else {
 
 
-        //$(".fbs").fancybox();
+
 
         $(".fbs")
             .attr('rel', 'gallery')
@@ -45,7 +45,7 @@ $(document).ready(function() {
                 padding: 0,
                 margin: 5,
                 infobar: true,
-                nextEffect: 'fade',
+                nextEffect: 'none',
                 prevEffect: 'none',
                 autoCenter: false,
                 helpers: {
@@ -57,7 +57,7 @@ $(document).ready(function() {
                         aspectRatio: false,
                         type: 'html',
                         width: '100%',
-                        height: '90%',
+                        height: '100%',
 
                         content: '<div class="fancybox-image" style="background-image:url(' + this.href + '); background-size: cover; background-position:50% 50%;background-repeat:no-repeat;height:100%;width:100%;" /> </div>'
                     });
