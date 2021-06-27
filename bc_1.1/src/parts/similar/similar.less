@@ -47,8 +47,8 @@
     // .adaptive-size(21, 80, 1024, 1926);
     // gap            : var(--return);
     justify-content: flex-start;
-    overflow     : hidden;
-    height: 450px;
+    
+    //height: 450px;
     margin: 0 -10px;
 
     @media (min-width: 1500px) {
@@ -61,8 +61,9 @@
     //   gap: 80px;
     // }
 
-    // @media screen and (max-width: 1024px) {
-    //   gap: 21px;
+    // @media screen and (max-width: @size-mobile) {
+    //   overflow-x : hidden;
+    //  // height: auto;
     // }
   }
 
@@ -114,6 +115,10 @@
     .flex-row;
     padding        : 28px;
     justify-content: space-between;
+    
+    @media screen and (max-width: @size-mobile){
+      padding: 10px;
+    }
 
     &-item {
       .flex-row;

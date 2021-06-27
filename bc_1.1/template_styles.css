@@ -1324,8 +1324,6 @@ h2 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  overflow: hidden;
-  height: 450px;
   margin: 0 -10px;
 }
 @media (min-width: 1500px) {
@@ -1377,6 +1375,11 @@ h2 {
   flex-wrap: wrap;
   padding: 28px;
   justify-content: space-between;
+}
+@media screen and (max-width: 800px) {
+  .row_card-title {
+    padding: 10px;
+  }
 }
 .row_card-title-item {
   display: flex;
@@ -1657,13 +1660,13 @@ h2 {
   color: white;
 }
 .index_first-tabs-card.elem_tabs-card .card-img--bucket {
-  background-image: url('./img/svg/buck.svg');
+  background: url('./img/svg/buck.svg') no-repeat center / contain;
 }
 .index_first-tabs-card.elem_tabs-card .card-img--parking {
-  background-image: url('./img/svg/park.svg');
+  background: url('./img/svg/park.svg') no-repeat center / contain;
 }
 .index_first-tabs-card.elem_tabs-card .card-img--taxometr {
-  background-image: url('./img/svg/tax.svg');
+  background: url('./img/svg/tax.svg') no-repeat center / contain;
 }
 .index_first-tabs-card.elem_tabs-card .card-text {
   max-width: 276px;
@@ -1990,24 +1993,40 @@ h2 {
   grid-area: d;
 }
 .index_about-right-card .text b {
-  font-size: calc(  0.10085227  * 100vw +  -7.27272727px  );
+  font-size: calc(  0  * 100vw +  96px  );
   line-height: 1em;
   color: #0055FF;
 }
-@media screen and (max-width: 320px) {
-  .index_about-right-card .text b {
-    font-size: 25px;
-  }
-}
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1920px) {
   .index_about-right-card .text b {
     font-size: 96px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .index_about-right-card .text b {
+    font-size: calc(  0.05546995  * 100vw +  39.19876733px  );
+  }
+}
+@media screen and (max-width: 375px) {
+  .index_about-right-card .text b {
+    font-size: calc(  0.36363636  * 100vw +  -76.36363636px  );
+  }
+}
+@media screen and (max-width: 320px) {
+  .index_about-right-card .text b {
+    font-size: 40px;
   }
 }
 .index_about-right-card .text-big {
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 700;
+}
+@media screen and (max-width: 800px) {
+  .index_about-right-card .text-big {
+    font-size: 16px;
+    font-weight: 400;
+  }
 }
 .index_slider {
   position: relative;
