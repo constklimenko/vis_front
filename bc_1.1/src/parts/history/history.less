@@ -4,6 +4,12 @@
     margin-bottom: @section-gap;
     background-color: #EDEFF1;
     overflow: hidden;
+
+    &__bg-text {
+        color: #e4e8ec;
+        top: 195px;
+        left: 208px;
+    }
     
     
     
@@ -21,13 +27,17 @@
         
     }
     
-    &-title{
-        position: relative;
-        margin-bottom: 20px;
-        font-size: 36px;
+    // &-title{
+    //     position: relative;
+    //     margin-bottom: 20px;
+    //     font-size: 36px;
 
+    //     text-align: center;
+    //     text-transform: uppercase;
+    // }
+    &__title {
         text-align: center;
-        text-transform: uppercase;
+        margin-bottom: 20px;
     }
     
     &-subtitle{
@@ -71,21 +81,27 @@
         }
         
         
-        
+        &__btn {
+            margin-top: 30px;
+
+            @media (min-width: 1200px) {
+                margin-top: 40px;
+            }
+        }
         
 
         
-        & .info-btn{
-            grid-column: span 2;
-            margin-top: 56px;
-            .flex-col;
+        // & .info-btn{
+        //     grid-column: span 2;
+        //     margin-top: 56px;
+        //     .flex-col;
             
-            justify-content: center;
+        //     justify-content: center;
             
-            @media screen and(max-width: 1000px){
-                width: 100%;
-            }
-        }
+        //     @media screen and(max-width: 1000px){
+        //         width: 100%;
+        //     }
+        // }
         
         &-top{
             grid-column: span 2;

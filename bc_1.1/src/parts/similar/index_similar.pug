@@ -20,9 +20,12 @@ mixin card()
 
 .similar.index_similar
     .container
-        .similar-title Свободные офисы
+        .bg-text.similar__bg-text Свободные офисы
+        //- .similar-title Свободные офисы
+        .title.similar__title Свободные офисы
         .similar-row
             +card()
             +card()
             +card()
             +card()
+        a.btn.similar__btn.btn--red(href="#") Все офисы

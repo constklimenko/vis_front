@@ -1,5 +1,6 @@
 .index_form
-    .index_form-bg_text заявка
+    //- .index_form-bg_text заявка
+    .bg-text.index_form__bg-text заявка
     .index_form-left
         .index_form-col
             .title Контакты
@@ -10,8 +11,10 @@
             .title Офис
             .text 127473, г. Москва, ул. Красноснопролетарская, д. 16
     form.index_form-right
-        h2 Оставить заявку
+        //- h2 Оставить заявку
+        h2.title Оставить заявку
         input.input
         input.input
         input.input
-        a.info-btn Отправить
+        //- a.info-btn Отправить
+        button.btn.index_form-right__btn.btn--red(type="submit") Отправить

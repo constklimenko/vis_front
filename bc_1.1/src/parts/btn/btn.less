@@ -1,0 +1,34 @@
+.btn {
+  border: none;
+}
+
+.btn--red {
+  display: inline-block;
+  min-width: 270px;
+  font-size: 12px;
+  line-height: 1.22em;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  background-color: @red;
+  padding: 10px 15px;
+
+  &--narrow {
+    min-width: 212px;
+  }
+
+  &:hover {
+    background-color: #D33327;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  @media (min-width: 1500px) {
+    min-width: 350px;
+    font-size: 18px;
+  }
+}

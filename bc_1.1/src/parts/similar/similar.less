@@ -1,40 +1,64 @@
-.container {
-  max-width: 1720px;
-  width: 100%;
-  padding: 0 15px;
-  margin: 0 auto;
+.similar__bg-text {
+  top: 70px;
 
-  @media (min-width: 768px) {
-    padding: 0 25px;
+  @media (min-width: 1200px) {
+    top: 145px;
   }
 
   @media (min-width: 1500px) {
-    padding: 0 35px;
+    top: 105px;
   }
 
-  @media (min-width: 1920px) {
-    padding: 0;
+  @media (min-width: 1900px) {
+    left: -80px;
+  }
+}
+
+.similar__btn {
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 767px) {
+    display: none !important;
   }
 }
 
 .similar {
   // .padding-container(1925px, 1726px);
-  position     : relative;
   margin-bottom: @section-gap;
   // .flex-col; флексы тут не нужны
+  overflow-x: hidden;
 
-  &-title {
-    font-size     : 20px;
-    font-weight: 700;
-    margin-bottom : 24px;
-    text-transform: uppercase;
+  & .container {
+    position     : relative;
+    padding-top: 40px;
+    // text-align: center;
+    display: flex;
+    flex-wrap: wrap;
 
-    @media (min-width: 1024px) {
-      font-size: 30px;
+    @media (min-width: 767px) {
+      padding-top: 150px;
     }
 
-    @media (min-width: 1500px) {
-      font-size: 36px;
+    @media (min-width: 1200px) {
+      padding-top: 240px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    margin: 0 auto;
+    margin-bottom: 25px;
+
+    @media (min-width: 768px) {
+      margin-bottom : 50px;
+    }
+
+    @media (min-width: 1200px) {
+      margin-left: 0;
     }
   }
 
@@ -45,6 +69,7 @@
     justify-content: flex-start;
     overflow     : hidden;
     height: 450px;
+    width: 100%;
     margin: 0 -10px;
 
     @media (min-width: 1500px) {
@@ -75,7 +100,7 @@
   flex-grow: 1;
 
   @media (min-width: 1500px) {
-    min-width: 370px;
+    max-width: 370px;
   }
 
   height     : 540px;
@@ -84,7 +109,7 @@
   .flex-col !important;
   justify-content: space-between;
 
-  margin: 10px;
+  margin: 0 10px;
 
   @media screen and (max-width: @size-mobile) {
     min-width: 90vw;
