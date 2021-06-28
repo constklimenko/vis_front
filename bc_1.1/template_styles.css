@@ -2133,22 +2133,22 @@ h2 {
   height: 758px;
   width: 66.666vw;
 }
-@media screen and (min-height: 1920px) {
+@media screen and (min-width: 1920px) {
   .index_slider-left .slide {
     height: 758px;
   }
 }
-@media screen and (max-height: 1366px) {
+@media screen and (max-width: 1366px) {
   .index_slider-left .slide {
     height: 760px;
   }
 }
-@media screen and (max-height: 1024px) {
+@media screen and (max-width: 1024px) {
   .index_slider-left .slide {
     height: 760px;
   }
 }
-@media screen and (max-height: 320px) {
+@media screen and (max-width: 320px) {
   .index_slider-left .slide {
     height: 558px;
   }
@@ -2364,17 +2364,17 @@ h2 {
     min-height: 22vw;
   }
 }
-@media screen and (max-height: 1366px) {
+@media screen and (max-width: 1366px) {
   .index_slider-right {
     min-height: 426px;
   }
 }
-@media screen and (max-height: 1024px) {
+@media screen and (max-width: 1024px) {
   .index_slider-right {
     min-height: 426px;
   }
 }
-@media screen and (max-height: 320px) {
+@media screen and (max-width: 320px) {
   .index_slider-right {
     min-height: 0;
   }
@@ -3227,6 +3227,101 @@ h2 {
 }
 .facts--reverse .facts-img {
   width: 29.5vw;
+}
+.infrastructure {
+  position: relative;
+  padding: 207px 5vw 65px 5vw;
+  width: 100%;
+  --padding-x: calc(5vw + 5vw);
+  --container-width: calc(100vw - var(--padding-x));
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-wrap: nowrap;
+}
+@media (min-width: 1925px) {
+  .infrastructure {
+    --container-width: 1726px;
+    padding: 36px calc((100vw - 1726px)/2);
+  }
+}
+.infrastructure-bg_text {
+  font-size: calc(  0.18050542  * 100vw +  -146.57039711px  );
+  position: absolute;
+  top: 2vw;
+  left: 1vw;
+  font-weight: bold;
+  line-height: 245px;
+  color: #F6F7F8;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 1366px) {
+  .infrastructure-bg_text {
+    font-size: 100px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .infrastructure-bg_text {
+    font-size: 200px;
+  }
+}
+.infrastructure-info {
+  position: relative;
+  width: 44%;
+  margin-left: 12%;
+}
+.infrastructure-info-title {
+  margin-bottom: 30px;
+}
+.infrastructure-info-text {
+  font-size: 20px;
+}
+.infrastructure-info p {
+  margin-bottom: 0.5em;
+  max-width: 578px;
+}
+.infrastructure-info ul {
+  padding-left: 1em;
+  margin-bottom: 0.5em;
+  max-width: 578px;
+}
+.infrastructure-labels {
+  width: 44%;
+  position: relative;
+}
+.infrastructure-labels-slide {
+  display: inline-grid !important;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  min-height: 390px;
+  height: 100%;
+}
+@media screen and (min-height: 1920px) {
+  .infrastructure-labels-slide {
+    min-height: 390px;
+  }
+}
+@media screen and (max-width: 1366px) {
+  .infrastructure-labels-slide {
+    min-height: 318px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .infrastructure-labels-slide {
+    min-height: 318px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .infrastructure-labels-slide {
+    min-height: 175px;
+  }
+}
+.infrastructure-labels-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 30px;
 }
 /**
  * MUI Form Component

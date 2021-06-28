@@ -7,10 +7,10 @@
     
     height: ~"calc( " @k ~" * 100vw + " @c ~" )" ;
     
-    @media screen and (max-height: @viewport_min * 1px ) {
+    @media screen and (max-width: @viewport_min * 1px ) {
       height: @value_min * 1px;
     }
-    @media screen and (min-height: @viewport_max * 1px - 1px) {
+    @media screen and (min-width: @viewport_max * 1px - 1px) {
       height: @value_max * 1px;
     }
     
@@ -47,19 +47,19 @@
     height: ~"calc( " @k ~" * 100vw + " @c ~" )" ;
     
     
-    @media screen and (min-height: @viewport_max * 1px) {
+    @media screen and (min-width: @viewport_max * 1px) {
       height: @value_max * 1px;
     }
     
-    @media screen and (max-height: @viewport_notebook * 1px) {
+    @media screen and (max-width: @viewport_notebook * 1px) {
       height:  ~"calc( " @k1 ~" * 100vw + " @c1 ~" )" ;
     }
     
-    @media screen and (max-height: @viewport_tablete * 1px) {
+    @media screen and (max-width: @viewport_tablete * 1px) {
       height:  ~"calc( " @k2 ~" * 100vw + " @c2 ~" )" ;
     }
     
-    @media screen and (max-height: @viewport_mobile * 1px) {
+    @media screen and (max-width: @viewport_mobile * 1px) {
       height: @value_mobile * 1px;
     }
   
@@ -70,19 +70,19 @@
     
     height: @value_max;
     
-    @media screen and (min-height: @viewport_max * 1px) {
+    @media screen and (min-width: @viewport_max * 1px) {
       height: @value_max;
     }
     
-    @media screen and (max-height: @viewport_notebook * 1px) {
+    @media screen and (max-width: @viewport_notebook * 1px) {
       height:  @value_notebook;
     }
     
-    @media screen and (max-height: @viewport_tablete * 1px) {
+    @media screen and (max-width: @viewport_tablete * 1px) {
       height:  @value_tablete;
     }
     
-    @media screen and (max-height: @viewport_mobile * 1px) {
+    @media screen and (max-width: @viewport_mobile * 1px) {
       height: @value_mobile ;
     }
     
@@ -99,10 +99,10 @@
     
     max-height: ~"calc( " @k ~" * 100vw + " @c ~" )" ;
     
-    @media screen and (max-height: @viewport_min * 1px) {
+    @media screen and (max-width: @viewport_min * 1px) {
       max-height: @value_min * 1px;
     }
-    @media screen and (min-height: @viewport_max * 1px) {
+    @media screen and (min-width: @viewport_max * 1px) {
       max-height: @value_max * 1px;
     }
     
@@ -139,7 +139,7 @@
     max-height: ~"calc( " @k ~" * 100vw + " @c ~" )" ;
     
     
-    @media screen and (min-height: @viewport_max * 1px) {
+    @media screen and (min-width: @viewport_max * 1px) {
       max-height: @value_max * 1px;
     }
     
@@ -162,7 +162,7 @@
     
     max-height: @value_max;
     
-    @media screen and (min-height: @viewport_max * 1px) {
+    @media screen and (min-width: @viewport_max * 1px) {
       max-height: @value_max;
     }
     
@@ -191,9 +191,9 @@
     min-height: ~"calc( " @k ~" * 100vw + " @c ~" )" ;
     
     @media screen and (max-height: @viewport_min * 1px) {
-      min-height: @value_min * 1px;
+      min-width: @value_min * 1px;
     }
-    @media screen and (min-height: @viewport_max * 1px) {
+    @media screen and (min-width: @viewport_max * 1px) {
       min-height: @value_max * 1px;
     }
     
@@ -234,15 +234,15 @@
       min-height: @value_max * 1px;
     }
     
-    @media screen and (max-height: @viewport_notebook * 1px) {
+    @media screen and (max-width: @viewport_notebook * 1px) {
       min-height:  ~"calc( " @k1 ~" * 100vw + " @c1 ~" )" ;
     }
     
-    @media screen and (max-height: @viewport_tablete * 1px) {
+    @media screen and (max-width: @viewport_tablete * 1px) {
       min-height:  ~"calc( " @k2 ~" * 100vw + " @c2 ~" )" ;
     }
     
-    @media screen and (max-height: @viewport_mobile * 1px) {
+    @media screen and (max-width: @viewport_mobile * 1px) {
       min-height: @value_mobile * 1px;
     }
   
@@ -257,15 +257,15 @@
       min-height: @value_max;
     }
     
-    @media screen and (max-height: @viewport_notebook * 1px) {
+    @media screen and (max-width: @viewport_notebook * 1px) {
       min-height:  @value_notebook;
     }
     
-    @media screen and (max-height: @viewport_tablete * 1px) {
+    @media screen and (max-width: @viewport_tablete * 1px) {
       min-height:  @value_tablete;
     }
     
-    @media screen and (max-height: @viewport_mobile * 1px) {
+    @media screen and (max-width: @viewport_mobile * 1px) {
       min-height: @value_mobile ;
     }
     

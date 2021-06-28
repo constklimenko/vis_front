@@ -1,9 +1,70 @@
 .infrastructure{
     
     position: relative;
-    .padding-container(1925px, 1726px, 77px, 5vw, 65px, 5vw);
+    .padding-container(1925px, 1726px, 207px, 5vw, 65px, 5vw);
+    .flex-row;
+    flex-wrap: nowrap;
     
     
+    &-bg_text {
+        .f-size( 100, 200, 1366, 1920 );
+        position:absolute;
+        top:2vw;
+        left:1vw;
+        font-weight: bold;        
+        line-height: 245px;
+        color      : #F6F7F8;
+        white-space: nowrap;
+        text-transform: uppercase;        
+    }
+    
+    &-info{
+        position: relative;
+        width: 44%;
+        margin-left: 12%;
+        
+        &-title{
+           margin-bottom: 30px; 
+        }
+        
+        &-text{
+            font-size: 20px;
+        }
+        
+        
+        & p{
+            margin-bottom: .5em;
+            max-width: 578px;
+          }
+        
+          & ul{
+            padding-left: 1em;
+            margin-bottom: .5em;
+            max-width: 578px;
+          }
+        
+    }
+    
+    &-labels{
+        width: 44%;
+        position: relative;
+        
+        &-slide{
+            display: inline-grid!important;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            .min-height-size-super(175px, 318px,318px,390px);
+            height: 100%;
+            
+        }
+        
+        &-img{
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin: 30px;            
+        }
+    }
     
     
 }

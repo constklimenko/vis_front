@@ -1,33 +1,34 @@
-mixin infractructure-labels-slide()
-    .infractructure-labels-slide
-                .infractructure-labels-img 
-                .infractructure-labels-img 
-                .infractructure-labels-img 
-                .infractructure-labels-img 
-                .infractructure-labels-img 
-                .infractructure-labels-img 
-                .infractructure-labels-img 
-                .infractructure-labels-img 
-                .infractructure-labels-img
+mixin infrastructure-labels-slide()
+    .infrastructure-labels-slide
+                .infrastructure-labels-img(style="background-image:url('./img/labels/reima.svg')")
+                .infrastructure-labels-img(style="background-image:url('./img/labels/blueberry.svg')")
+                .infrastructure-labels-img(style="background-image:url('./img/labels/apteka.svg')")
+                .infrastructure-labels-img(style="background-image:url('./img/labels/pizzahut.svg')")
+                .infrastructure-labels-img(style="background-image:url('./img/labels/brothers.svg')")
+                .infrastructure-labels-img(style="background-image:url('./img/labels/boxer.svg')") 
+                .infrastructure-labels-img(style="background-image:url('./img/labels/elcafe.svg')") 
+                .infrastructure-labels-img(style="background-image:url('./img/labels/stetching.svg')") 
+                .infrastructure-labels-img(style="background-image:url('./img/labels/lingva.svg')")
 
 
-.infractructure 
-    .infractructure-bg_text  ИНФРАСТРУКТУРА
-    .infractructure-info 
-        .infractructure-info-title ИНФРАСТРУКТУРА
-        .infractructure-info-text 
+.infrastructure 
+    .infrastructure-bg_text  ИНФРАСТРУКТУРА
+    .infrastructure-info 
+        h2.infrastructure-info-title ИНФРАСТРУКТУРА
+        .infrastructure-info-text 
             p На территории офисного центра:
-            ul 
-                
+            ul                 
                 li Гостевой паркинг
                 li Корпоративная столовая с демократичными ценами
                 li Несколько кофеен с широким ассортиментом сладостей и закусок кафе Брусника, кулинарная лавка Братья Караваевы, Pizza Hut, ресторан аргентинской кухни Новая Арена с летней террасой супермаркет и мини-маркет, вендинг
                 li Школа танцев, спортивные студии и студия растяжки
                 li Банкоматы и платежные терминалы
                 li  Аптека, диагностический центр, улуги красоты и барбер шоп
+                
         
-    .infractructure-labels
-        .infractructure-labels-nav
-        +infractructure-labels-slide()
-        +infractructure-labels-slide()
-        +infractructure-labels-slide()
+    .infrastructure-labels
+        .infrastructure-labels-nav
+        .infrastructure-labels-slider
+            +infrastructure-labels-slide()
+            +infrastructure-labels-slide()
+            +infrastructure-labels-slide()
