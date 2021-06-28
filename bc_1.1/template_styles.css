@@ -554,7 +554,9 @@ h2 {
   max-width: 350px;
   text-align: center;
   vertical-align: middle;
+  align-content: center;
   margin: auto;
+  font-weight: 700;
 }
 @media screen and (max-width: 1240px) {
   .info-btn {
@@ -565,6 +567,10 @@ h2 {
   .info-btn {
     font-size: 18px;
   }
+}
+.info-btn a {
+  color: inherit;
+  font-weight: inherit;
 }
 .info-btn:hover {
   background-color: #D33327;
@@ -1278,30 +1284,57 @@ h2 {
     font-size: 10px;
   }
 }
-.container {
+.similar {
+  position: relative;
+  padding-top: 160px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.similar-container {
   max-width: 1720px;
   width: 100%;
   padding: 0 15px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 @media (min-width: 768px) {
-  .container {
+  .similar-container {
     padding: 0 25px;
   }
 }
 @media (min-width: 1500px) {
-  .container {
+  .similar-container {
     padding: 0 35px;
   }
 }
 @media (min-width: 1920px) {
-  .container {
+  .similar-container {
     padding: 0;
   }
 }
-.similar {
-  position: relative;
-  margin-bottom: var(--section-gap);
+.similar-bg_text {
+  font-size: calc(  0.0625  * 100vw +  80px  );
+  position: absolute;
+  top: 2vw;
+  left: 1vw;
+  font-weight: bold;
+  line-height: 245px;
+  color: #F6F7F8;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 320px) {
+  .similar-bg_text {
+    font-size: 100px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .similar-bg_text {
+    font-size: 200px;
+  }
 }
 .similar-title {
   font-size: 20px;
@@ -1331,6 +1364,9 @@ h2 {
     justify-content: space-between;
     height: 540px;
   }
+}
+.similar .info-btn {
+  margin-top: 50px;
 }
 .row_card {
   position: relative;
