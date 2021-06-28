@@ -30,7 +30,7 @@ $(document).ready(function() {
             infinite: true,
             arrows: false,
             dots: true,
-            fade: true
+            // fade: true
 
 
         });
