@@ -2066,7 +2066,6 @@ h2 {
 }
 .index_slider {
   position: relative;
-  margin-bottom: var(--section-gap);
   display: flex;
   align-content: center;
   align-items: center;
@@ -2784,7 +2783,6 @@ h2 {
   width: 100%;
   --padding-x: calc(5vw + 5vw);
   --container-width: calc(100vw - var(--padding-x));
-  margin-bottom: var(--section-gap);
   background-color: #EDEFF1;
 }
 @media (min-width: 1925px) {
@@ -2868,10 +2866,11 @@ h2 {
 }
 .history-grid .info-btn {
   grid-column: span 2;
-  margin-top: 56px;
+  margin-top: 36px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  width: 350px ;
   justify-content: center;
 }
 @media screen and (max-width: 1000px) {
