@@ -2786,7 +2786,6 @@ h2 {
   --container-width: calc(100vw - var(--padding-x));
   margin-bottom: var(--section-gap);
   background-color: #EDEFF1;
-  overflow: hidden;
 }
 @media (min-width: 1925px) {
   .history {
@@ -2923,19 +2922,35 @@ h2 {
   justify-self: center;
   font-weight: bold;
   font-size: 24px;
-  line-height: 29px;
+  line-height: 1.9em;
+  margin-bottom: 0.6em;
   text-align: center;
   text-transform: uppercase;
   height: 29px;
   color: #B6BDC3;
 }
+.history-grid-date--final::after {
+  content: ".";
+  display: block;
+  color: transparent;
+  width: 12px;
+  height: 12px;
+  background-color: #9c9c9c;
+  border-radius: 50%;
+  top: -160%;
+  left: calc(50% - 5px);
+  position: relative;
+}
 .history-grid-date.history-blue {
   color: #0055FF;
+}
+.history-grid-date--final.history-blue::after {
+  background-color: #0055FF;
 }
 .history-grid-info {
   text-align: right;
   font-size: 20px;
-  max-width: 367px;
+  max-width: 377px;
   min-height: 208px;
   align-self: center;
   justify-self: center;
@@ -2962,6 +2977,7 @@ h2 {
   padding-bottom: 40px;
   width: 50%;
   order: 1;
+  min-height: 302px;
 }
 .history-grid-container .img {
   width: 367px;
@@ -3026,15 +3042,17 @@ h2 {
   width: max-content;
   align-self: center;
   justify-self: center;
+  position: relative;
+  top: 2em;
 }
 @media screen and (max-width: 1024px) {
   .business_first .business_first-center {
-    position: relative;
     top: 0;
   }
 }
 .business_first .business_first-center-title {
   font-size: calc(  0.05833333  * 100vw +  -40px  );
+  font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 0.6em;
   line-height: 1.2em;
@@ -3098,7 +3116,6 @@ h2 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  overflow-x: hidden;
 }
 @media (min-width: 1925px) {
   .about {
@@ -3152,7 +3169,6 @@ h2 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  overflow-x: hidden;
   justify-content: space-around;
 }
 @media (min-width: 1925px) {
@@ -3164,7 +3180,7 @@ h2 {
 .facts-bg_text {
   font-size: calc(  0.0625  * 100vw +  80px  );
   position: absolute;
-  top: -0.1em;
+  top: -0.07em;
   left: 0.1em;
   font-weight: bold;
   line-height: 245px;
@@ -3181,13 +3197,6 @@ h2 {
   .facts-bg_text {
     font-size: 200px;
   }
-}
-.facts--reverse {
-  background-color: white;
-}
-.facts--reverse .facts-bg_text {
-  color: #F6F7F8;
-  left: 45%;
 }
 .facts-text {
   max-width: 592px;
@@ -3208,6 +3217,17 @@ h2 {
 .facts-img {
   width: 24vw;
   position: relative;
+}
+.facts--reverse {
+  background-color: white;
+  padding-bottom: 133px;
+}
+.facts--reverse .facts-bg_text {
+  color: #F6F7F8;
+  left: 45%;
+}
+.facts--reverse .facts-img {
+  width: 29.5vw;
 }
 /**
  * MUI Form Component
