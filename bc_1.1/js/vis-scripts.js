@@ -22,6 +22,17 @@ function toggleElemTab() {
 $(document).ready(function() {
 
 
+        $('.input_phone').mask('+7(000)000-00-00');
+    $('input[name^="form_email"]').mask("A", {
+        translation: {
+            "A": { pattern: /[\w@\-.+]/, recursive: true }
+        }
+    });
+
+    $('.index_form  input').attr("placeholder", " ");
+
+
+
 
     if (window.matchMedia("(max-width: 700px)").matches) {
         $('.similar-row').slick({
@@ -58,7 +69,6 @@ $(document).ready(function() {
                         type: 'html',
                         width: '100%',
                         height: '100%',
-
                         content: '<div class="fancybox-image" style="background-image:url(' + this.href + '); background-size: cover; background-position:50% 50%;background-repeat:no-repeat;height:100%;width:100%;" /> </div>'
                     });
                 }

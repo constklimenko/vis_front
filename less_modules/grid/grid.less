@@ -3,7 +3,9 @@
   align-content: center;
   align-items: center;
   justify-content: space-between;
-  
+  display              : -ms-grid;
+  -ms-grid-columns: @col;
+  -ms-grid-rows   : @row;
   display              : grid;
   grid-template-columns: @col;
   grid-template-rows   : @row;
@@ -11,6 +13,16 @@
   grid-column-gap      : @col-gap;
   row-gap         : @row-gap;
   column-gap      : @col-gap;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    & > div, &> p, &>a{
+      margin-bottom: @row-gap;
+      margin-right: @col-gap;
+    }
+  }
+
+
+
 
   @supports not (grid-row-gap: @row-gap){
 & > div, &> p, &>a {
@@ -22,12 +34,14 @@
 
 
 .grid-col-span(@n: 2){
+  -ms-grid-column: span @n;
   grid-column: span @n;
 }
 
 .grid-col-span-m(@n:2){
   .grid-col-span(@n);
   @media only screen and (max-width: @size-tablete) {
+    -ms-grid-column: 1;
     grid-column: 1;
 }
 }

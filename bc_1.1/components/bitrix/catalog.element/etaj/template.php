@@ -1,18 +1,12 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 $this->setFrameMode(true);?>
 
-<?
 
 
-$ob_el=CIBlockElement::GetList(Array("SORT"=>"ASC"),Array('IBLOCK_ID'=>$arResult['IBLOCK_ID'],'SORT'=>array($arResult['SORT']-1,$arResult['SORT']+1),'PROPERTY_KORPUS'=>$arResult['PROPERTIES']['KORPUS']['VALUE']),false,false,Array('SORT','CODE'));
-while($ob = $ob_el->GetNext()){ 
-	if($ob['SORT']>$arResult['SORT']){$etahe['+']=$ob;}else{$etahe['-']=$ob;}
-}
-$ob_el=CIBlockElement::GetByID($arResult['PROPERTIES']['KORPUS']['VALUE']);
-$ar_res = $ob_el->GetNext();
-?><div class="gallery-controls_wrapper rent">
+
+<div class="gallery-controls_wrapper rent">
 	<div class="content">
-		<a href="/arenda/<?=$ar_res['CODE']?>.html" class="select-floor"><i class="icon-arrowhead7"></i>Выбор этажа</a>
+		<a href="/arenda/<?=$arResult['AR_RES']['CODE']?>.html" class="select-floor"><i class="icon-arrowhead7"></i>Выбор этажа</a>
 		<a href="" class="back-link parameters-link"><i class="icon-menu61"></i><span>Подбор по параметрам</span></a>
 		<div class="number-offers">Найдено <span>0</span> предложений</div>
 		<div class="clear"></div>
@@ -96,28 +90,51 @@ $ar_res = $ob_el->GetNext();
 				<div class="title">Этаж</div>
 				<div class="floor-number">
 					<span><?=$arResult['SORT']?></span>
-					<?if($etahe['+']['CODE']!=''){?>
-					<a href="/arenda/etaj/<?=$etahe['+']['CODE']?>.html" class="next-floor"><i class="icon-add202"></i></a>
+					<?if($arResult['ETAHE']['+']['CODE']!=''){?>
+					<a href="/arenda/etaj/<?=$arResult['ETAHE']['+']['CODE']?>.html" class="next-floor"><i class="icon-add202"></i></a>
 					<?}
-					if($etahe['-']['CODE']!=''){?>
-					<a href="/arenda/etaj/<?=$etahe['-']['CODE']?>.html" class="prew-floor"><i class="icon-minus25-2"></i></a>
+					if($arResult['ETAHE']['-']['CODE']!=''){?>
+					<a href="/arenda/etaj/<?=$arResult['ETAHE']['-']['CODE']?>.html" class="prew-floor"><i class="icon-minus25-2"></i></a>
 					<?}?>
 				</div>
 			</div>
-
+<?if(!empty($arResult['PROPERTIES']['PLAN_DOC']['VALUE'])):?>
 			<div class="floor-controls_item floor-controls_item-2">
 				<div class="title">Поэтажный план</div>
 
-<?
-/*				<a data-element="<?=$arResult['ID']?>" href="/pdf/dompdf.php?base_path=<?=$_SERVER["DOCUMENT_ROOT"]?>/pdf/&input_file=img_to_pdf.html" data-id="<?=$arResult['PREVIEW_PICTURE']['ID']?>" class="doc-link"><span>Скачать (.pdf, 1.56 мб.)</span></a>
-*/
+                    <?$arDocument = CFile::GetFileArray($arResult['PROPERTIES']['PLAN_DOC']['VALUE']);
 
-$file_name='Корпус: '.$ar_res['NAME'].' Этаж: '.$arResult['SORT'];
-$arParams = array("replace_space"=>"-","replace_other"=>"-");
-$file_name= Cutil::translit($file_name,"ru",$arParams);?> 
-<a data-element="<?=$arResult['ID']?>" href="/pdf/dompdf.php?IMG=<?=$arResult['ID']?>&outfile=<?=$file_name?>" data-id="<?=$arResult['PREVIEW_PICTURE']['ID']?>" class="doc-link"><span>Скачать (.pdf, 1.56 мб.)</span></a>
+                         function sizeFilter( $bytes )
+                    {
+                        $label = array( 'б.', 'кб.', 'мб.', 'гб.', 'тб.', 'пб.' );
+                        for( $i = 0; $bytes >= 1000 && $i < ( count( $label ) -1 ); $bytes /= 1000, $i++ );
+                        return( round( $bytes, 2 ) . " " . $label[$i] );
+                    }
+
+                    $docSizeFormatted =  sizeFilter($arDocument['FILE_SIZE']);
+
+                        $extension = explode(".",$arDocument['FILE_NAME'])[1];
+
+                    ;?>
+
+                    <?
+
+                    /*				<a data-element="<?=$arResult['ID']?>" href="/pdf/dompdf.php?base_path=<?=$_SERVER["DOCUMENT_ROOT"]?>/pdf/&input_file=img_to_pdf.html" data-id="<?=$arResult['PREVIEW_PICTURE']['ID']?>" class="doc-link"><span>Скачать (.pdf, 1.56 мб.)</span></a>
+
+
+                   $file_name='Корпус: '.$arResult['AR_RES']['NAME'].' Этаж: '.$arResult['SORT'];
+                  $arParams = array("replace_space"=>"-","replace_other"=>"-");
+                  $file_name= Cutil::translit($file_name,"ru",$arParams);?>
+                  */
+
+                    /*
+                    <a data-element="<?=$arResult['ID']?>" href="/pdf/dompdf.php?IMG=<?=$arResult['ID']?>&outfile=<?=$file_name?>" data-id="<?=$arResult['PREVIEW_PICTURE']['ID']?>" class="doc-link"><span>Скачать (.pdf, 1.56 мб.)</span></a> */?>
+
+                                            <a data-element="<?=$arResult['ID']?>" href="<?=CFile::GetPath($arResult['PROPERTIES']['PLAN_DOC']['VALUE']) ;?>" data-id="<?=$arResult['PREVIEW_PICTURE']['ID']?>" class="doc-link"><span>Скачать (.<?=$extension;?>, <?=$docSizeFormatted;?>)</span></a>
 
 			</div>
+
+			<?endif;?>
 
 			<div class="floor-controls_item floor-controls_item-3">
 				<div class="title">Обозначения</div>
@@ -132,70 +149,37 @@ $file_name= Cutil::translit($file_name,"ru",$arParams);?>
 	
 <div class="svgBoxFloor"><div class="svgBox" id="floor"  style="background-image: url(<?=$arResult['PREVIEW_PICTURE']['SRC']?>);"></div></div>
 
-<? 
-$arOficce=array();
-$arFilter=Array('IBLOCK_ID'=>6,'PROPERTY_PLAN'=>$arResult['ID'],'ACTIVE'=>'Y');
-$ob_ofise=CIBlockElement::GetList(Array("SORT"=>"ASC"),$arFilter,false,false,Array('ID','NAME','PROPERTY_PLOSH','DETAIL_PAGE_URL','SORT','PREVIEW_TEXT','DETAIL_TEXT'));
-while($ar = $ob_ofise->GetNext()) {
-	$arOficce[]=$ar; ?>	
-	
-	<div class="officeTooltip 0ff1<?=$ar['ID']?>">
-		<div class="number"><?=$ar['NAME']?></div>
-		<div class="area"><?=$ar['PROPERTY_PLOSH_VALUE']?><i>м2</i></div>
-		<span>площадь</span>	
-	</div>
-<?
 
-$arKoords=explode(",", $ar['PREVIEW_TEXT']);
-$col_value=""; $i=0; $M=1;
-$namb=count($arKoords);
-	foreach($arKoords as $line ){
-
-$line=str_replace(" ","",$line);
-
-		if($M==1){ $col_value.="M".$line.",";
-				 }else{
-			if($namb == $i+2 ){$col_value.= $line;}else
-			if(($i++ % 2) == 0){
-$col_value.= $line."L";
-}else{
-$col_value.= $line.",";
-}
-
-		}
-$M=2;
-	}
-	//echo $col_value."<br>";
-
-$arKoordsM[$ar['ID']]=$col_value;
-
-}
-//print_r($arKoordsM);
-?>
 	<div class="clear"></div>
 
 <script>
 $(document).ready(function () {
+    
 	
 // korpus 
 
 
 	var daWidth = <?=$arResult['PREVIEW_PICTURE']['WIDTH']?>;
-		daHeight = <?=$arResult['PREVIEW_PICTURE']['HEIGHT']?>;
+    var	daHeight = <?=$arResult['PREVIEW_PICTURE']['HEIGHT']?>;
 
-	var paper1 = Raphael($('#floor')[0], <?=$arResult['PREVIEW_PICTURE']['WIDTH']?>, <?=$arResult['PREVIEW_PICTURE']['HEIGHT']?>);
+    var h_w_proportion = daHeight / daWidth;
+
+    var paper1 = Raphael($('#floor')[0], <?=$arResult['PREVIEW_PICTURE']['WIDTH']?>, <?=$arResult['PREVIEW_PICTURE']['HEIGHT']?>);
 	var attr = {stroke:'none'};
 
 	$('.controls-box').css({'height':daHeight})
 
 	paper1.setViewBox(0, 0, <?=$arResult['PREVIEW_PICTURE']['WIDTH']?>, <?=$arResult['PREVIEW_PICTURE']['HEIGHT']?>, true); 
 	paper1.canvas.setAttribute('preserveAspectRatio', 'none'); // there's no method in RaphaГ«l for doing this directly
+    daWidth = $('.SvgBoxFloor').innerWidth();
+    daHeight = (daWidth * h_w_proportion);
 
+    paper1.setSize(daWidth,daHeight);
 	
 	$(window).resize(function(){
-		if ($('body').width() < 960) {	
-	     	var daWidth = $('body').innerWidth();
-			daHeight = (daWidth * .7711);
+		if ($('body').width() < 1900) {
+	     	daWidth = $('.SvgBoxFloor').innerWidth();
+			daHeight = (daWidth * h_w_proportion);
 			// setsize is a very handy method that, i believe, is new to RaphaГ«l 2.0
 			// it's great for being responsive in our designs.
 			paper1.setSize(daWidth,daHeight);
@@ -211,8 +195,8 @@ $(document).ready(function () {
 	    var textObj = pathObj.paper.text( bbox.x + bbox.width / 2, bbox.y + bbox.height / 2, text ).attr( textattr );
 	    return textObj;
 	};
-<? foreach($arOficce as $item){?>
-	var office1<?=$item['ID']?> = paper1.path("<?=$arKoordsM[$item['ID']]?>")
+<? foreach($arResult['AR_OFFICE'] as $item){?>
+	var office1<?=$item['ID']?> = paper1.path("<?=$arResult['AR_COORDINATES'][$item['ID']]?>")
 	.attr({fill: "#0dbed6", opacity:"0.4", stroke:'none' });
 	office1<?=$item['ID']?>.data("id", 'fl1<?=$item['ID']?>');
 	office1<?=$item['ID']?>.data("value", "<?=$item['DETAIL_PAGE_URL']?>");

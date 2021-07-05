@@ -24,9 +24,9 @@ $this->setFrameMode(true);
                         $photo_path = CFile::GetPath($photo);
                         ?>
                         <div class="slide"><a class="slide-fancybox fbs" href="<?=CFile::GetPath($photo) ?>"
-                                              rel="gallery<?=$key;?>"> a</a>
-                            <div class="img"
-                                 style="background: url(<?=CFile::GetPath($photo)?>) no-repeat center/ cover;"></div>
+                                              rel="gallery<?=$key;?>" title="<?=$item["PROPERTIES"]["IMG_GALERY"]["DESCRIPTION"][$k];?>" >  </a>
+                            <div class="img" title="<?=$item["PROPERTIES"]["IMG_GALERY"]["DESCRIPTION"][$k];?>"
+                                 style="background: url(<?=CFile::GetPath($photo)?>) no-repeat center/ cover;">                            </div>
                         </div>
 
 

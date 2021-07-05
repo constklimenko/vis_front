@@ -1,0 +1,140 @@
+@import "parts/root";
+@import "parts/params";
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// font styles
+@font-face {
+  font-family: 'Formular';
+  src: url(./fonts/Formular-Bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Formular';
+  src: url(./fonts/Formular.ttf);
+  font-weight: 400;
+}
+
+
+
+
+html {
+  font-family                : @font-family;
+
+  @media screen and (max-width: @size-tablete){
+    font-size: 14px;
+  }
+  line-height: 130%;
+  -webkit-text-size-adjust   : 100%;
+  -ms-text-size-adjust       : 100%;
+  -ms-overflow-style         : scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: @font-family, -apple-system, BlinkMacSystemFont,  "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+
+  font-weight     : 400;
+  line-height     : 1.5;
+  color           : @black;
+  text-align      : left;
+  background-color: @white;
+  
+
+  // row-gap: @block-gap;
+}
+
+// end of bs styles
+
+//common styles
+
+
+
+
+.span-2{
+  .grid-col-span-m;
+}
+
+.vis-logo{
+  .bg-contain('./img/svg/vis-logo.svg');
+  height: 2rem;
+  width:6.86rem;
+  display: inline-block;
+}
+
+@import "parts/header/header";
+
+@import "parts/info/info";
+@import "parts/elem_descr/elem_descr";
+@import "parts/elem_tabs/elem_tabs";
+@import "parts/similar/similar";
+@import "parts/index_first/index_first";
+@import "parts/index_about/index_about";
+@import "parts/index_slider/index_slider";
+@import "parts/index_news/index_news";
+@import "parts/index_form/index_form";
+@import "parts/history/history";
+
+@import "parts/footer/footer";
+
+.m-show {
+  @media (min-width: @size-mobile + 1) {
+    display: none!important;
+  }
+}
+
+.m-hide {
+  @media (max-width: @size-mobile) {
+    display: none!important;
+  }
+}
+
+.t-hide {
+  @media (max-width: @size-tablete) {
+    display: none!important;
+  }
+}
+
+.t-show {
+  @media (min-width: @size-tablete) {
+    display: none!important;
+  }
+}
+
+.hide{
+  display: none!important;
+}
+
+.hide-light{
+  visibility: hidden;
+  z-index: 2;
+}
+
+
+
+

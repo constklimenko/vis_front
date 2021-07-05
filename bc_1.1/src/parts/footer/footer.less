@@ -8,14 +8,29 @@
   align-items: end;
   position: relative;
   grid-row-gap: 10px;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+    margin-bottom: 10px;
+
+
+  }
   
   @media screen and (max-width: 1180px){
+    -ms-grid-columns: max-content max-content auto;
     grid-template-columns: max-content max-content auto;
     grid-template-areas:   "logo  tel adress"
     " text pres copy";
     align-items: center;
     grid-row-gap: 24px;
     grid-column-gap: 20px;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+      margin-bottom: 24px;
+      margin-right: 20px;
+
+    }
+
   }
 
   @media screen and (max-width: 900px){
@@ -25,6 +40,7 @@
   
   &-contacts{
     grid-area: tel;
+    -ms-grid-row-align:center;
     align-self: center;
   }
   

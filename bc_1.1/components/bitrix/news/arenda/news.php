@@ -26,26 +26,30 @@ $offices = [
     12 => 0,
     13 => 1,
     14 => 2,
-];
+]; //соответствие номеров корпусов(1,2,3) номерам элементов инфоблока
 $officesQuantity = array_fill(0, count($offices), 0);
 
 $cache = Cache::createInstance();
 if($cache->initCache($arParams['CACHE_TIME'], sha1(serialize([__FILE__, $offices, 'getOfficesQuantities'])), '/iblock/news/arenda')) {
-    $officesQuantity = $cache->getVars();
+    $officesQuantity = $cache->getVars(); // данные берутся из кэша при наличии
 } elseif($cache->startDataCache()) {
 
     Loader::includeModule('iblock');
-
+// из инфоблока Офисы выбираются активные элементы  с  PREVIEW_TEXT и группируются по корпусу
     $res = CIBlockElement::GetList(
         ['SORT' =>'ASC'],
-        ['IBLOCK_ID' => $arParams['IBLOCK_ID'], 'ACTIVE' =>'Y', '!PREVIEW_TEXT' =>false, 'PROPERTY_KORPUS' => array_keys($offices)],
+        ['IBLOCK_ID' => $arParams['IBLOCK_ID'], 'ACTIVE' =>'Y',
+       //  '!PREVIEW_TEXT' =>false,
+         'PROPERTY_KORPUS' => array_keys($offices)],
         ['PROPERTY_KORPUS'],false,
         ['PROPERTY_KORPUS']
     );
+
+
     while($row = $res->Fetch()) {
         $officesQuantity[$offices[$row['PROPERTY_KORPUS_VALUE']] ?? array_keys($offices)[count($offices)-1] ?? 0] = (int) $row['CNT'];
     }
-
+//$officesQuantity - массив содержащий число свободных офисов. Если элемент инфоблока Офисы активен, но не содержит PREVIEW_TEXT то он тоже не считается активным.
     $cache->endDataCache($officesQuantity);
 }
 

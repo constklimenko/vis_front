@@ -1,0 +1,1 @@
+<a class="btn  btn--primary promo__btn" href="#">Арендовать офис</a>

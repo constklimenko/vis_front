@@ -12,6 +12,7 @@
     
     @media screen and (max-width: @size-notebook){
        padding: 46px 2.4vw 36px;
+      -ms-grid-columns: max-content  minmax(max-content, 995px) max-content;
        grid-template-columns: max-content  minmax(max-content, 995px) max-content;
       }
       
@@ -56,6 +57,7 @@
     @media screen and (max-width: @size-mobile){
         background-color: transparent;
         position: absolute;
+      -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
         
         padding: 18px 15px;
@@ -81,6 +83,7 @@
         
         @media screen and(max-width: @size-mobile) {
             order:2;
+          -ms-grid-column-align:center;
             justify-self: center;
             
         }
@@ -94,6 +97,7 @@
         //
         
         color: white;
+      -ms-grid-column-align:center;
         justify-self: center;
 
         &:hover {
@@ -146,6 +150,7 @@
         
         & li {
             list-style  : none;
+          -ms-grid-column-align:center;
             justify-self: center;
             padding:0;
             margin-right: 10px;

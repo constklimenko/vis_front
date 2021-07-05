@@ -94,6 +94,7 @@
                 
                 max-width:270px;
                 width:100%;
+              -ms-grid-column-align:center;
                 justify-self: center;
             }
             
@@ -112,7 +113,7 @@
     
     &-tabs{
        
-        
+        -ms-grid-columns: repeat(3,1fr) auto!important;
         grid-template-columns: repeat(3,1fr) auto!important;
         grid-column-gap: 1vw!important;
         .bottom-super(-30px, -50px, 60px,0px);
@@ -198,6 +199,7 @@
         .masked-icon('./img/svg/oval_plus_arrow.svg');
         height: 58px;
         width:26px;
+      -ms-grid-row-align:center;
       align-self: center;     
       animation: index_arrow 1s  infinite ;
      

@@ -1,0 +1,18 @@
+mixin news-card(title, text)
+    .index_news-card
+            .index_news-card-img(style=attributes.style) 
+            .index_news-card-title=title            
+            .index_news-card-text=text
+
+.index_news 
+    .index_news-bg_text новости
+    h2.index_news-title новости
+    .index_news-row 
+        +news-card('Высокотехнологичные компании выбирают БЦ Красный пролетарий','Компания – производитель беспроводных сетей заняла в бизнес-центре 700 кв.м.')(style= "background: url(./img/history/3.jpg) no-repeat center/cover")
+        +news-card('В БЦ арендовали офис немецкие компании Durr Systems и Homag', 'Durr Systems и компания Homag арендовали офис площадью 680 кв.м')(style= "background: url(./img/history/3.jpg) no-repeat center/cover")
+        +news-card('TopStretching открыли студию в БЦ Красный пролетарий','В центре Москвы открылась студия современного фитнеса TopStretching.')(style= "background: url(./img/history/3.jpg) no-repeat center/cover")
+        +news-card('Высокотехнологичные компании выбирают БЦ Красный пролетарий','Компания – производитель беспроводных сетей заняла в бизнес-центре 700 кв.м.')(style= "background: url(./img/history/3.jpg) no-repeat center/cover")
+        +news-card('В БЦ арендовали офис немецкие компании Durr Systems и Homag', 'Durr Systems и компания Homag арендовали офис площадью 680 кв.м')(style= "background: url(./img/history/3.jpg) no-repeat center/cover")
+        +news-card('TopStretching открыли студию в БЦ Красный пролетарий','В центре Москвы открылась студия современного фитнеса TopStretching.')(style= "background: url(./img/history/3.jpg) no-repeat center/cover")
+        
+        

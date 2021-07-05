@@ -118,6 +118,15 @@
     text-overflow: ellipsis;
 }
 
+.mui-textfield--float-label>input:not(:placeholder-shown)~label,
+.mui-textfield--float-label>textarea:not(:placeholder-shown)~label {
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  font-size: 12px;
+  line-height: 15px;
+  text-overflow: ellipsis;
+}
+
 .mui-textfield--float-label>input:not(:focus).mui--is-not-empty~label,
 .mui-textfield--float-label>input:not(:focus)[value]:not([value=""]):not(.mui--is-empty):not(.mui--is-not-empty)~label,
 .mui-textfield--float-label>input:not(:focus):not(:empty):not(.mui--is-empty):not(.mui--is-not-empty)~label,

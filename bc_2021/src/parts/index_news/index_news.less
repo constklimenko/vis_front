@@ -1,0 +1,113 @@
+.index_news{
+
+    padding-top: 211px ;
+    padding-bottom: 103px;
+    padding-left: 16vw;
+    position: relative;
+    overflow-x: hidden;
+
+    @media screen and(max-width: 1000px){
+        padding-left: 10px;
+    }
+
+    &-title{
+        font-size: 36px;
+        text-transform: uppercase;
+        position: relative;
+        margin-bottom:65px ;
+    }
+
+    &-bg_text {
+        .f-size(100,200,320,1920);
+        position   : absolute;
+        top: 0;
+        left: 1vw;
+        font-weight: bold;
+
+        line-height: 245px;
+        color      :  #EDEFF1;
+        white-space: nowrap;
+        text-transform: uppercase;
+
+    }
+    
+    &-row{ position: relative;
+
+        height: 319px;
+        overflow-x: scroll;
+        width: auto;
+        .flex-row;
+        flex-wrap: nowrap;
+        gap:30px;
+
+
+
+    }
+
+    &-row::-webkit-scrollbar{
+        height: 9px;
+        background-color: white;
+        border-bottom:1px solid  @gray_lines ;
+    }
+
+    &-row::-webkit-scrollbar-thumb{
+        height: 9px;
+        background-color: @red;
+        border-radius: 4px;
+        max-width: 240px;
+    }
+
+    &-card{
+        min-width: 486px;
+        height: 250px;
+        background-color: @light_gray;
+        padding: 58px 30px 38px;
+        .grid( auto auto);
+        gap: 30px;
+
+        @media screen and(max-width: 1000px){
+            min-width: 100vw;
+        }
+
+
+        &-img{
+            .masked-img-no-bg('./img/svg/hexagon.svg');
+            width: 90px;
+            height:54px;
+
+        }
+
+        &-title{
+            font-size: 20px;
+            line-height: 150%;
+            text-transform: uppercase;
+            @media screen and(max-width: 1000px){
+                font-size: 14px;
+            }
+
+
+        }
+
+        &-text{
+            grid-column: span 2;
+
+        }
+
+        &:hover{
+            box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.15);
+            background-color: white;
+
+        }
+
+        &:hover &-title{
+            color:@red;
+        }
+
+
+
+
+
+    }
+    
+    
+}

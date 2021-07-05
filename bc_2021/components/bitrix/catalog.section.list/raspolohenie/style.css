@@ -1,0 +1,8 @@
+span.img{
+    height: 25px;
+    vertical-align: sub;
+    background-position: center;
+    display: inline-block;
+    margin-right: 20px;
+    width: 24px;
+}

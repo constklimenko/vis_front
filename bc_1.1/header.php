@@ -17,12 +17,10 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     $assets->addJs(SITE_TEMPLATE_PATH . '/js/jquery.ui.touch-punch.min.js');
     $assets->addJs(SITE_TEMPLATE_PATH . '/js/jquery.pageScroll.js');
     $assets->addJs(SITE_TEMPLATE_PATH . '/js/contacts-map.js');
+    $assets->addJs(SITE_TEMPLATE_PATH . '/js/jquery.mask.min.js');
     $assets->addJs(SITE_TEMPLATE_PATH . '/js/custom.js');
     $assets->addJs(SITE_TEMPLATE_PATH . '/js/script.js');
     $assets->addJs(SITE_TEMPLATE_PATH . '/js/vis-scripts.js');
-
-
-
 
     $assets->addCss(SITE_TEMPLATE_PATH . '/css/plagins_style.css');
     $assets->addCss(SITE_TEMPLATE_PATH . '/css/style.css');
@@ -140,7 +138,7 @@ $isDevMode = $isAdmin || $isDevSite;
 					"MENU_CACHE_TYPE" => "A",	// Тип кеширования
 					"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
 					"ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
-					"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+					"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
 				),
 				false
 			);?>

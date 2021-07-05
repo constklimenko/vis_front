@@ -3,7 +3,7 @@
     .padding-container(1925px, 1726px, 77px, 5vw, 65px, 5vw);
     
     background-color: #EDEFF1;
-    //overflow: hidden;
+    overflow-x: hidden;
     
     
     
@@ -69,7 +69,7 @@
                 align-content: flex-start;
                 
                 &--reverse{
-                    flex-direction: column-reverse;
+                    //flex-direction: column-reverse;
                 }
                 
             }
@@ -81,6 +81,7 @@
 
         
         & .info-btn{
+          -ms-grid-column: span 2;
             grid-column: span 2;
             margin-top: 36px;
             .flex-col;
@@ -94,11 +95,13 @@
         }
         
         &-top{
+          -ms-grid-column: span 2;
             grid-column: span 2;
             border-left: 1px solid @gray_lines; 
             width:50%;
             height: 60px;
             position: relative;
+
             align-self: flex-end;
             
             @media screen and(max-width: 1000px){
@@ -143,7 +146,9 @@
         }
         
         &-date{
+          -ms-grid-column: span 2;
             grid-column: span 2;
+          -ms-grid-column-align:center;
             justify-self: center;
             font-weight: bold;
             font-size: 24px;
@@ -187,6 +192,7 @@
             
             max-width: 377px;
                 min-height: 208px;
+          -ms-grid-row-align:center;
                 align-self: center;
                 justify-self: center;
             
@@ -221,6 +227,7 @@
             & .img{
                 width: 367px;
                 height: 208px;
+              -ms-grid-row-align:center;
                 align-self: center;
                 justify-self: center;
                 

@@ -15,8 +15,9 @@
 
   @media screen and (max-width: @size-mobile){
     .grid(auto,auto);
-    grid-row-gap: var(--section-gap);
-    row-gap: var(--section-gap);
+   // -ms-grid-row-gap: var(--section-gap);
+   // grid-row-gap: var(--section-gap);
+   // row-gap: var(--section-gap);
     padding:0;
 
 
@@ -24,6 +25,7 @@
   }
 
   &-back-link{
+    -ms-grid-column: span 2;
     grid-column: span 2;
     color: @red;
     cursor: pointer;
@@ -81,7 +83,9 @@
   }
 
   &-grid{
+    position: relative;
     .grid(1fr 3.6fr, auto, 2em);
+    -ms-grid-row-align:start;
     align-self: start;
     @media screen and (max-width: @size-mobile){
     padding-left: 5vw;
@@ -98,7 +102,7 @@
     line-height: 1.2em;
     text-transform: uppercase;
     margin-bottom: 1em;
-
+    -ms-grid-column: span 2;
     grid-column: span 2;
 
 
@@ -107,11 +111,12 @@
   &-text{
 
     padding-top: 32px ;
-
+-ms-grid-column: span 2;
     grid-column: span 2;
   }
 
   &-char, &-prices{
+    -ms-grid-row-align:start;
     align-self: start;
     .flex-col();
     justify-content: flex-start;
@@ -167,6 +172,15 @@
     color:red;
     .masked-icon('./img/svg/share.svg', 20px, 21px);
     cursor: pointer;
+
+
+
+  }
+
+  .share-modal{
+    position: absolute;
+    right:calc(4.5vw + 10px);
+    top:54px;
   }
 
 
@@ -218,6 +232,7 @@
 
       & span {
         font-size: 12px;
+        -ms-grid-row-align:center;
         align-self: center;
         padding-left: 2px;
       }

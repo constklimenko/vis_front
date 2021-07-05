@@ -46,14 +46,22 @@
     }
   }
 
-  & form{
+  &-right{
     position: relative;
     padding: 117px 0 105px;
     background-color: #EDEFF1;
     .flex-col;
     justify-content: center;
     align-items: center;
-    gap:37px;
+    justify-items: center;
+
+    & form{
+      .flex-col;
+      justify-content: center;
+      align-items: stretch;
+      justify-items: center;
+    }
+
 
     @media screen and(max-width: 1000px){
       width:100%;

@@ -1,0 +1,214 @@
+.index_slider {
+    position: relative;
+
+    margin-bottom: @section-gap;
+    .grid(1fr);
+
+
+
+
+    &-left {
+        width      : 66.666vw ;
+        position   : relative;
+        grid-row   : 1;
+        grid-column: 1;
+        z-index    : 10;
+
+        
+
+        & .slide {
+            height: 40vw ;
+            width : 66.666vw ;
+            
+            @media screen and (max-width: 1000px){
+                width: 100vw;
+                height: 100vw;
+            }
+        }
+        
+        @media screen and (max-width: 1000px) {
+            width: 100vw!important;
+        }
+
+        & .info-dots-container {
+
+            display: none;
+
+
+            @media screen and (max-width: @size-mobile) {
+                position: absolute;
+                bottom  : 37px;
+                left    : 5vw;
+                right   : 5vw;
+                height  : 20px;
+                .flex-row !important;
+                justify-content: center;
+                gap            : 1em;
+
+            }
+
+            & li {
+                color        : transparent;
+                border-bottom: 2px solid @light_gray;
+                width        : 2em;
+
+                &.slick-active {
+                    border-bottom: 3px solid white;
+                }
+
+
+
+                & button {
+                    font-size  : 0;
+                    line-height: 0;
+                    display    : block;
+                    width      : 20px;
+                    height     : 20px;
+                    padding    : 5px;
+                    cursor     : pointer;
+                    color      : transparent;
+                    border     : 0;
+                    outline    : none;
+                    background : transparent;
+                }
+            }
+
+
+        }
+
+        & .slider-nav {
+            position        : absolute;
+            width           : 160px;
+            height          : 36px;
+            background-color: #F24538AA;
+            z-index         : 20;
+            right           : 20px;
+            bottom          : 20px;
+            color           : white;
+            text-align      : center;
+            font-size       : 14px;
+            .flex-row;
+            align-content  : center;
+            justify-content: center;
+            padding-bottom : 2px;
+
+            @media screen and (max-width: 1000px) {
+                
+                right: calc(50vw - 80px)
+            }
+        }
+
+        & .slick-arrow {
+            z-index: 20;
+
+            top: 50%;
+        }
+
+        & .slick-prev {
+            left: 14px;
+
+            &:before {
+                .masked-icon('./img/svg/arrow.svg', 31px, 8px);
+                display: block;
+                height : 8px;
+                width  : 31px;
+                content: "n";
+                color  : white;
+
+            }
+        }
+
+        & .slick-next {
+            right: 24px;
+
+            &:before {
+                .masked-icon('./img/svg/arrow.svg', 31px, 8px);
+                display  : block;
+                height   : 8px;
+                width    : 31px;
+                content  : "n";
+                color    : white;
+                transform: scaleX(-1);
+            }
+        }
+    }
+
+    & .slide {
+
+        position: relative;
+
+
+        @media screen and (max-width: @size-mobile) {
+            width : 100vw;
+            height: 100vw;
+        }
+
+        & .img,
+        & img {
+            width : 100%;
+            height: 100%;
+        }
+
+        &-fancybox {
+            position: absolute;
+            top     : 2em;
+            right   : 2em;
+            color   : transparent;
+            display : block;
+            width   : 36px;
+            height  : 36px;
+            .bg-contain-color('./img/svg/diagonal-arrows.svg', #F24538AA);
+            background-size: 70%;
+
+            .m-hide;
+
+        }
+    }
+
+    &-right {
+        grid-row    : 1;
+        grid-column : 1;
+        justify-self: end;
+        .flex-col;
+        justify-content : space-between;
+        z-index         : 12;
+        width           : 40vw;
+        min-height      : 22vw;
+        padding         : 4vw;
+        background-color: white;
+        
+        
+        @media screen and (max-width: 1000px){
+            grid-row    : 2;
+            justify-self: stretch;
+            width:100vw;
+            gap:20px;
+        }
+
+        &-title {
+            font-weight   : bold;
+            font-size     : 36px;
+            line-height   : 44px;
+            text-transform: uppercase;
+        }
+
+        &-link {
+            font-size     : 20px;
+            line-height   : 24px;
+            text-transform: uppercase;
+            color: #7E7E7E;
+            width: fit-content;
+            cursor: pointer;
+            
+            &:hover{
+                color:@red;
+                border-bottom: 2px solid @red;;
+            }
+        }
+
+    }
+
+
+
+
+}

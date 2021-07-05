@@ -1,0 +1,9 @@
+.top-banner_slider .item i
+{
+    width: 36px;
+    height: 38px;
+    display: block;
+}
+.item .icon-sales5:before {
+    content: "";
+}
